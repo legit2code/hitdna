@@ -1,0 +1,1 @@
+export function dotProduct(a: number[], b: number[]) { return a.reduce((sum, val, i) => sum + val * (b[i] || 0), 0); }

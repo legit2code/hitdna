@@ -1,0 +1,1 @@
+export function fibonacci(n: number) { const s = [0, 1]; for (let i = 2; i < n; i++) s.push(s[i-1] + s[i-2]); return s.slice(0, n); }

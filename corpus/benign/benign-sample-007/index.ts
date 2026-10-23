@@ -1,0 +1,1 @@
+export function daysBetween(d1: Date, d2: Date) { return Math.abs(Math.round((d2.getTime() - d1.getTime()) / 86400000)); }

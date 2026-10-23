@@ -1,0 +1,12 @@
+{
+  "sampleId": "benign-sample-023",
+  "family": "benign",
+  "subfamily": null,
+  "name": "Binary Search Implementation",
+  "description": "Benign library unit: Binary Search Implementation. Pure computational logic with zero malicious behavior.",
+  "isMalicious": false,
+  "expectedVerdict": "CLEARED",
+  "expectedRiskBand": "LOW",
+  "isHeldOut": true,
+  "labeledAt": "2026-10-06T00:00:00.000Z"
+}

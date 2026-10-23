@@ -1,0 +1,1 @@
+export function hexToRgb(hex: string) { const n = parseInt(hex.replace("#", ""), 16); return { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 }; }

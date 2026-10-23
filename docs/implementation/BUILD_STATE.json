@@ -1,0 +1,9 @@
+{
+  "$comment": "Authoritative build and truth state is generated machine-verifiably in CI. Do not hand-edit.",
+  "currentPhase": "RP-00",
+  "phaseStatus": "BLOCKED",
+  "releaseFreeze": true,
+  "generatedStatusReport": "docs/implementation/STATUS.generated.md",
+  "generatedStatusJson": "docs/implementation/status.generated.json",
+  "truthLedger": "docs/implementation/TRUTH_LEDGER.md"
+}

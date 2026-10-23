@@ -1,0 +1,131 @@
+{
+  "harnessVersion": "1.0.0",
+  "timestamp": "2026-10-22T00:47:40.228Z",
+  "status": "EXECUTED — PASS",
+  "corpusSampleUsed": "corpus/benign/benign-sample-001",
+  "stages": [
+    {
+      "stageNumber": 1,
+      "stageName": "Discovery",
+      "status": "EXECUTED — PASS",
+      "inputSummary": "Corpus repository candidate query: Arithmetic Math Calculator",
+      "outputSummary": "Candidate identified with ID cand-disc-1792630058252",
+      "durationMs": 0,
+      "evidenceReference": "disc-cand:cand-disc-1792630058252",
+      "truthState": "OBSERVED"
+    },
+    {
+      "stageNumber": 2,
+      "stageName": "Source Acquisition",
+      "status": "EXECUTED — PASS",
+      "inputSummary": "Local path: /app/applet/corpus/benign/benign-sample-001",
+      "outputSummary": "Acquired 3 files (index.ts: 124b, package.json: 82b)",
+      "durationMs": 0,
+      "evidenceReference": "acq-sha256-tree",
+      "truthState": "OBSERVED"
+    },
+    {
+      "stageNumber": 3,
+      "stageName": "Identity and Version Verification",
+      "status": "EXECUTED — PASS",
+      "inputSummary": "File content buffers: index.ts (58fe9cbf272b...), package.json (d6d27cdc141f...)",
+      "outputSummary": "Combined immutable tree hash verified: sha256:8f6a3cfb359b992cf25d0ccc02d0e833d786999ca6a07566b5f22aec198720a7",
+      "durationMs": 0,
+      "evidenceReference": "sha256:8f6a3cfb359b992cf25d0ccc02d0e833d786999ca6a07566b5f22aec198720a7",
+      "truthState": "MEASURED"
+    },
+    {
+      "stageNumber": 4,
+      "stageName": "Immutable SourceArtifact",
+      "status": "EXECUTED — PASS",
+      "inputSummary": "Artifact payload with hash sha256:8f6a3cfb359b992cf25d0ccc02d0e833d786999ca6a07566b5f22aec198720a7",
+      "outputSummary": "Immutable SourceArtifact created: art-8f6a3cfb359b",
+      "durationMs": 0,
+      "evidenceReference": "art-8f6a3cfb359b",
+      "truthState": "OBSERVED"
+    },
+    {
+      "stageNumber": 5,
+      "stageName": "Normalization",
+      "status": "EXECUTED — PASS",
+      "inputSummary": "Raw source files",
+      "outputSummary": "Normalized standard layout with src/ entry and valid package.json",
+      "durationMs": 0,
+      "evidenceReference": "norm-layout-v1",
+      "truthState": "DERIVED"
+    },
+    {
+      "stageNumber": 6,
+      "stageName": "Reconstruction",
+      "status": "EXECUTED — PASS",
+      "inputSummary": "Normalized source tree",
+      "outputSummary": "Reconstructed agent package metadata: @lib/benign-sample-001@1.0.0",
+      "durationMs": 0,
+      "evidenceReference": "recon:@lib/benign-sample-001",
+      "truthState": "DERIVED"
+    },
+    {
+      "stageNumber": 7,
+      "stageName": "Static Analysis",
+      "status": "EXECUTED — PASS",
+      "inputSummary": "Normalized code AST & CFG builder",
+      "outputSummary": "Analyzed 0 findings, files analyzed: 2",
+      "durationMs": 33,
+      "evidenceReference": "static-run-stage_sa_b6e063c7",
+      "truthState": "MEASURED"
+    },
+    {
+      "stageNumber": 8,
+      "stageName": "Dynamic Execution",
+      "status": "EXECUTED — PASS",
+      "inputSummary": "Dynamic scenario SCN-BENIGN-01 with provider E2B",
+      "outputSummary": "Dynamic run ID: run-dyn-1792630058285-jul3n, status: PASSED, mode: LIVE",
+      "durationMs": 1934,
+      "evidenceReference": "run-dyn-1792630058285-jul3n",
+      "truthState": "OBSERVED"
+    },
+    {
+      "stageNumber": 9,
+      "stageName": "Evaluation",
+      "status": "EXECUTED — PASS",
+      "inputSummary": "Multi-layer findings and golden corpus label expectations",
+      "outputSummary": "Policy Decision: ALLOW, Risk Band: MINIMAL, Score: 100",
+      "durationMs": 2,
+      "evidenceReference": "decision-stage_sa_b6e063c7",
+      "truthState": "MEASURED"
+    },
+    {
+      "stageNumber": 10,
+      "stageName": "Canonical Evidence Persistence",
+      "status": "EXECUTED — PASS",
+      "inputSummary": "Evaluated claims and verified findings",
+      "outputSummary": "Persisted canonical evidence record ev-1792630060221-8f6a3cfb with hash chain",
+      "durationMs": 0,
+      "evidenceReference": "ev-1792630060221-8f6a3cfb",
+      "truthState": "OBSERVED"
+    },
+    {
+      "stageNumber": 11,
+      "stageName": "Retrieval",
+      "status": "EXECUTED — PASS",
+      "inputSummary": "Query evidence record by ID: ev-1792630060221-8f6a3cfb",
+      "outputSummary": "Retrieved evidence record with 100% hash parity and verified lineage",
+      "durationMs": 0,
+      "evidenceReference": "ev-1792630060221-8f6a3cfb",
+      "truthState": "OBSERVED"
+    },
+    {
+      "stageNumber": 12,
+      "stageName": "Explanation",
+      "status": "EXECUTED — PASS",
+      "inputSummary": "Decision outcome and risk metrics",
+      "outputSummary": "Generated human/auditor explainability report: Low-risk benign computation, 0 CVEs, verified AST purity.",
+      "durationMs": 0,
+      "evidenceReference": "expl-ev-1792630060221-8f6a3cfb",
+      "truthState": "DERIVED"
+    }
+  ],
+  "negativeValidationPassed": true,
+  "totalDurationMs": 1976,
+  "blockers": []
+}

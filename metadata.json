@@ -1,0 +1,6 @@
+{
+  "name": "CAIM Security & Intelligence Platform",
+  "description": "Enterprise-grade artifact intelligence, security analysis, AI-BOM, golden corpus evaluations, CI regression release gates, and 71-engine verification platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

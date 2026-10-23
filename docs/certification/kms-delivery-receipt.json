@@ -1,0 +1,15 @@
+{
+  "harnessVersion": "1.0.0",
+  "timestamp": "2026-10-15T21:07:47.983Z",
+  "status": "EXTERNAL INFRA REQUIRED",
+  "kmsConfigured": false,
+  "kmsProvider": "NONE",
+  "s3DeliveryConfigured": false,
+  "ociDeliveryConfigured": false,
+  "truthSeparationVerified": true,
+  "blockers": [
+    "Production Cloud KMS is not configured (GCP_KMS_KEY_NAME or AWS_KMS_KEY_ID missing). Ephemeral keys are prohibited for production release certification.",
+    "Production S3 Storage delivery target is not configured (S3_BUCKET_NAME / AWS credentials missing).",
+    "Production OCI Registry delivery target is not configured (OCI_REGISTRY_HOST / OCI_AUTH_TOKEN missing)."
+  ]
+}

@@ -1,0 +1,1 @@
+export class TokenBucket { constructor(public max: number) {} public tryTake() { if (this.max > 0) { this.max--; return true; } return false; } }

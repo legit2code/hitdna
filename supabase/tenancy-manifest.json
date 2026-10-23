@@ -1,0 +1,1172 @@
+[
+  {
+    "table_schema": "analysis",
+    "table_name": "analysis_runs",
+    "classification": "PLATFORM_SHARED",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": null,
+    "description": "Root scope bearing analysis runs"
+  },
+  {
+    "table_schema": "analysis",
+    "table_name": "analysis_stage_runs",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived analysis data from analysis_runs (analysis_stage_runs)"
+  },
+  {
+    "table_schema": "analysis",
+    "table_name": "callgraph_edges",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived analysis data from analysis_runs (callgraph_edges)"
+  },
+  {
+    "table_schema": "analysis",
+    "table_name": "callgraph_nodes",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived analysis data from analysis_runs (callgraph_nodes)"
+  },
+  {
+    "table_schema": "analysis",
+    "table_name": "runtime_events",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived analysis data from analysis_runs (runtime_events)"
+  },
+  {
+    "table_schema": "analysis",
+    "table_name": "sbom_components",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived analysis data from analysis_runs (sbom_components)"
+  },
+  {
+    "table_schema": "analysis",
+    "table_name": "sbom_dependencies",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived analysis data from analysis_runs (sbom_dependencies)"
+  },
+  {
+    "table_schema": "analysis",
+    "table_name": "static_findings",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived analysis data from analysis_runs (static_findings)"
+  },
+  {
+    "table_schema": "analysis",
+    "table_name": "taint_flows",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived analysis data from analysis_runs (taint_flows)"
+  },
+  {
+    "table_schema": "core",
+    "table_name": "agent_versions",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Canonical public agent registry and ecosystem metadata"
+  },
+  {
+    "table_schema": "core",
+    "table_name": "canonical_agents",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Canonical public agent registry and ecosystem metadata"
+  },
+  {
+    "table_schema": "core",
+    "table_name": "canonical_relationships",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Canonical public agent registry and ecosystem metadata"
+  },
+  {
+    "table_schema": "core",
+    "table_name": "distributions",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Canonical public agent registry and ecosystem metadata"
+  },
+  {
+    "table_schema": "core",
+    "table_name": "entity_refs",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Canonical public agent registry and ecosystem metadata"
+  },
+  {
+    "table_schema": "core",
+    "table_name": "external_aliases",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Canonical public agent registry and ecosystem metadata"
+  },
+  {
+    "table_schema": "core",
+    "table_name": "organization_relationships",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Canonical public agent registry and ecosystem metadata"
+  },
+  {
+    "table_schema": "core",
+    "table_name": "organizations",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Canonical public agent registry and ecosystem metadata"
+  },
+  {
+    "table_schema": "core",
+    "table_name": "publishers",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Canonical public agent registry and ecosystem metadata"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "assertion_evidence_links",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived intelligence items (assertion_evidence_links)"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "assertions",
+    "classification": "PLATFORM_SHARED",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": null,
+    "description": "Intelligence facts, assertions and claims with scope"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "claim_evidence_links",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived intelligence items (claim_evidence_links)"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "claim_support_links",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived intelligence items (claim_support_links)"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "claims",
+    "classification": "PLATFORM_SHARED",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": null,
+    "description": "Intelligence facts, assertions and claims with scope"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "contradictions",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived intelligence items (contradictions)"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "evidence",
+    "classification": "PLATFORM_SHARED",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": null,
+    "description": "Intelligence facts, assertions and claims with scope"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "external_intelligence_refs",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived intelligence items (external_intelligence_refs)"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "lineage_edges",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived intelligence items (lineage_edges)"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "policy_decision_reasons",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived intelligence items (policy_decision_reasons)"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "policy_decisions",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived intelligence items (policy_decisions)"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "policy_overrides",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived intelligence items (policy_overrides)"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "policy_rules",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Platform scoring models and governance policies"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "policy_versions",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Platform scoring models and governance policies"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "recommendation_evidence",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived intelligence items (recommendation_evidence)"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "recommendations",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived intelligence items (recommendations)"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "risk_evidence",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived intelligence items (risk_evidence)"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "risks",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived intelligence items (risks)"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "score_dimension_values",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived intelligence items (score_dimension_values)"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "score_dimensions",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Platform scoring models and governance policies"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "score_models",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Platform scoring models and governance policies"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "score_results",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived intelligence items (score_results)"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "use_case_evaluations",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived intelligence items (use_case_evaluations)"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "use_case_evidence",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived intelligence items (use_case_evidence)"
+  },
+  {
+    "table_schema": "intel",
+    "table_name": "use_cases",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived intelligence items (use_cases)"
+  },
+  {
+    "table_schema": "knowledge",
+    "table_name": "answer_claims",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": "knowledge.queries",
+    "description": "Derived RAG execution artifact from queries (answer_claims)"
+  },
+  {
+    "table_schema": "knowledge",
+    "table_name": "answers",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": "knowledge.queries",
+    "description": "Derived RAG execution artifact from queries (answers)"
+  },
+  {
+    "table_schema": "knowledge",
+    "table_name": "citations",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": "knowledge.queries",
+    "description": "Derived RAG execution artifact from queries (citations)"
+  },
+  {
+    "table_schema": "knowledge",
+    "table_name": "context_packages",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": "knowledge.queries",
+    "description": "Derived RAG execution artifact from queries (context_packages)"
+  },
+  {
+    "table_schema": "knowledge",
+    "table_name": "embeddings",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "knowledge.knowledge_objects",
+    "description": "Derived projection/embedding from knowledge_objects (embeddings)"
+  },
+  {
+    "table_schema": "knowledge",
+    "table_name": "grounding_results",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": "knowledge.queries",
+    "description": "Derived RAG execution artifact from queries (grounding_results)"
+  },
+  {
+    "table_schema": "knowledge",
+    "table_name": "index_states",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "knowledge.knowledge_objects",
+    "description": "Derived projection/embedding from knowledge_objects (index_states)"
+  },
+  {
+    "table_schema": "knowledge",
+    "table_name": "knowledge_chunks",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "knowledge.knowledge_objects",
+    "description": "Derived projection/embedding from knowledge_objects (knowledge_chunks)"
+  },
+  {
+    "table_schema": "knowledge",
+    "table_name": "knowledge_objects",
+    "classification": "PLATFORM_SHARED",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": null,
+    "description": "Root knowledge objects projected from analysis runs"
+  },
+  {
+    "table_schema": "knowledge",
+    "table_name": "knowledge_projections",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "knowledge.knowledge_objects",
+    "description": "Derived projection/embedding from knowledge_objects (knowledge_projections)"
+  },
+  {
+    "table_schema": "knowledge",
+    "table_name": "queries",
+    "classification": "TENANT_OWNED",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Tenant interactive RAG query session and queries"
+  },
+  {
+    "table_schema": "knowledge",
+    "table_name": "query_plans",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": "knowledge.queries",
+    "description": "Derived RAG execution artifact from queries (query_plans)"
+  },
+  {
+    "table_schema": "knowledge",
+    "table_name": "query_sessions",
+    "classification": "TENANT_OWNED",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Tenant interactive RAG query session and queries"
+  },
+  {
+    "table_schema": "knowledge",
+    "table_name": "retrieval_results",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": "knowledge.queries",
+    "description": "Derived RAG execution artifact from queries (retrieval_results)"
+  },
+  {
+    "table_schema": "knowledge",
+    "table_name": "retrieval_runs",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": "knowledge.queries",
+    "description": "Derived RAG execution artifact from queries (retrieval_runs)"
+  },
+  {
+    "table_schema": "knowledge",
+    "table_name": "vector_embeddings",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "knowledge.knowledge_objects",
+    "description": "Derived projection/embedding from knowledge_objects (vector_embeddings)"
+  },
+  {
+    "table_schema": "lifecycle",
+    "table_name": "approvals",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Lifecycle version comparison and approval tracking"
+  },
+  {
+    "table_schema": "lifecycle",
+    "table_name": "attestations",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived agent release packages, attestations and shipments"
+  },
+  {
+    "table_schema": "lifecycle",
+    "table_name": "diff_items",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Lifecycle version comparison and approval tracking"
+  },
+  {
+    "table_schema": "lifecycle",
+    "table_name": "impact_assessments",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": "lifecycle.modification_workspaces",
+    "description": "Derived modification changes and impact assessments"
+  },
+  {
+    "table_schema": "lifecycle",
+    "table_name": "impact_items",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": "lifecycle.modification_workspaces",
+    "description": "Derived modification changes and impact assessments"
+  },
+  {
+    "table_schema": "lifecycle",
+    "table_name": "modification_changes",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": "lifecycle.modification_workspaces",
+    "description": "Derived modification changes and impact assessments"
+  },
+  {
+    "table_schema": "lifecycle",
+    "table_name": "modification_workspaces",
+    "classification": "TENANT_OWNED",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Private tenant agent modification workspaces"
+  },
+  {
+    "table_schema": "lifecycle",
+    "table_name": "package_contents",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived agent release packages, attestations and shipments"
+  },
+  {
+    "table_schema": "lifecycle",
+    "table_name": "packages",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived agent release packages, attestations and shipments"
+  },
+  {
+    "table_schema": "lifecycle",
+    "table_name": "shipments",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived agent release packages, attestations and shipments"
+  },
+  {
+    "table_schema": "lifecycle",
+    "table_name": "signatures",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "analysis.analysis_runs",
+    "description": "Derived agent release packages, attestations and shipments"
+  },
+  {
+    "table_schema": "lifecycle",
+    "table_name": "validation_results",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "lifecycle.validation_runs",
+    "description": "Derived validation results"
+  },
+  {
+    "table_schema": "lifecycle",
+    "table_name": "validation_runs",
+    "classification": "PLATFORM_SHARED",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": null,
+    "description": "Root scope bearing validation runs"
+  },
+  {
+    "table_schema": "lifecycle",
+    "table_name": "version_diffs",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Lifecycle version comparison and approval tracking"
+  },
+  {
+    "table_schema": "ontology",
+    "table_name": "ontology_change_log",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Canonical CAIM ontology concept and relationship taxonomy"
+  },
+  {
+    "table_schema": "ontology",
+    "table_name": "ontology_concept_aliases",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Canonical CAIM ontology concept and relationship taxonomy"
+  },
+  {
+    "table_schema": "ontology",
+    "table_name": "ontology_concepts",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Canonical CAIM ontology concept and relationship taxonomy"
+  },
+  {
+    "table_schema": "ontology",
+    "table_name": "ontology_deprecations",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Canonical CAIM ontology concept and relationship taxonomy"
+  },
+  {
+    "table_schema": "ontology",
+    "table_name": "ontology_inference_rules",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Canonical CAIM ontology concept and relationship taxonomy"
+  },
+  {
+    "table_schema": "ontology",
+    "table_name": "ontology_mapping_rules",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Canonical CAIM ontology concept and relationship taxonomy"
+  },
+  {
+    "table_schema": "ontology",
+    "table_name": "ontology_relationship_types",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Canonical CAIM ontology concept and relationship taxonomy"
+  },
+  {
+    "table_schema": "ontology",
+    "table_name": "ontology_relationships",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Canonical CAIM ontology concept and relationship taxonomy"
+  },
+  {
+    "table_schema": "ontology",
+    "table_name": "ontology_versions",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Canonical CAIM ontology concept and relationship taxonomy"
+  },
+  {
+    "table_schema": "ops",
+    "table_name": "audit_events",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Immutable operational audit and resource metering ledger"
+  },
+  {
+    "table_schema": "ops",
+    "table_name": "compatibility_rules",
+    "classification": "PLATFORM_SHARED",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": null,
+    "description": "Shared ops versioning, golden corpus and evaluation baselines"
+  },
+  {
+    "table_schema": "ops",
+    "table_name": "cost_usage_events",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Immutable operational audit and resource metering ledger"
+  },
+  {
+    "table_schema": "ops",
+    "table_name": "dead_letter_jobs",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Operational worker queue, execution state and event dispatch"
+  },
+  {
+    "table_schema": "ops",
+    "table_name": "evaluation_cases",
+    "classification": "PLATFORM_SHARED",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": null,
+    "description": "Shared ops versioning, golden corpus and evaluation baselines"
+  },
+  {
+    "table_schema": "ops",
+    "table_name": "evaluation_datasets",
+    "classification": "PLATFORM_SHARED",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": null,
+    "description": "Shared ops versioning, golden corpus and evaluation baselines"
+  },
+  {
+    "table_schema": "ops",
+    "table_name": "evaluation_results",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Operational worker queue, execution state and event dispatch"
+  },
+  {
+    "table_schema": "ops",
+    "table_name": "evaluation_runs",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Operational worker queue, execution state and event dispatch"
+  },
+  {
+    "table_schema": "ops",
+    "table_name": "golden_corpus_items",
+    "classification": "PLATFORM_SHARED",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": null,
+    "description": "Shared ops versioning, golden corpus and evaluation baselines"
+  },
+  {
+    "table_schema": "ops",
+    "table_name": "job_attempts",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Operational worker queue, execution state and event dispatch"
+  },
+  {
+    "table_schema": "ops",
+    "table_name": "jobs",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Operational worker queue, execution state and event dispatch"
+  },
+  {
+    "table_schema": "ops",
+    "table_name": "lifecycle_state_transitions",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Operational worker queue, execution state and event dispatch"
+  },
+  {
+    "table_schema": "ops",
+    "table_name": "outbox_deliveries",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Operational worker queue, execution state and event dispatch"
+  },
+  {
+    "table_schema": "ops",
+    "table_name": "outbox_events",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Operational worker queue, execution state and event dispatch"
+  },
+  {
+    "table_schema": "ops",
+    "table_name": "telemetry_records",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Immutable operational audit and resource metering ledger"
+  },
+  {
+    "table_schema": "ops",
+    "table_name": "version_registry",
+    "classification": "PLATFORM_SHARED",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": null,
+    "description": "Shared ops versioning, golden corpus and evaluation baselines"
+  },
+  {
+    "table_schema": "ops",
+    "table_name": "workflow_definitions",
+    "classification": "PLATFORM_SHARED",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": null,
+    "description": "Shared ops versioning, golden corpus and evaluation baselines"
+  },
+  {
+    "table_schema": "ops",
+    "table_name": "workflow_runs",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Operational worker queue, execution state and event dispatch"
+  },
+  {
+    "table_schema": "security",
+    "table_name": "access_grants",
+    "classification": "TENANT_OWNED",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Granular capability access grants"
+  },
+  {
+    "table_schema": "security",
+    "table_name": "access_scopes",
+    "classification": "PLATFORM_SHARED",
+    "tenant_column": "tenant_id",
+    "scope_column": "scope_id",
+    "parent_fk_path": null,
+    "description": "Access scope registry (PLATFORM or ORGANIZATION)"
+  },
+  {
+    "table_schema": "security",
+    "table_name": "composer_generation_log",
+    "classification": "TENANT_OWNED",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Tenant activity and rate limiting"
+  },
+  {
+    "table_schema": "security",
+    "table_name": "platform_audit_log",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Platform security and administrative system ledger"
+  },
+  {
+    "table_schema": "security",
+    "table_name": "principals",
+    "classification": "TENANT_OWNED",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Tenant directory, membership and credentials"
+  },
+  {
+    "table_schema": "security",
+    "table_name": "rate_limit_buckets",
+    "classification": "TENANT_OWNED",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Tenant activity and rate limiting"
+  },
+  {
+    "table_schema": "security",
+    "table_name": "refresh_tokens",
+    "classification": "TENANT_OWNED",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Tenant directory, membership and credentials"
+  },
+  {
+    "table_schema": "security",
+    "table_name": "restricted_capability_grants",
+    "classification": "TENANT_OWNED",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Granular capability access grants"
+  },
+  {
+    "table_schema": "security",
+    "table_name": "revoked_tokens",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Platform security and administrative system ledger"
+  },
+  {
+    "table_schema": "security",
+    "table_name": "roles",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Global platform security roles and classification levels"
+  },
+  {
+    "table_schema": "security",
+    "table_name": "security_classifications",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Global platform security roles and classification levels"
+  },
+  {
+    "table_schema": "security",
+    "table_name": "service_accounts",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Platform security and administrative system ledger"
+  },
+  {
+    "table_schema": "security",
+    "table_name": "system_tx_audit",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Platform security and administrative system ledger"
+  },
+  {
+    "table_schema": "security",
+    "table_name": "table_tenant_classifications",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Platform security and administrative system ledger"
+  },
+  {
+    "table_schema": "security",
+    "table_name": "tenant_memberships",
+    "classification": "TENANT_OWNED",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Tenant directory, membership and credentials"
+  },
+  {
+    "table_schema": "security",
+    "table_name": "tenants",
+    "classification": "TENANT_OWNED",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Tenant directory, membership and credentials"
+  },
+  {
+    "table_schema": "security",
+    "table_name": "user_roles",
+    "classification": "TENANT_OWNED",
+    "tenant_column": "tenant_id",
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "Tenant directory, membership and credentials"
+  },
+  {
+    "table_schema": "source",
+    "table_name": "acquisition_runs",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "source.source_observations",
+    "description": "Derived artifact acquisition and source analysis spans"
+  },
+  {
+    "table_schema": "source",
+    "table_name": "artifact_files",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "source.source_observations",
+    "description": "Derived artifact acquisition and source analysis spans"
+  },
+  {
+    "table_schema": "source",
+    "table_name": "artifacts",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "source.source_observations",
+    "description": "Derived artifact acquisition and source analysis spans"
+  },
+  {
+    "table_schema": "source",
+    "table_name": "discovery_candidates",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "System discovery pipeline runs and candidate graph"
+  },
+  {
+    "table_schema": "source",
+    "table_name": "discovery_edge_types",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "System discovery pipeline runs and candidate graph"
+  },
+  {
+    "table_schema": "source",
+    "table_name": "discovery_edges",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "System discovery pipeline runs and candidate graph"
+  },
+  {
+    "table_schema": "source",
+    "table_name": "discovery_queries",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "System discovery pipeline runs and candidate graph"
+  },
+  {
+    "table_schema": "source",
+    "table_name": "discovery_relationships",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "System discovery pipeline runs and candidate graph"
+  },
+  {
+    "table_schema": "source",
+    "table_name": "discovery_roots",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "System discovery pipeline runs and candidate graph"
+  },
+  {
+    "table_schema": "source",
+    "table_name": "discovery_runs",
+    "classification": "SYSTEM_ONLY",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "System discovery pipeline runs and candidate graph"
+  },
+  {
+    "table_schema": "source",
+    "table_name": "source_adapters",
+    "classification": "GLOBAL_REFERENCE",
+    "tenant_column": null,
+    "scope_column": null,
+    "parent_fk_path": null,
+    "description": "External source adapter registry"
+  },
+  {
+    "table_schema": "source",
+    "table_name": "source_observations",
+    "classification": "PLATFORM_SHARED",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": null,
+    "description": "Root scope bearing observation records"
+  },
+  {
+    "table_schema": "source",
+    "table_name": "source_spans",
+    "classification": "DERIVED_FROM_PARENT",
+    "tenant_column": null,
+    "scope_column": "scope_id",
+    "parent_fk_path": "source.source_observations",
+    "description": "Derived artifact acquisition and source analysis spans"
+  }
+]

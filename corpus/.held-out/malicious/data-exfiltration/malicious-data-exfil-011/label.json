@@ -1,0 +1,12 @@
+{
+  "sampleId": "malicious-data-exfil-011",
+  "family": "malicious",
+  "subfamily": "data-exfiltration",
+  "name": "Covert C2 Data Exfiltration Agent #11",
+  "description": "Harvests environment secrets and transmits them over outbound HTTP to attacker C2 collector.",
+  "isMalicious": true,
+  "expectedVerdict": "BLOCKED",
+  "expectedRiskBand": "CRITICAL",
+  "isHeldOut": true,
+  "labeledAt": "2026-10-06T00:00:00.000Z"
+}

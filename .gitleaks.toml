@@ -1,0 +1,47 @@
+# Gitleaks authoritative configuration for CAIM Enterprise (RP-00 / P32 Gate)
+title = "CAIM Authoritative Gitleaks Security Scan"
+
+[extend]
+useDefault = true
+
+# Pinned rules for CAIM security boundaries
+[[rules]]
+id = "caim-google-gemini-key"
+description = "Google Cloud / Gemini API Key"
+regex = '''\bAIza[0-9A-Za-z\-_]{30,40}\b'''
+keywords = ["AIza"]
+
+[[rules]]
+id = "caim-aws-access-key-id"
+description = "Generic AWS / S3 Access Key ID"
+regex = '''\b(AKIA|ABIA|ACCA|ASIA)[0-9A-Z]{16}\b'''
+keywords = ["AKIA", "ABIA", "ACCA", "ASIA"]
+
+[[rules]]
+id = "caim-supabase-service-role-jwt"
+description = "Supabase Service Role JWT (Unredacted)"
+regex = '''eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\.[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+'''
+keywords = ["eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"]
+
+[[rules]]
+id = "caim-hardcoded-private-key"
+description = "Hardcoded Private Key Header"
+regex = '''-----BEGIN (RSA|EC|OPENSSH|PGP) PRIVATE KEY-----'''
+keywords = ["BEGIN RSA PRIVATE KEY", "BEGIN EC PRIVATE KEY", "BEGIN OPENSSH PRIVATE KEY", "BEGIN PGP PRIVATE KEY"]
+
+[[rules]]
+id = "caim-openai-live-secret-key"
+description = "OpenAI / Live Secret Token Key"
+regex = '''\bsk-(?:live|proj|admin)[-_][0-9A-Za-z]{16,}\b'''
+keywords = ["sk-live", "sk-proj", "sk-admin"]
+
+# Explicit reviewed allowlist with owner, reason, and expiry
+# General/blanket test exclusions are strictly forbidden.
+[allowlist]
+description = "Strict reviewed allowlist entries"
+# Only exact reviewed entries with owner and reason
+paths = [
+  # Self-detection prevention for the regex definition file itself
+  '''scripts/secret-scanner\.ts$''',
+  '''\.gitleaks\.toml$'''
+]

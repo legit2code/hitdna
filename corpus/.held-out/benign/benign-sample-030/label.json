@@ -1,0 +1,12 @@
+{
+  "sampleId": "benign-sample-030",
+  "family": "benign",
+  "subfamily": null,
+  "name": "Sorting Quicksort Implementation",
+  "description": "Benign library unit: Sorting Quicksort Implementation. Pure computational logic with zero malicious behavior.",
+  "isMalicious": false,
+  "expectedVerdict": "CLEARED",
+  "expectedRiskBand": "LOW",
+  "isHeldOut": true,
+  "labeledAt": "2026-10-06T00:00:00.000Z"
+}

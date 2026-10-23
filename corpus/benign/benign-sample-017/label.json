@@ -1,0 +1,12 @@
+{
+  "sampleId": "benign-sample-017",
+  "family": "benign",
+  "subfamily": null,
+  "name": "Cache Eviction LRU Model",
+  "description": "Benign library unit: Cache Eviction LRU Model. Pure computational logic with zero malicious behavior.",
+  "isMalicious": false,
+  "expectedVerdict": "CLEARED",
+  "expectedRiskBand": "LOW",
+  "isHeldOut": false,
+  "labeledAt": "2026-10-06T00:00:00.000Z"
+}

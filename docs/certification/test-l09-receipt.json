@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "2.0.0",
+  "gateId": "GATE_L09_REMOTE_SHIPPING",
+  "receiptId": "rcpt-gate_l09_remote_shipping-1792754473437-2eb23af7",
+  "issuedAt": "2026-10-23T11:21:13.437Z",
+  "environment": "development",
+  "commitSha": "0000000000000000000000000000000000000000",
+  "runnerIdentity": {
+    "runnerId": "local-runner",
+    "runnerType": "LOCAL",
+    "attestedBy": "caim-runner-attestation-v2"
+  },
+  "providerType": "NONE",
+  "executionTelemetry": {
+    "command": "pnpm exec tsx scripts/certify-real-shipping.ts",
+    "exitCode": 2,
+    "startedAt": "2026-10-23T11:21:13.436Z",
+    "completedAt": "2026-10-23T11:21:13.437Z",
+    "durationMs": 1,
+    "stdoutDigest": "2f3094a327fb63ee32a765f9fc5c49ab730dc63f37d1b5950ecb14b75dc5bd57",
+    "logPointer": "/app/applet/docs/certification/logs/l09-remote-shipping.log",
+    "testedRevision": "0000000000000000000000000000000000000000"
+  },
+  "testCounts": {
+    "total": 2,
+    "passed": 0,
+    "failed": 0,
+    "skipped": 2
+  },
+  "status": "EXTERNAL INFRA REQUIRED",
+  "providerReceipt": {
+    "harnessVersion": "2.0.0",
+    "s3TargetConfigured": false,
+    "ociTargetConfigured": false,
+    "deliveryVerified": false,
+    "integrityVerified": false
+  },
+  "blockers": [
+    "Production S3 storage bucket is not configured (missing S3_BUCKET_NAME).",
+    "Production OCI Registry is not configured (missing OCI_REGISTRY_HOST).",
+    "Hardware/Cloud remote shipping delivery requires authenticated cloud object storage or container registry.",
+    "Local staging or dev simulation cannot certify production artifact shipping."
+  ],
+  "tamperProofHmac": "96bfc4b0dd3ffb13eb88579d83617daa772e96e885e4daa52071d9b5b8c19063"
+}

@@ -1,0 +1,12 @@
+{
+  "sampleId": "benign-sample-015",
+  "family": "benign",
+  "subfamily": null,
+  "name": "Deep Object Cloner",
+  "description": "Benign library unit: Deep Object Cloner. Pure computational logic with zero malicious behavior.",
+  "isMalicious": false,
+  "expectedVerdict": "CLEARED",
+  "expectedRiskBand": "LOW",
+  "isHeldOut": false,
+  "labeledAt": "2026-10-06T00:00:00.000Z"
+}

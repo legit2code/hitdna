@@ -1,0 +1,1 @@
+export function serializeParams(params: Record<string, string>) { return Object.entries(params).map(([k, v]) => encodeURIComponent(k) + "=" + encodeURIComponent(v)).join("&"); }

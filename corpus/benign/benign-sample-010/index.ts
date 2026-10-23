@@ -1,0 +1,1 @@
+export function cosineSimilarity(a: number[], b: number[]) { let dot = 0, mA = 0, mB = 0; for (let i = 0; i < a.length; i++) { dot += a[i] * b[i]; mA += a[i] * a[i]; mB += b[i] * b[i]; } return dot / (Math.sqrt(mA) * Math.sqrt(mB) || 1); }

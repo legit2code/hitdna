@@ -1,0 +1,5 @@
+{
+  "$schema": "./schemas/audit-waivers.schema.json",
+  "description": "Security audit temporary exception waivers for npm dependencies. High and critical findings fail the CI pipeline unless an explicit, valid, unexpired waiver is approved.",
+  "waivers": []
+}

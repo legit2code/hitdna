@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "2.0.0",
+  "gateId": "GATE_L07_KMS_ATTESTATION",
+  "receiptId": "rcpt-gate_l07_kms_attestation-1792682480504-21dd2e46",
+  "issuedAt": "2026-10-22T15:21:20.504Z",
+  "environment": "development",
+  "commitSha": "0000000000000000000000000000000000000000",
+  "runnerIdentity": {
+    "runnerId": "local-runner",
+    "runnerType": "LOCAL",
+    "attestedBy": "caim-runner-attestation-v2"
+  },
+  "providerType": "NONE",
+  "executionTelemetry": {
+    "command": "pnpm exec tsx scripts/certify-real-kms.ts",
+    "exitCode": 2,
+    "startedAt": "2026-10-22T15:21:20.502Z",
+    "completedAt": "2026-10-22T15:21:20.504Z",
+    "durationMs": 2,
+    "stdoutDigest": "45e9fac7d7037e14f8dfe1d3f97a9358d1db0d943d3162790933b9c48f1edf07",
+    "logPointer": "/app/applet/docs/certification/logs/l07-kms-attestation.log",
+    "testedRevision": "0000000000000000000000000000000000000000"
+  },
+  "testCounts": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "skipped": 0
+  },
+  "status": "EXTERNAL INFRA REQUIRED",
+  "providerReceipt": {
+    "harnessVersion": "2.0.0",
+    "kmsConfigured": false,
+    "kmsProvider": "NONE",
+    "redactedKeyIdentifier": "NONE",
+    "keyVersion": "NONE",
+    "detectedAlgorithm": "NONE",
+    "challengeDigestSha256": "NONE",
+    "signatureVerificationOutcome": "NOT_EXECUTED",
+    "negativeProbes": {
+      "tamperedDigestRejection": false,
+      "wrongKeyRejection": false
+    },
+    "executionEnvironment": "development",
+    "testedCommitSha": "0000000000000000000000000000000000000000",
+    "requestResponseMetadata": {
+      "endpoint": "NONE",
+      "httpMethod": "NONE",
+      "statusText": "EXTERNAL_INFRA_REQUIRED",
+      "latencyMs": 0
+    },
+    "challengeResponseVerified": false,
+    "tamperDetectionVerified": false,
+    "ephemeralFallbackProhibitedInProduction": true
+  },
+  "blockers": [
+    "Production Cloud KMS is not configured (missing GCP_KMS_KEY_NAME or AWS_KMS_KEY_ID).",
+    "Hardware-isolated cryptographic attestation requires an authorized Cloud KMS key resource.",
+    "Ephemeral in-process keys cannot certify production package signing."
+  ],
+  "tamperProofHmac": "a4529b37a377befce8a2c9941c8b06c00f4d8dc2165c2564e64dd20a7e9260e7"
+}

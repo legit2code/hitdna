@@ -1,0 +1,9 @@
+{
+  "checkpoint_id": "0cf90ecc-d126-4aa4-9c70-293c9a52c171",
+  "stream_id": "tenant:00000000-0000-0000-0000-000000000001",
+  "total_records": 1,
+  "chain_head_hash": "sha256:6d1c77effb07c5d777043c0115d66088f20f6d156acc8b4047f3ba4247b30652",
+  "verified_at": "2026-10-08T02:26:06.623Z",
+  "algorithm": "Ed25519",
+  "key_id": "caim-audit-verifier-key"
+}

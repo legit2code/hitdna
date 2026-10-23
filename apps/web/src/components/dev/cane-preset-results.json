@@ -1,0 +1,2566 @@
+{
+  "multilang_process": {
+    "caim_manifest": {
+      "caim_version": "2.0.1",
+      "agent": {
+        "_entity_kind": "CANONICAL_AGENT",
+        "agent_id": "agent_cane_art",
+        "canonical_name": "CANE-Cross-Language",
+        "status": "ACTIVE",
+        "identity_confidence": 1
+      },
+      "version": {
+        "_entity_kind": "AGENT_VERSION",
+        "agent_version_id": "ver_55118599-aed5-425a-86df-6c7eebd0cf09",
+        "agent_id": "agent_cane_art",
+        "content_fingerprint": "2c97624a-799b-49f3-a272-f27dc5ee2fb0"
+      },
+      "distributions": [],
+      "components": [
+        {
+          "_entity_kind": "COMPONENT",
+          "component_id": "76be09cb-e73e-4586-ac05-94cd22f3287c",
+          "canonical_name": "child_process",
+          "component_type": "LIBRARY",
+          "ecosystem": "npm",
+          "version": "*"
+        },
+        {
+          "_entity_kind": "COMPONENT",
+          "component_id": "f802ce59-4f7d-43bb-9f7c-50b81e0198af",
+          "canonical_name": "axios",
+          "component_type": "LIBRARY",
+          "ecosystem": "npm",
+          "version": "*"
+        },
+        {
+          "_entity_kind": "COMPONENT",
+          "component_id": "f116f164-49bd-4cbb-82a3-167b90831b79",
+          "canonical_name": "subprocess",
+          "component_type": "LIBRARY",
+          "ecosystem": "pypi",
+          "version": "*"
+        },
+        {
+          "_entity_kind": "COMPONENT",
+          "component_id": "ef818ea2-cdc6-4a48-a84e-428df486265c",
+          "canonical_name": "os",
+          "component_type": "LIBRARY",
+          "ecosystem": "pypi",
+          "version": "*"
+        }
+      ],
+      "dependencies": [
+        {
+          "_entity_kind": "DEPENDENCY_RELATIONSHIP",
+          "relationship_id": "8d192537-478d-4f2c-bb1e-02672581e612",
+          "agent_version_id": "ver_55118599-aed5-425a-86df-6c7eebd0cf09",
+          "to_component_id": "76be09cb-e73e-4586-ac05-94cd22f3287c",
+          "dependency_type": "DIRECT",
+          "scope": "direct",
+          "resolved_version": "*",
+          "is_direct": true
+        },
+        {
+          "_entity_kind": "DEPENDENCY_RELATIONSHIP",
+          "relationship_id": "ae832f68-059d-42ce-97fc-b50052d6d685",
+          "agent_version_id": "ver_55118599-aed5-425a-86df-6c7eebd0cf09",
+          "to_component_id": "f802ce59-4f7d-43bb-9f7c-50b81e0198af",
+          "dependency_type": "DIRECT",
+          "scope": "direct",
+          "resolved_version": "*",
+          "is_direct": true
+        },
+        {
+          "_entity_kind": "DEPENDENCY_RELATIONSHIP",
+          "relationship_id": "f209a896-764f-4428-a35f-a8de735162a2",
+          "agent_version_id": "ver_55118599-aed5-425a-86df-6c7eebd0cf09",
+          "to_component_id": "f116f164-49bd-4cbb-82a3-167b90831b79",
+          "dependency_type": "DIRECT",
+          "scope": "direct",
+          "resolved_version": "*",
+          "is_direct": true
+        },
+        {
+          "_entity_kind": "DEPENDENCY_RELATIONSHIP",
+          "relationship_id": "4a92b9db-3079-4f78-91b7-a1682c7a05cd",
+          "agent_version_id": "ver_55118599-aed5-425a-86df-6c7eebd0cf09",
+          "to_component_id": "ef818ea2-cdc6-4a48-a84e-428df486265c",
+          "dependency_type": "DIRECT",
+          "scope": "direct",
+          "resolved_version": "*",
+          "is_direct": true
+        }
+      ],
+      "tools": [],
+      "tool_bindings": [],
+      "protocols": [],
+      "protocol_capabilities": [],
+      "capabilities": [
+        {
+          "_entity_kind": "CAPABILITY",
+          "capability_id": "6ab800b9-8ff3-4216-bb13-c059ce9f8b5e",
+          "agent_version_id": "ver_55118599-aed5-425a-86df-6c7eebd0cf09",
+          "capability_concept_id": "c0000000-0001-0000-0000-000000000003",
+          "canonical_key": "capability.network.egress",
+          "declaration_state": "INFERRED_STATIC",
+          "source_type": "CODE_AST",
+          "confidence": 0.95
+        },
+        {
+          "_entity_kind": "CAPABILITY",
+          "capability_id": "0f87e036-9ba5-4433-9948-48d6cf1afc70",
+          "agent_version_id": "ver_55118599-aed5-425a-86df-6c7eebd0cf09",
+          "capability_concept_id": "c0000000-0001-0000-0000-000000000001",
+          "canonical_key": "capability.tools.exec",
+          "declaration_state": "INFERRED_STATIC",
+          "source_type": "CODE_AST",
+          "confidence": 0.98
+        }
+      ],
+      "permissions": [],
+      "entrypoints": [],
+      "runtimes": [
+        {
+          "_entity_kind": "RUNTIME_ENVIRONMENT",
+          "runtime_id": "ffc442ed-e1e5-4d16-b3b5-2a33f99afbf5",
+          "agent_version_id": "ver_55118599-aed5-425a-86df-6c7eebd0cf09",
+          "runtime_type": "NODEJS",
+          "runtime_name": "Standard POSIX / Node",
+          "execution_mode": "SANDBOXED"
+        }
+      ],
+      "endpoints": [],
+      "models": [],
+      "datasets": [],
+      "prompts": [],
+      "configurations": [],
+      "credentials": [],
+      "data_access_requirements": []
+    },
+    "ontology_concepts": [
+      {
+        "concept_id": "c0000000-0001-0000-0000-000000000001",
+        "ontology_version": "2.0.1",
+        "namespace": "capability",
+        "canonical_key": "capability.tools.exec",
+        "display_name": "Process Execution Tool",
+        "description": "Capability to execute shell or child process commands on the host or in a sandbox",
+        "aliases": [
+          "exec",
+          "bash",
+          "spawn_process",
+          "shell_tool"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "c0000000-0001-0000-0000-000000000002",
+        "ontology_version": "2.0.1",
+        "namespace": "capability",
+        "canonical_key": "capability.tools.mcp",
+        "display_name": "Model Context Protocol (MCP) Tool Integration",
+        "description": "Capability to interact with external tools via Model Context Protocol servers",
+        "aliases": [
+          "mcp_tool",
+          "mcp_client",
+          "mcp_server"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "c0000000-0001-0000-0000-000000000003",
+        "ontology_version": "2.0.1",
+        "namespace": "capability",
+        "canonical_key": "capability.network.egress",
+        "display_name": "Outbound Network Connectivity",
+        "description": "Capability to make outbound HTTP/TCP/UDP connections to external addresses",
+        "aliases": [
+          "http_client",
+          "fetch",
+          "axios",
+          "curl",
+          "network_out"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "c0000000-0001-0000-0000-000000000004",
+        "ontology_version": "2.0.1",
+        "namespace": "capability",
+        "canonical_key": "capability.fs.read",
+        "display_name": "Filesystem Read Access",
+        "description": "Capability to inspect and read files from the host or storage workspace",
+        "aliases": [
+          "read_file",
+          "fs_read",
+          "cat",
+          "open_file"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "c0000000-0001-0000-0000-000000000005",
+        "ontology_version": "2.0.1",
+        "namespace": "capability",
+        "canonical_key": "capability.fs.write",
+        "display_name": "Filesystem Write Access",
+        "description": "Capability to create, edit, or delete files on the filesystem",
+        "aliases": [
+          "write_file",
+          "edit_file",
+          "rm_file",
+          "fs_write"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "c0000000-0001-0000-0000-000000000006",
+        "ontology_version": "2.0.1",
+        "namespace": "capability",
+        "canonical_key": "capability.code.eval",
+        "display_name": "Dynamic Code Evaluation",
+        "description": "Capability to dynamically parse and evaluate code at runtime (e.g. eval, Function constructor)",
+        "aliases": [
+          "eval",
+          "vm_run",
+          "python_exec",
+          "dynamic_eval"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "p0000000-0001-0000-0000-000000000001",
+        "ontology_version": "2.0.1",
+        "namespace": "permission",
+        "canonical_key": "permission.fs.write",
+        "display_name": "Filesystem Mutation Permission",
+        "description": "Permission granting or requesting the ability to write or delete local files",
+        "aliases": [
+          "write_permission",
+          "fs_write_grant"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "p0000000-0001-0000-0000-000000000002",
+        "ontology_version": "2.0.1",
+        "namespace": "permission",
+        "canonical_key": "permission.net.outbound",
+        "display_name": "Outbound Network Permission",
+        "description": "Permission granting outbound network egress to external endpoints",
+        "aliases": [
+          "egress_permission",
+          "net_grant"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "p0000000-0001-0000-0000-000000000003",
+        "ontology_version": "2.0.1",
+        "namespace": "permission",
+        "canonical_key": "permission.process.spawn",
+        "display_name": "Subprocess Execution Permission",
+        "description": "Permission granting the ability to spawn sub-processes on the system",
+        "aliases": [
+          "exec_permission",
+          "process_grant"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "b0000000-0001-0000-0000-000000000001",
+        "ontology_version": "2.0.1",
+        "namespace": "behavior",
+        "canonical_key": "behavior.evasion.obfuscation",
+        "display_name": "Dynamic Payload Obfuscation",
+        "description": "Empirical detection of dynamic decoding, string deobfuscation, or evasive execution",
+        "aliases": [
+          "obfuscation",
+          "evasion",
+          "anti_analysis"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "b0000000-0001-0000-0000-000000000002",
+        "ontology_version": "2.0.1",
+        "namespace": "behavior",
+        "canonical_key": "behavior.data.exfiltration",
+        "display_name": "Sensitive Data Exfiltration",
+        "description": "Empirical observed outbound transmission of sensitive memory or filesystem data",
+        "aliases": [
+          "data_leak",
+          "exfiltration",
+          "secret_leak"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "r0000000-0001-0000-0000-000000000001",
+        "ontology_version": "2.0.1",
+        "namespace": "risk",
+        "canonical_key": "risk.supply_chain.untrusted_dep",
+        "display_name": "Untrusted Supply Chain Dependency",
+        "description": "Risk arising from unverified, typosquatted, or compromised dependencies",
+        "aliases": [
+          "malicious_dep",
+          "supply_chain_vulnerability"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "r0000000-0001-0000-0000-000000000002",
+        "ontology_version": "2.0.1",
+        "namespace": "risk",
+        "canonical_key": "risk.injection.prompt",
+        "display_name": "Indirect Prompt Injection Susceptibility",
+        "description": "Risk that external inputs can override system instructions and hijack execution",
+        "aliases": [
+          "prompt_injection",
+          "jailbreak"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "e0000000-0001-0000-0000-000000000001",
+        "ontology_version": "2.0.1",
+        "namespace": "epistemic",
+        "canonical_key": "epistemic.observed_fact",
+        "display_name": "Directly Observed Empirical Fact",
+        "description": "Fact directly verified from deterministic AST or dynamic execution trace",
+        "aliases": [
+          "observed",
+          "fact"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "e0000000-0001-0000-0000-000000000002",
+        "ontology_version": "2.0.1",
+        "namespace": "epistemic",
+        "canonical_key": "epistemic.derived_assertion",
+        "display_name": "Analytically Derived Assertion",
+        "description": "Assertion synthesized from evidence items through calibrated engine rules",
+        "aliases": [
+          "derived",
+          "assertion",
+          "inferred"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "e0000000-0001-0000-0000-000000000003",
+        "ontology_version": "2.0.1",
+        "namespace": "epistemic",
+        "canonical_key": "epistemic.hypothesis",
+        "display_name": "Candidate Analytical Hypothesis",
+        "description": "Plausible condition with partial evidence requiring further evaluation or validation",
+        "aliases": [
+          "hypothesis",
+          "candidate"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "e0000000-0001-0000-0000-000000000004",
+        "ontology_version": "2.0.1",
+        "namespace": "epistemic",
+        "canonical_key": "epistemic.contradicted",
+        "display_name": "Contradicted Hypothesis or Assertion",
+        "description": "Condition with mutually exclusive opposing evidence",
+        "aliases": [
+          "contradicted",
+          "refuted"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "ev000000-0001-0000-0000-000000000001",
+        "ontology_version": "2.0.1",
+        "namespace": "evidence",
+        "canonical_key": "evidence.static_code",
+        "display_name": "Static Source Code Evidence",
+        "description": "Proof extracted from source spans, AST syntax, or static text matches",
+        "aliases": [
+          "static_code",
+          "ast_match"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "ev000000-0001-0000-0000-000000000002",
+        "ontology_version": "2.0.1",
+        "namespace": "evidence",
+        "canonical_key": "evidence.dynamic_call",
+        "display_name": "Dynamic Execution Trace Evidence",
+        "description": "Proof captured from sandbox runtime events, system calls, or network packets",
+        "aliases": [
+          "dynamic_call",
+          "sandbox_event"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "ev000000-0001-0000-0000-000000000003",
+        "ontology_version": "2.0.1",
+        "namespace": "evidence",
+        "canonical_key": "evidence.metadata_manifest",
+        "display_name": "Metadata Manifest Evidence",
+        "description": "Proof declared in package.json, requirements.txt, Dockerfile, or MCP manifest",
+        "aliases": [
+          "manifest",
+          "declaration"
+        ],
+        "status": "ACTIVE"
+      }
+    ],
+    "ontology_relationships": [
+      {
+        "relationship_id": "a1826ee8-1b7b-431f-b07c-79b8f1ccaef6",
+        "ontology_version": "2.0.1",
+        "subject_concept_id": "ver_55118599-aed5-425a-86df-6c7eebd0cf09",
+        "predicate": "IMPLEMENTS",
+        "object_concept_id": "c0000000-0001-0000-0000-000000000003",
+        "confidence": 0.95
+      },
+      {
+        "relationship_id": "f4d9a386-3d97-419f-afdd-73254a3de9f1",
+        "ontology_version": "2.0.1",
+        "subject_concept_id": "ver_55118599-aed5-425a-86df-6c7eebd0cf09",
+        "predicate": "IMPLEMENTS",
+        "object_concept_id": "c0000000-0001-0000-0000-000000000001",
+        "confidence": 0.98
+      },
+      {
+        "relationship_id": "4a283ad3-167f-4c1d-b85d-b7a2baa9b20a",
+        "ontology_version": "2.0.1",
+        "subject_concept_id": "r0000000-0001-0000-0000-000000000002",
+        "predicate": "DERIVED_FROM",
+        "object_concept_id": "c0000000-0001-0000-0000-000000000003",
+        "confidence": 0.88
+      },
+      {
+        "relationship_id": "3ac12f26-ff8d-44b8-a2e9-3761333ca71a",
+        "ontology_version": "2.0.1",
+        "subject_concept_id": "r0000000-0001-0000-0000-000000000002",
+        "predicate": "DERIVED_FROM",
+        "object_concept_id": "c0000000-0001-0000-0000-000000000001",
+        "confidence": 0.88
+      }
+    ],
+    "mapping_matches": [
+      {
+        "rule_id": "CANE_MAP_NET_JS_FETCH_AXIOS",
+        "rule_version": "1.0.0",
+        "source_fact_id": "call_agent_executor.ts_5_get",
+        "source_ecosystem": "typescript",
+        "file_path": "agent_executor.ts",
+        "matched_construct": "axios.get",
+        "target_canonical_key": "capability.network.egress",
+        "target_concept_id": "c0000000-0001-0000-0000-000000000003",
+        "target_entity_type": "CAPABILITY",
+        "confidence": 0.95,
+        "span": {
+          "file_path": "agent_executor.ts",
+          "start_line": 5,
+          "start_col": 21,
+          "end_line": 5,
+          "end_col": 35,
+          "byte_offset_start": 151,
+          "byte_offset_end": 165,
+          "text_slice": "axios.get(url)",
+          "symbol_hint": "get"
+        },
+        "provenance": {
+          "provenance_id": "7201fe89-7bbc-4227-b7b2-c4167e488230",
+          "source_spans": [
+            {
+              "file_path": "agent_executor.ts",
+              "start_line": 5,
+              "start_col": 21,
+              "end_line": 5,
+              "end_col": 35,
+              "byte_offset_start": 151,
+              "byte_offset_end": 165,
+              "symbol_hint": "get"
+            }
+          ],
+          "input_hashes": [],
+          "rule_id": "CANE_MAP_NET_JS_FETCH_AXIOS",
+          "ruleset_version": "1.0.0",
+          "transformation_type": "SYNTAX_TRANSFORMATION",
+          "confidence": 0.95,
+          "derived_at": "2026-10-08T15:24:31.852Z",
+          "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+        }
+      },
+      {
+        "rule_id": "CANE_MAP_EXEC_JS_CHILD_PROCESS",
+        "rule_version": "1.0.0",
+        "source_fact_id": "call_agent_executor.ts_6_exec",
+        "source_ecosystem": "typescript",
+        "file_path": "agent_executor.ts",
+        "matched_construct": "exec",
+        "target_canonical_key": "capability.tools.exec",
+        "target_concept_id": "c0000000-0001-0000-0000-000000000001",
+        "target_entity_type": "CAPABILITY",
+        "confidence": 0.98,
+        "span": {
+          "file_path": "agent_executor.ts",
+          "start_line": 6,
+          "start_col": 3,
+          "end_line": 6,
+          "end_col": 12,
+          "byte_offset_start": 169,
+          "byte_offset_end": 178,
+          "text_slice": "exec(cmd)",
+          "symbol_hint": "exec"
+        },
+        "provenance": {
+          "provenance_id": "eb982f34-ea72-4a12-acee-bd81fdad9f66",
+          "source_spans": [
+            {
+              "file_path": "agent_executor.ts",
+              "start_line": 6,
+              "start_col": 3,
+              "end_line": 6,
+              "end_col": 12,
+              "byte_offset_start": 169,
+              "byte_offset_end": 178,
+              "symbol_hint": "exec"
+            }
+          ],
+          "input_hashes": [],
+          "rule_id": "CANE_MAP_EXEC_JS_CHILD_PROCESS",
+          "ruleset_version": "1.0.0",
+          "transformation_type": "SYNTAX_TRANSFORMATION",
+          "confidence": 0.98,
+          "derived_at": "2026-10-08T15:24:31.852Z",
+          "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+        }
+      },
+      {
+        "rule_id": "CANE_MAP_EXEC_PYTHON_SUBPROCESS",
+        "rule_version": "1.0.0",
+        "source_fact_id": "call_worker_service.py_5_Popen",
+        "source_ecosystem": "python",
+        "file_path": "worker_service.py",
+        "matched_construct": "subprocess.Popen",
+        "target_canonical_key": "capability.tools.exec",
+        "target_concept_id": "c0000000-0001-0000-0000-000000000001",
+        "target_entity_type": "CAPABILITY",
+        "confidence": 0.98,
+        "span": {
+          "file_path": "worker_service.py",
+          "start_line": 5,
+          "start_col": 5,
+          "end_line": 5,
+          "end_col": 38,
+          "byte_offset_start": 0,
+          "byte_offset_end": 0,
+          "text_slice": "subprocess.Popen(cmd, shell=True)"
+        },
+        "provenance": {
+          "provenance_id": "a20bef91-6c81-4caf-9c29-8d261715a206",
+          "source_spans": [
+            {
+              "file_path": "worker_service.py",
+              "start_line": 5,
+              "start_col": 5,
+              "end_line": 5,
+              "end_col": 38,
+              "byte_offset_start": 0,
+              "byte_offset_end": 0,
+              "symbol_hint": "subprocess.Popen"
+            }
+          ],
+          "input_hashes": [],
+          "rule_id": "CANE_MAP_EXEC_PYTHON_SUBPROCESS",
+          "ruleset_version": "1.0.0",
+          "transformation_type": "SYNTAX_TRANSFORMATION",
+          "confidence": 0.98,
+          "derived_at": "2026-10-08T15:24:31.852Z",
+          "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+        }
+      },
+      {
+        "rule_id": "CANE_MAP_EXEC_PYTHON_SUBPROCESS",
+        "rule_version": "1.0.0",
+        "source_fact_id": "call_worker_service.py_6_system",
+        "source_ecosystem": "python",
+        "file_path": "worker_service.py",
+        "matched_construct": "os.system",
+        "target_canonical_key": "capability.tools.exec",
+        "target_concept_id": "c0000000-0001-0000-0000-000000000001",
+        "target_entity_type": "CAPABILITY",
+        "confidence": 0.98,
+        "span": {
+          "file_path": "worker_service.py",
+          "start_line": 6,
+          "start_col": 5,
+          "end_line": 6,
+          "end_col": 32,
+          "byte_offset_start": 0,
+          "byte_offset_end": 0,
+          "text_slice": "os.system(\"echo completed\")"
+        },
+        "provenance": {
+          "provenance_id": "3528538f-4d0d-4706-a1be-855fe037ea9f",
+          "source_spans": [
+            {
+              "file_path": "worker_service.py",
+              "start_line": 6,
+              "start_col": 5,
+              "end_line": 6,
+              "end_col": 32,
+              "byte_offset_start": 0,
+              "byte_offset_end": 0,
+              "symbol_hint": "os.system"
+            }
+          ],
+          "input_hashes": [],
+          "rule_id": "CANE_MAP_EXEC_PYTHON_SUBPROCESS",
+          "ruleset_version": "1.0.0",
+          "transformation_type": "SYNTAX_TRANSFORMATION",
+          "confidence": 0.98,
+          "derived_at": "2026-10-08T15:24:31.852Z",
+          "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+        }
+      }
+    ],
+    "inferences": [
+      {
+        "inference_id": "inf_5f407722-8c48-4dc1-b161-98dfe4aabbfb",
+        "inference_rule_id": "INF_RULE_RCE_COMPOUND_CAPABILITY_V1",
+        "derived_concept_id": "r0000000-0001-0000-0000-000000000002",
+        "canonical_key": "risk.remote_code_execution",
+        "epistemic_state": "INFERRED_STATIC",
+        "confidence": 0.88,
+        "antecedent_concept_ids": [
+          "c0000000-0001-0000-0000-000000000003",
+          "c0000000-0001-0000-0000-000000000001"
+        ],
+        "antecedent_entity_ids": [
+          "6ab800b9-8ff3-4216-bb13-c059ce9f8b5e",
+          "0f87e036-9ba5-4433-9948-48d6cf1afc70"
+        ],
+        "provenance": {
+          "provenance_id": "aa4ccfc8-99b3-4267-b6c0-bc2e0942edef",
+          "inference_rule_id": "INF_RULE_RCE_COMPOUND_CAPABILITY_V1",
+          "engine_key": "caim:cane-taxonomic-inference",
+          "engine_version": "1.0.0",
+          "input_entity_ref_ids": [
+            "6ab800b9-8ff3-4216-bb13-c059ce9f8b5e",
+            "0f87e036-9ba5-4433-9948-48d6cf1afc70"
+          ],
+          "derived_concept_id": "r0000000-0001-0000-0000-000000000002",
+          "confidence": 0.88,
+          "inferred_at": "2026-10-08T15:24:31.853Z"
+        },
+        "rationale": "Inferred compound risk vector from co-occurrence of child process execution and outbound network egress capabilities."
+      }
+    ],
+    "provenance_records": [
+      {
+        "provenance_id": "dac05264-ee28-4058-a196-5c807cd38d8f",
+        "source_spans": [
+          {
+            "file_path": "agent_executor.ts",
+            "start_line": 4,
+            "start_col": 1,
+            "end_line": 7,
+            "end_col": 2,
+            "byte_offset_start": 73,
+            "byte_offset_end": 181,
+            "symbol_hint": "runTask"
+          },
+          {
+            "file_path": "agent_executor.ts",
+            "start_line": 5,
+            "start_col": 9,
+            "end_line": 5,
+            "end_col": 12,
+            "byte_offset_start": 139,
+            "byte_offset_end": 142,
+            "symbol_hint": "res"
+          },
+          {
+            "file_path": "agent_executor.ts",
+            "start_line": 1,
+            "start_col": 1,
+            "end_line": 1,
+            "end_col": 45,
+            "byte_offset_start": 0,
+            "byte_offset_end": 44,
+            "symbol_hint": "child_process"
+          },
+          {
+            "file_path": "agent_executor.ts",
+            "start_line": 2,
+            "start_col": 1,
+            "end_line": 2,
+            "end_col": 27,
+            "byte_offset_start": 45,
+            "byte_offset_end": 71,
+            "symbol_hint": "axios"
+          },
+          {
+            "file_path": "agent_executor.ts",
+            "start_line": 4,
+            "start_col": 1,
+            "end_line": 7,
+            "end_col": 2,
+            "byte_offset_start": 73,
+            "byte_offset_end": 181,
+            "symbol_hint": "runTask"
+          },
+          {
+            "file_path": "agent_executor.ts",
+            "start_line": 5,
+            "start_col": 21,
+            "end_line": 5,
+            "end_col": 35,
+            "byte_offset_start": 151,
+            "byte_offset_end": 165,
+            "symbol_hint": "get"
+          },
+          {
+            "file_path": "agent_executor.ts",
+            "start_line": 6,
+            "start_col": 3,
+            "end_line": 6,
+            "end_col": 12,
+            "byte_offset_start": 169,
+            "byte_offset_end": 178,
+            "symbol_hint": "exec"
+          },
+          {
+            "file_path": "worker_service.py",
+            "start_line": 4,
+            "start_col": 1,
+            "end_line": 6,
+            "end_col": 32,
+            "byte_offset_start": 0,
+            "byte_offset_end": 0
+          },
+          {
+            "file_path": "worker_service.py",
+            "start_line": 1,
+            "start_col": 1,
+            "end_line": 1,
+            "end_col": 18,
+            "byte_offset_start": 0,
+            "byte_offset_end": 0
+          },
+          {
+            "file_path": "worker_service.py",
+            "start_line": 2,
+            "start_col": 1,
+            "end_line": 2,
+            "end_col": 10,
+            "byte_offset_start": 0,
+            "byte_offset_end": 0
+          },
+          {
+            "file_path": "worker_service.py",
+            "start_line": 4,
+            "start_col": 1,
+            "end_line": 6,
+            "end_col": 32,
+            "byte_offset_start": 0,
+            "byte_offset_end": 0
+          },
+          {
+            "file_path": "worker_service.py",
+            "start_line": 5,
+            "start_col": 5,
+            "end_line": 5,
+            "end_col": 38,
+            "byte_offset_start": 0,
+            "byte_offset_end": 0
+          },
+          {
+            "file_path": "worker_service.py",
+            "start_line": 6,
+            "start_col": 5,
+            "end_line": 6,
+            "end_col": 32,
+            "byte_offset_start": 0,
+            "byte_offset_end": 0
+          }
+        ],
+        "input_hashes": [
+          "0007b297f0f625ae001625ae0407b2970007b297f0f625ae001625ae0407b297",
+          "001c0c9dcd613d2a00013d2a6bfc0c9d001c0c9dcd613d2a00013d2a6bfc0c9d",
+          "00103c778a2fce67000fce679fb03c7700103c778a2fce67000fce679fb03c77"
+        ],
+        "rule_id": "CANE_SOURCE_FACTS_NORMALIZATION_V1",
+        "ruleset_version": "1.0.0",
+        "transformation_type": "SYNTAX_TRANSFORMATION",
+        "confidence": 1,
+        "derived_at": "2026-10-08T15:24:31.851Z",
+        "engine_signature": "caim:cane-source-facts-normalizer:v1.0.0"
+      },
+      {
+        "provenance_id": "7201fe89-7bbc-4227-b7b2-c4167e488230",
+        "source_spans": [
+          {
+            "file_path": "agent_executor.ts",
+            "start_line": 5,
+            "start_col": 21,
+            "end_line": 5,
+            "end_col": 35,
+            "byte_offset_start": 151,
+            "byte_offset_end": 165,
+            "symbol_hint": "get"
+          }
+        ],
+        "input_hashes": [],
+        "rule_id": "CANE_MAP_NET_JS_FETCH_AXIOS",
+        "ruleset_version": "1.0.0",
+        "transformation_type": "SYNTAX_TRANSFORMATION",
+        "confidence": 0.95,
+        "derived_at": "2026-10-08T15:24:31.852Z",
+        "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+      },
+      {
+        "provenance_id": "eb982f34-ea72-4a12-acee-bd81fdad9f66",
+        "source_spans": [
+          {
+            "file_path": "agent_executor.ts",
+            "start_line": 6,
+            "start_col": 3,
+            "end_line": 6,
+            "end_col": 12,
+            "byte_offset_start": 169,
+            "byte_offset_end": 178,
+            "symbol_hint": "exec"
+          }
+        ],
+        "input_hashes": [],
+        "rule_id": "CANE_MAP_EXEC_JS_CHILD_PROCESS",
+        "ruleset_version": "1.0.0",
+        "transformation_type": "SYNTAX_TRANSFORMATION",
+        "confidence": 0.98,
+        "derived_at": "2026-10-08T15:24:31.852Z",
+        "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+      },
+      {
+        "provenance_id": "a20bef91-6c81-4caf-9c29-8d261715a206",
+        "source_spans": [
+          {
+            "file_path": "worker_service.py",
+            "start_line": 5,
+            "start_col": 5,
+            "end_line": 5,
+            "end_col": 38,
+            "byte_offset_start": 0,
+            "byte_offset_end": 0,
+            "symbol_hint": "subprocess.Popen"
+          }
+        ],
+        "input_hashes": [],
+        "rule_id": "CANE_MAP_EXEC_PYTHON_SUBPROCESS",
+        "ruleset_version": "1.0.0",
+        "transformation_type": "SYNTAX_TRANSFORMATION",
+        "confidence": 0.98,
+        "derived_at": "2026-10-08T15:24:31.852Z",
+        "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+      },
+      {
+        "provenance_id": "3528538f-4d0d-4706-a1be-855fe037ea9f",
+        "source_spans": [
+          {
+            "file_path": "worker_service.py",
+            "start_line": 6,
+            "start_col": 5,
+            "end_line": 6,
+            "end_col": 32,
+            "byte_offset_start": 0,
+            "byte_offset_end": 0,
+            "symbol_hint": "os.system"
+          }
+        ],
+        "input_hashes": [],
+        "rule_id": "CANE_MAP_EXEC_PYTHON_SUBPROCESS",
+        "ruleset_version": "1.0.0",
+        "transformation_type": "SYNTAX_TRANSFORMATION",
+        "confidence": 0.98,
+        "derived_at": "2026-10-08T15:24:31.852Z",
+        "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+      }
+    ],
+    "unmapped_extensions": {
+      "x_diagnostics_session": "console-live-eval",
+      "x_cane_engine_profile": "high-assurance"
+    },
+    "diagnostics": {
+      "total_source_facts": 13,
+      "total_mappings_applied": 4,
+      "total_capabilities": 2,
+      "total_tools": 0,
+      "total_dependencies": 4,
+      "total_protocols": 0,
+      "total_inferences": 1,
+      "average_mapping_confidence": 0.9725,
+      "security_guard_status": "PASSED",
+      "processing_time_ms": 9
+    }
+  },
+  "mcp_agent": {
+    "caim_manifest": {
+      "caim_version": "2.0.1",
+      "agent": {
+        "_entity_kind": "CANONICAL_AGENT",
+        "agent_id": "agent_cane_art",
+        "canonical_name": "CANE-Model",
+        "status": "ACTIVE",
+        "identity_confidence": 1
+      },
+      "version": {
+        "_entity_kind": "AGENT_VERSION",
+        "agent_version_id": "ver_75dc5024-a553-44f8-9adf-bce04baaa9e0",
+        "agent_id": "agent_cane_art",
+        "content_fingerprint": "42a20ba9-1a44-4e88-8cfe-e8ad2ec99169"
+      },
+      "distributions": [],
+      "components": [
+        {
+          "_entity_kind": "COMPONENT",
+          "component_id": "44ed8bfd-14aa-4f7e-8b1b-80a417e0cd5e",
+          "canonical_name": "@modelcontextprotocol/sdk/server/mcp.js",
+          "component_type": "LIBRARY",
+          "ecosystem": "npm",
+          "version": "*"
+        },
+        {
+          "_entity_kind": "COMPONENT",
+          "component_id": "70e45127-eb7c-46dd-b0c3-00ff355ee0e4",
+          "canonical_name": "zod",
+          "component_type": "LIBRARY",
+          "ecosystem": "npm",
+          "version": "*"
+        },
+        {
+          "_entity_kind": "COMPONENT",
+          "component_id": "e3aa0097-1d28-4463-917c-51bb2978a561",
+          "canonical_name": "fs",
+          "component_type": "LIBRARY",
+          "ecosystem": "npm",
+          "version": "*"
+        },
+        {
+          "_entity_kind": "COMPONENT",
+          "component_id": "284b2061-3405-4c2e-ae60-406cbee2e3ec",
+          "canonical_name": "@modelcontextprotocol/sdk",
+          "component_type": "LIBRARY",
+          "ecosystem": "npm",
+          "version": "*"
+        }
+      ],
+      "dependencies": [
+        {
+          "_entity_kind": "DEPENDENCY_RELATIONSHIP",
+          "relationship_id": "09da33ab-3f29-4759-83a3-e29f156c6e82",
+          "agent_version_id": "ver_75dc5024-a553-44f8-9adf-bce04baaa9e0",
+          "to_component_id": "44ed8bfd-14aa-4f7e-8b1b-80a417e0cd5e",
+          "dependency_type": "DIRECT",
+          "scope": "direct",
+          "resolved_version": "*",
+          "is_direct": true
+        },
+        {
+          "_entity_kind": "DEPENDENCY_RELATIONSHIP",
+          "relationship_id": "47ae5f4a-1a2d-4ffe-8405-3e6d5c6781d7",
+          "agent_version_id": "ver_75dc5024-a553-44f8-9adf-bce04baaa9e0",
+          "to_component_id": "70e45127-eb7c-46dd-b0c3-00ff355ee0e4",
+          "dependency_type": "DIRECT",
+          "scope": "direct",
+          "resolved_version": "*",
+          "is_direct": true
+        },
+        {
+          "_entity_kind": "DEPENDENCY_RELATIONSHIP",
+          "relationship_id": "658aeaa4-1ebf-4a05-85f1-48f5d61e4c50",
+          "agent_version_id": "ver_75dc5024-a553-44f8-9adf-bce04baaa9e0",
+          "to_component_id": "e3aa0097-1d28-4463-917c-51bb2978a561",
+          "dependency_type": "DIRECT",
+          "scope": "direct",
+          "resolved_version": "*",
+          "is_direct": true
+        },
+        {
+          "_entity_kind": "DEPENDENCY_RELATIONSHIP",
+          "relationship_id": "f04e88df-19cf-4877-bf0f-5d162d5d015b",
+          "agent_version_id": "ver_75dc5024-a553-44f8-9adf-bce04baaa9e0",
+          "to_component_id": "284b2061-3405-4c2e-ae60-406cbee2e3ec",
+          "dependency_type": "DIRECT",
+          "scope": "direct",
+          "resolved_version": "*",
+          "is_direct": true
+        }
+      ],
+      "tools": [
+        {
+          "_entity_kind": "TOOL",
+          "tool_id": "63a1b111-895b-4ca9-bf3e-7ac7d488d6c4",
+          "agent_version_id": "ver_75dc5024-a553-44f8-9adf-bce04baaa9e0",
+          "canonical_name": "read_secure_file",
+          "tool_type": "MCP_TOOL",
+          "interface_type": "JSON_SCHEMA",
+          "protocol_instance_id": "8ec69c8f-4c36-4fe2-9bb1-080638d64f05",
+          "parameters_schema": {},
+          "confidence": 0.99
+        }
+      ],
+      "tool_bindings": [
+        {
+          "_entity_kind": "TOOL_BINDING",
+          "binding_id": "e6592ccf-ea58-40a6-a527-e6a22b6349a3",
+          "tool_id": "63a1b111-895b-4ca9-bf3e-7ac7d488d6c4",
+          "target_entity_ref_id": "8ec69c8f-4c36-4fe2-9bb1-080638d64f05",
+          "binding_type": "RPC_PROXY",
+          "confidence": 0.99
+        }
+      ],
+      "protocols": [
+        {
+          "_entity_kind": "PROTOCOL_INSTANCE",
+          "protocol_instance_id": "8ec69c8f-4c36-4fe2-9bb1-080638d64f05",
+          "agent_version_id": "ver_75dc5024-a553-44f8-9adf-bce04baaa9e0",
+          "protocol_name": "MCP",
+          "protocol_version": "2024-11-05",
+          "role": "SERVER",
+          "confidence": 0.98
+        },
+        {
+          "_entity_kind": "PROTOCOL_INSTANCE",
+          "protocol_instance_id": "aaa3e0f4-fafc-464b-ac2b-a12f370c6056",
+          "agent_version_id": "ver_75dc5024-a553-44f8-9adf-bce04baaa9e0",
+          "protocol_name": "MCP",
+          "protocol_version": "2024-11-05",
+          "role": "SERVER",
+          "confidence": 0.98
+        }
+      ],
+      "protocol_capabilities": [],
+      "capabilities": [
+        {
+          "_entity_kind": "CAPABILITY",
+          "capability_id": "81674246-d5b6-46d9-bc4a-5a6a8b3298ea",
+          "agent_version_id": "ver_75dc5024-a553-44f8-9adf-bce04baaa9e0",
+          "capability_concept_id": "c0000000-0001-0000-0000-000000000004",
+          "canonical_key": "capability.fs.read",
+          "declaration_state": "INFERRED_STATIC",
+          "source_type": "CODE_AST",
+          "confidence": 0.95
+        },
+        {
+          "_entity_kind": "CAPABILITY",
+          "capability_id": "7174809e-7f9a-4aae-9f58-8cc2f27350c2",
+          "agent_version_id": "ver_75dc5024-a553-44f8-9adf-bce04baaa9e0",
+          "capability_concept_id": "c0000000-0001-0000-0000-000000000002",
+          "canonical_key": "capability.tools.mcp",
+          "declaration_state": "INFERRED_STATIC",
+          "source_type": "CODE_AST",
+          "confidence": 0.99
+        }
+      ],
+      "permissions": [],
+      "entrypoints": [],
+      "runtimes": [],
+      "endpoints": [],
+      "models": [],
+      "datasets": [],
+      "prompts": [],
+      "configurations": [],
+      "credentials": [],
+      "data_access_requirements": []
+    },
+    "ontology_concepts": [
+      {
+        "concept_id": "c0000000-0001-0000-0000-000000000001",
+        "ontology_version": "2.0.1",
+        "namespace": "capability",
+        "canonical_key": "capability.tools.exec",
+        "display_name": "Process Execution Tool",
+        "description": "Capability to execute shell or child process commands on the host or in a sandbox",
+        "aliases": [
+          "exec",
+          "bash",
+          "spawn_process",
+          "shell_tool"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "c0000000-0001-0000-0000-000000000002",
+        "ontology_version": "2.0.1",
+        "namespace": "capability",
+        "canonical_key": "capability.tools.mcp",
+        "display_name": "Model Context Protocol (MCP) Tool Integration",
+        "description": "Capability to interact with external tools via Model Context Protocol servers",
+        "aliases": [
+          "mcp_tool",
+          "mcp_client",
+          "mcp_server"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "c0000000-0001-0000-0000-000000000003",
+        "ontology_version": "2.0.1",
+        "namespace": "capability",
+        "canonical_key": "capability.network.egress",
+        "display_name": "Outbound Network Connectivity",
+        "description": "Capability to make outbound HTTP/TCP/UDP connections to external addresses",
+        "aliases": [
+          "http_client",
+          "fetch",
+          "axios",
+          "curl",
+          "network_out"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "c0000000-0001-0000-0000-000000000004",
+        "ontology_version": "2.0.1",
+        "namespace": "capability",
+        "canonical_key": "capability.fs.read",
+        "display_name": "Filesystem Read Access",
+        "description": "Capability to inspect and read files from the host or storage workspace",
+        "aliases": [
+          "read_file",
+          "fs_read",
+          "cat",
+          "open_file"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "c0000000-0001-0000-0000-000000000005",
+        "ontology_version": "2.0.1",
+        "namespace": "capability",
+        "canonical_key": "capability.fs.write",
+        "display_name": "Filesystem Write Access",
+        "description": "Capability to create, edit, or delete files on the filesystem",
+        "aliases": [
+          "write_file",
+          "edit_file",
+          "rm_file",
+          "fs_write"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "c0000000-0001-0000-0000-000000000006",
+        "ontology_version": "2.0.1",
+        "namespace": "capability",
+        "canonical_key": "capability.code.eval",
+        "display_name": "Dynamic Code Evaluation",
+        "description": "Capability to dynamically parse and evaluate code at runtime (e.g. eval, Function constructor)",
+        "aliases": [
+          "eval",
+          "vm_run",
+          "python_exec",
+          "dynamic_eval"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "p0000000-0001-0000-0000-000000000001",
+        "ontology_version": "2.0.1",
+        "namespace": "permission",
+        "canonical_key": "permission.fs.write",
+        "display_name": "Filesystem Mutation Permission",
+        "description": "Permission granting or requesting the ability to write or delete local files",
+        "aliases": [
+          "write_permission",
+          "fs_write_grant"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "p0000000-0001-0000-0000-000000000002",
+        "ontology_version": "2.0.1",
+        "namespace": "permission",
+        "canonical_key": "permission.net.outbound",
+        "display_name": "Outbound Network Permission",
+        "description": "Permission granting outbound network egress to external endpoints",
+        "aliases": [
+          "egress_permission",
+          "net_grant"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "p0000000-0001-0000-0000-000000000003",
+        "ontology_version": "2.0.1",
+        "namespace": "permission",
+        "canonical_key": "permission.process.spawn",
+        "display_name": "Subprocess Execution Permission",
+        "description": "Permission granting the ability to spawn sub-processes on the system",
+        "aliases": [
+          "exec_permission",
+          "process_grant"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "b0000000-0001-0000-0000-000000000001",
+        "ontology_version": "2.0.1",
+        "namespace": "behavior",
+        "canonical_key": "behavior.evasion.obfuscation",
+        "display_name": "Dynamic Payload Obfuscation",
+        "description": "Empirical detection of dynamic decoding, string deobfuscation, or evasive execution",
+        "aliases": [
+          "obfuscation",
+          "evasion",
+          "anti_analysis"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "b0000000-0001-0000-0000-000000000002",
+        "ontology_version": "2.0.1",
+        "namespace": "behavior",
+        "canonical_key": "behavior.data.exfiltration",
+        "display_name": "Sensitive Data Exfiltration",
+        "description": "Empirical observed outbound transmission of sensitive memory or filesystem data",
+        "aliases": [
+          "data_leak",
+          "exfiltration",
+          "secret_leak"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "r0000000-0001-0000-0000-000000000001",
+        "ontology_version": "2.0.1",
+        "namespace": "risk",
+        "canonical_key": "risk.supply_chain.untrusted_dep",
+        "display_name": "Untrusted Supply Chain Dependency",
+        "description": "Risk arising from unverified, typosquatted, or compromised dependencies",
+        "aliases": [
+          "malicious_dep",
+          "supply_chain_vulnerability"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "r0000000-0001-0000-0000-000000000002",
+        "ontology_version": "2.0.1",
+        "namespace": "risk",
+        "canonical_key": "risk.injection.prompt",
+        "display_name": "Indirect Prompt Injection Susceptibility",
+        "description": "Risk that external inputs can override system instructions and hijack execution",
+        "aliases": [
+          "prompt_injection",
+          "jailbreak"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "e0000000-0001-0000-0000-000000000001",
+        "ontology_version": "2.0.1",
+        "namespace": "epistemic",
+        "canonical_key": "epistemic.observed_fact",
+        "display_name": "Directly Observed Empirical Fact",
+        "description": "Fact directly verified from deterministic AST or dynamic execution trace",
+        "aliases": [
+          "observed",
+          "fact"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "e0000000-0001-0000-0000-000000000002",
+        "ontology_version": "2.0.1",
+        "namespace": "epistemic",
+        "canonical_key": "epistemic.derived_assertion",
+        "display_name": "Analytically Derived Assertion",
+        "description": "Assertion synthesized from evidence items through calibrated engine rules",
+        "aliases": [
+          "derived",
+          "assertion",
+          "inferred"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "e0000000-0001-0000-0000-000000000003",
+        "ontology_version": "2.0.1",
+        "namespace": "epistemic",
+        "canonical_key": "epistemic.hypothesis",
+        "display_name": "Candidate Analytical Hypothesis",
+        "description": "Plausible condition with partial evidence requiring further evaluation or validation",
+        "aliases": [
+          "hypothesis",
+          "candidate"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "e0000000-0001-0000-0000-000000000004",
+        "ontology_version": "2.0.1",
+        "namespace": "epistemic",
+        "canonical_key": "epistemic.contradicted",
+        "display_name": "Contradicted Hypothesis or Assertion",
+        "description": "Condition with mutually exclusive opposing evidence",
+        "aliases": [
+          "contradicted",
+          "refuted"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "ev000000-0001-0000-0000-000000000001",
+        "ontology_version": "2.0.1",
+        "namespace": "evidence",
+        "canonical_key": "evidence.static_code",
+        "display_name": "Static Source Code Evidence",
+        "description": "Proof extracted from source spans, AST syntax, or static text matches",
+        "aliases": [
+          "static_code",
+          "ast_match"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "ev000000-0001-0000-0000-000000000002",
+        "ontology_version": "2.0.1",
+        "namespace": "evidence",
+        "canonical_key": "evidence.dynamic_call",
+        "display_name": "Dynamic Execution Trace Evidence",
+        "description": "Proof captured from sandbox runtime events, system calls, or network packets",
+        "aliases": [
+          "dynamic_call",
+          "sandbox_event"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "ev000000-0001-0000-0000-000000000003",
+        "ontology_version": "2.0.1",
+        "namespace": "evidence",
+        "canonical_key": "evidence.metadata_manifest",
+        "display_name": "Metadata Manifest Evidence",
+        "description": "Proof declared in package.json, requirements.txt, Dockerfile, or MCP manifest",
+        "aliases": [
+          "manifest",
+          "declaration"
+        ],
+        "status": "ACTIVE"
+      }
+    ],
+    "ontology_relationships": [
+      {
+        "relationship_id": "76b485d0-33d6-4737-907a-d8b467a41e7b",
+        "ontology_version": "2.0.1",
+        "subject_concept_id": "63a1b111-895b-4ca9-bf3e-7ac7d488d6c4",
+        "predicate": "BOUND_TO",
+        "object_concept_id": "8ec69c8f-4c36-4fe2-9bb1-080638d64f05",
+        "confidence": 0.99
+      },
+      {
+        "relationship_id": "9ac94958-c86d-4165-b0f1-59f161c8eebd",
+        "ontology_version": "2.0.1",
+        "subject_concept_id": "ver_75dc5024-a553-44f8-9adf-bce04baaa9e0",
+        "predicate": "IMPLEMENTS",
+        "object_concept_id": "c0000000-0001-0000-0000-000000000004",
+        "confidence": 0.95
+      },
+      {
+        "relationship_id": "23fbc5bd-6259-42c9-bd95-52d7c7504e5f",
+        "ontology_version": "2.0.1",
+        "subject_concept_id": "ver_75dc5024-a553-44f8-9adf-bce04baaa9e0",
+        "predicate": "IMPLEMENTS",
+        "object_concept_id": "c0000000-0001-0000-0000-000000000002",
+        "confidence": 0.99
+      }
+    ],
+    "mapping_matches": [
+      {
+        "rule_id": "CANE_MAP_MCP_TOOL_REGISTRATION",
+        "rule_version": "1.0.0",
+        "source_fact_id": "call_mcp_server.ts_7_tool",
+        "source_ecosystem": "typescript",
+        "file_path": "mcp_server.ts",
+        "matched_construct": "server.tool",
+        "target_canonical_key": "capability.tools.mcp",
+        "target_concept_id": "c0000000-0001-0000-0000-000000000002",
+        "target_entity_type": "TOOL",
+        "confidence": 0.99,
+        "span": {
+          "file_path": "mcp_server.ts",
+          "start_line": 7,
+          "start_col": 1,
+          "end_line": 14,
+          "end_col": 2,
+          "byte_offset_start": 196,
+          "byte_offset_end": 388,
+          "text_slice": "server.tool(\n  'read_secure_file',\n  { path: z.string() },\n  async ({ path }) => {\n    const data = fs.readFileSync(path, 'utf8');\n    return { content: [{ type: 'text', text: data }] };\n  }\n)",
+          "symbol_hint": "tool"
+        },
+        "provenance": {
+          "provenance_id": "d524f142-cd40-4b5d-913a-4e47bc75bb11",
+          "source_spans": [
+            {
+              "file_path": "mcp_server.ts",
+              "start_line": 7,
+              "start_col": 1,
+              "end_line": 14,
+              "end_col": 2,
+              "byte_offset_start": 196,
+              "byte_offset_end": 388,
+              "symbol_hint": "tool"
+            }
+          ],
+          "input_hashes": [],
+          "rule_id": "CANE_MAP_MCP_TOOL_REGISTRATION",
+          "ruleset_version": "1.0.0",
+          "transformation_type": "SYNTAX_TRANSFORMATION",
+          "confidence": 0.99,
+          "derived_at": "2026-10-08T15:24:31.867Z",
+          "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+        }
+      },
+      {
+        "rule_id": "CANE_MAP_FS_READ_JS",
+        "rule_version": "1.0.0",
+        "source_fact_id": "call_mcp_server.ts_11_readFileSync",
+        "source_ecosystem": "typescript",
+        "file_path": "mcp_server.ts",
+        "matched_construct": "fs.readFileSync",
+        "target_canonical_key": "capability.fs.read",
+        "target_concept_id": "c0000000-0001-0000-0000-000000000004",
+        "target_entity_type": "CAPABILITY",
+        "confidence": 0.95,
+        "span": {
+          "file_path": "mcp_server.ts",
+          "start_line": 11,
+          "start_col": 18,
+          "end_line": 11,
+          "end_col": 47,
+          "byte_offset_start": 296,
+          "byte_offset_end": 325,
+          "text_slice": "fs.readFileSync(path, 'utf8')",
+          "symbol_hint": "readFileSync"
+        },
+        "provenance": {
+          "provenance_id": "155fed47-7525-4508-849c-66d842c1d3be",
+          "source_spans": [
+            {
+              "file_path": "mcp_server.ts",
+              "start_line": 11,
+              "start_col": 18,
+              "end_line": 11,
+              "end_col": 47,
+              "byte_offset_start": 296,
+              "byte_offset_end": 325,
+              "symbol_hint": "readFileSync"
+            }
+          ],
+          "input_hashes": [],
+          "rule_id": "CANE_MAP_FS_READ_JS",
+          "ruleset_version": "1.0.0",
+          "transformation_type": "SYNTAX_TRANSFORMATION",
+          "confidence": 0.95,
+          "derived_at": "2026-10-08T15:24:31.867Z",
+          "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+        }
+      },
+      {
+        "rule_id": "CANE_MAP_MCP_PROTOCOL_DIRECT",
+        "rule_version": "1.0.0",
+        "source_fact_id": "proto_mcp_server.ts_MCP",
+        "source_ecosystem": "generic",
+        "file_path": "mcp_server.ts",
+        "matched_construct": "mcp (1 tools, stdio)",
+        "target_canonical_key": "capability.tools.mcp",
+        "target_concept_id": "c0000000-0001-0000-0000-000000000002",
+        "target_entity_type": "PROTOCOL",
+        "confidence": 0.99,
+        "span": {
+          "file_path": "mcp_server.ts",
+          "start_line": 1,
+          "start_col": 1,
+          "end_line": 14,
+          "end_col": 3,
+          "byte_offset_start": 0,
+          "byte_offset_end": 389,
+          "text_slice": "import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';\nimport { z } from 'zod';\nimport * as fs from 'fs';\n\nconst server = new McpServer({ name: 'file-analyst', version: '1.0.0' });\n\ns...",
+          "symbol_hint": "Model Context Protocol (MCP)"
+        },
+        "provenance": {
+          "provenance_id": "f7a61747-5a86-4cf2-8405-e9e9aba2e66a",
+          "source_spans": [
+            {
+              "file_path": "mcp_server.ts",
+              "start_line": 1,
+              "start_col": 1,
+              "end_line": 14,
+              "end_col": 3,
+              "symbol_hint": "MCP Protocol Server/Client"
+            }
+          ],
+          "input_hashes": [],
+          "rule_id": "CANE_MAP_MCP_PROTOCOL_DIRECT",
+          "ruleset_version": "1.0.0",
+          "transformation_type": "DIRECT_EXTRACTION",
+          "confidence": 0.99,
+          "derived_at": "2026-10-08T15:24:31.867Z",
+          "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+        }
+      },
+      {
+        "rule_id": "CANE_MAP_MCP_PROTOCOL_DIRECT",
+        "rule_version": "1.0.0",
+        "source_fact_id": "proto_package.json_MCP",
+        "source_ecosystem": "generic",
+        "file_path": "package.json",
+        "matched_construct": "mcp (0 tools, stdio)",
+        "target_canonical_key": "capability.tools.mcp",
+        "target_concept_id": "c0000000-0001-0000-0000-000000000002",
+        "target_entity_type": "PROTOCOL",
+        "confidence": 0.99,
+        "span": {
+          "file_path": "package.json",
+          "start_line": 1,
+          "start_col": 1,
+          "end_line": 13,
+          "end_col": 2,
+          "byte_offset_start": 0,
+          "byte_offset_end": 236,
+          "text_slice": "{\n  \"name\": \"mcp-file-analyst\",\n  \"version\": \"1.0.0\",\n  \"dependencies\": {\n    \"@modelcontextprotocol/sdk\": \"^1.0.1\",\n    \"zod\": \"^3.23.0\"\n  },\n  \"x_mcp_capabilities\": {\n    \"prompts\": true,\n    \"re...",
+          "symbol_hint": "Model Context Protocol (MCP)"
+        },
+        "provenance": {
+          "provenance_id": "24c59f3c-1306-40dd-8a99-b70493ffacd6",
+          "source_spans": [
+            {
+              "file_path": "package.json",
+              "start_line": 1,
+              "start_col": 1,
+              "end_line": 13,
+              "end_col": 2,
+              "symbol_hint": "MCP Protocol Server/Client"
+            }
+          ],
+          "input_hashes": [],
+          "rule_id": "CANE_MAP_MCP_PROTOCOL_DIRECT",
+          "ruleset_version": "1.0.0",
+          "transformation_type": "DIRECT_EXTRACTION",
+          "confidence": 0.99,
+          "derived_at": "2026-10-08T15:24:31.867Z",
+          "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+        }
+      }
+    ],
+    "inferences": [],
+    "provenance_records": [
+      {
+        "provenance_id": "562d042d-e057-404b-a2d1-618d8c1f0368",
+        "source_spans": [
+          {
+            "file_path": "mcp_server.ts",
+            "start_line": 5,
+            "start_col": 7,
+            "end_line": 5,
+            "end_col": 13,
+            "byte_offset_start": 127,
+            "byte_offset_end": 133,
+            "symbol_hint": "server"
+          },
+          {
+            "file_path": "mcp_server.ts",
+            "start_line": 11,
+            "start_col": 11,
+            "end_line": 11,
+            "end_col": 15,
+            "byte_offset_start": 289,
+            "byte_offset_end": 293,
+            "symbol_hint": "data"
+          },
+          {
+            "file_path": "mcp_server.ts",
+            "start_line": 1,
+            "start_col": 1,
+            "end_line": 1,
+            "end_col": 69,
+            "byte_offset_start": 0,
+            "byte_offset_end": 68,
+            "symbol_hint": "@modelcontextprotocol/sdk/server/mcp.js"
+          },
+          {
+            "file_path": "mcp_server.ts",
+            "start_line": 2,
+            "start_col": 1,
+            "end_line": 2,
+            "end_col": 25,
+            "byte_offset_start": 69,
+            "byte_offset_end": 93,
+            "symbol_hint": "zod"
+          },
+          {
+            "file_path": "mcp_server.ts",
+            "start_line": 3,
+            "start_col": 1,
+            "end_line": 3,
+            "end_col": 26,
+            "byte_offset_start": 94,
+            "byte_offset_end": 119,
+            "symbol_hint": "fs"
+          },
+          {
+            "file_path": "mcp_server.ts",
+            "start_line": 5,
+            "start_col": 16,
+            "end_line": 5,
+            "end_col": 73,
+            "byte_offset_start": 136,
+            "byte_offset_end": 193,
+            "symbol_hint": "McpServer"
+          },
+          {
+            "file_path": "mcp_server.ts",
+            "start_line": 7,
+            "start_col": 1,
+            "end_line": 14,
+            "end_col": 2,
+            "byte_offset_start": 196,
+            "byte_offset_end": 388,
+            "symbol_hint": "tool"
+          },
+          {
+            "file_path": "mcp_server.ts",
+            "start_line": 9,
+            "start_col": 11,
+            "end_line": 9,
+            "end_col": 21,
+            "byte_offset_start": 241,
+            "byte_offset_end": 251,
+            "symbol_hint": "string"
+          },
+          {
+            "file_path": "mcp_server.ts",
+            "start_line": 11,
+            "start_col": 18,
+            "end_line": 11,
+            "end_col": 47,
+            "byte_offset_start": 296,
+            "byte_offset_end": 325,
+            "symbol_hint": "readFileSync"
+          },
+          {
+            "file_path": "package.json",
+            "start_line": 1,
+            "start_col": 1,
+            "end_line": 13,
+            "end_col": 2,
+            "byte_offset_start": 0,
+            "byte_offset_end": 236,
+            "symbol_hint": "mcp-file-analyst"
+          },
+          {
+            "file_path": "package.json",
+            "start_line": 1,
+            "start_col": 1,
+            "end_line": 13,
+            "end_col": 2,
+            "byte_offset_start": 0,
+            "byte_offset_end": 236,
+            "symbol_hint": "mcp-file-analyst"
+          },
+          {
+            "file_path": "package.json",
+            "start_line": 1,
+            "start_col": 1,
+            "end_line": 13,
+            "end_col": 2,
+            "byte_offset_start": 0,
+            "byte_offset_end": 236,
+            "symbol_hint": "mcp-file-analyst"
+          }
+        ],
+        "input_hashes": [
+          "00148cb1538ed63c000ed63c08948cb100148cb1538ed63c000ed63c08948cb1",
+          "001b2ed82318a0490018a0494e1b2ed8001b2ed82318a0490018a0494e1b2ed8"
+        ],
+        "rule_id": "CANE_SOURCE_FACTS_NORMALIZATION_V1",
+        "ruleset_version": "1.0.0",
+        "transformation_type": "SYNTAX_TRANSFORMATION",
+        "confidence": 1,
+        "derived_at": "2026-10-08T15:24:31.866Z",
+        "engine_signature": "caim:cane-source-facts-normalizer:v1.0.0"
+      },
+      {
+        "provenance_id": "d524f142-cd40-4b5d-913a-4e47bc75bb11",
+        "source_spans": [
+          {
+            "file_path": "mcp_server.ts",
+            "start_line": 7,
+            "start_col": 1,
+            "end_line": 14,
+            "end_col": 2,
+            "byte_offset_start": 196,
+            "byte_offset_end": 388,
+            "symbol_hint": "tool"
+          }
+        ],
+        "input_hashes": [],
+        "rule_id": "CANE_MAP_MCP_TOOL_REGISTRATION",
+        "ruleset_version": "1.0.0",
+        "transformation_type": "SYNTAX_TRANSFORMATION",
+        "confidence": 0.99,
+        "derived_at": "2026-10-08T15:24:31.867Z",
+        "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+      },
+      {
+        "provenance_id": "155fed47-7525-4508-849c-66d842c1d3be",
+        "source_spans": [
+          {
+            "file_path": "mcp_server.ts",
+            "start_line": 11,
+            "start_col": 18,
+            "end_line": 11,
+            "end_col": 47,
+            "byte_offset_start": 296,
+            "byte_offset_end": 325,
+            "symbol_hint": "readFileSync"
+          }
+        ],
+        "input_hashes": [],
+        "rule_id": "CANE_MAP_FS_READ_JS",
+        "ruleset_version": "1.0.0",
+        "transformation_type": "SYNTAX_TRANSFORMATION",
+        "confidence": 0.95,
+        "derived_at": "2026-10-08T15:24:31.867Z",
+        "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+      },
+      {
+        "provenance_id": "f7a61747-5a86-4cf2-8405-e9e9aba2e66a",
+        "source_spans": [
+          {
+            "file_path": "mcp_server.ts",
+            "start_line": 1,
+            "start_col": 1,
+            "end_line": 14,
+            "end_col": 3,
+            "symbol_hint": "MCP Protocol Server/Client"
+          }
+        ],
+        "input_hashes": [],
+        "rule_id": "CANE_MAP_MCP_PROTOCOL_DIRECT",
+        "ruleset_version": "1.0.0",
+        "transformation_type": "DIRECT_EXTRACTION",
+        "confidence": 0.99,
+        "derived_at": "2026-10-08T15:24:31.867Z",
+        "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+      },
+      {
+        "provenance_id": "24c59f3c-1306-40dd-8a99-b70493ffacd6",
+        "source_spans": [
+          {
+            "file_path": "package.json",
+            "start_line": 1,
+            "start_col": 1,
+            "end_line": 13,
+            "end_col": 2,
+            "symbol_hint": "MCP Protocol Server/Client"
+          }
+        ],
+        "input_hashes": [],
+        "rule_id": "CANE_MAP_MCP_PROTOCOL_DIRECT",
+        "ruleset_version": "1.0.0",
+        "transformation_type": "DIRECT_EXTRACTION",
+        "confidence": 0.99,
+        "derived_at": "2026-10-08T15:24:31.867Z",
+        "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+      }
+    ],
+    "unmapped_extensions": {
+      "x_diagnostics_session": "console-live-eval",
+      "x_cane_engine_profile": "high-assurance",
+      "package.json:x_mcp_capabilities": {
+        "prompts": true,
+        "resources": true,
+        "tools": true
+      }
+    },
+    "diagnostics": {
+      "total_source_facts": 12,
+      "total_mappings_applied": 4,
+      "total_capabilities": 2,
+      "total_tools": 1,
+      "total_dependencies": 4,
+      "total_protocols": 2,
+      "total_inferences": 0,
+      "average_mapping_confidence": 0.98,
+      "security_guard_status": "PASSED",
+      "processing_time_ms": 2
+    }
+  },
+  "compound_risk": {
+    "caim_manifest": {
+      "caim_version": "2.0.1",
+      "agent": {
+        "_entity_kind": "CANONICAL_AGENT",
+        "agent_id": "agent_cane_art",
+        "canonical_name": "CANE-Compound",
+        "status": "ACTIVE",
+        "identity_confidence": 1
+      },
+      "version": {
+        "_entity_kind": "AGENT_VERSION",
+        "agent_version_id": "ver_c6345ec9-c858-4b61-87ee-c9e2f6e85c4e",
+        "agent_id": "agent_cane_art",
+        "content_fingerprint": "347c3af3-6b8d-4710-a0d3-e63696ba35c8"
+      },
+      "distributions": [],
+      "components": [
+        {
+          "_entity_kind": "COMPONENT",
+          "component_id": "95a01d2d-e788-4b8f-8645-fdbe75184058",
+          "canonical_name": "fs",
+          "component_type": "LIBRARY",
+          "ecosystem": "npm",
+          "version": "*"
+        },
+        {
+          "_entity_kind": "COMPONENT",
+          "component_id": "8e9b3b77-abee-40e9-8e25-672352d14be5",
+          "canonical_name": "node-fetch",
+          "component_type": "LIBRARY",
+          "ecosystem": "npm",
+          "version": "*"
+        }
+      ],
+      "dependencies": [
+        {
+          "_entity_kind": "DEPENDENCY_RELATIONSHIP",
+          "relationship_id": "0854a58a-653a-40b5-a1df-e459c4a76f84",
+          "agent_version_id": "ver_c6345ec9-c858-4b61-87ee-c9e2f6e85c4e",
+          "to_component_id": "95a01d2d-e788-4b8f-8645-fdbe75184058",
+          "dependency_type": "DIRECT",
+          "scope": "direct",
+          "resolved_version": "*",
+          "is_direct": true
+        },
+        {
+          "_entity_kind": "DEPENDENCY_RELATIONSHIP",
+          "relationship_id": "8fd32dad-90ba-4d3e-9c95-d111729d3465",
+          "agent_version_id": "ver_c6345ec9-c858-4b61-87ee-c9e2f6e85c4e",
+          "to_component_id": "8e9b3b77-abee-40e9-8e25-672352d14be5",
+          "dependency_type": "DIRECT",
+          "scope": "direct",
+          "resolved_version": "*",
+          "is_direct": true
+        }
+      ],
+      "tools": [],
+      "tool_bindings": [],
+      "protocols": [],
+      "protocol_capabilities": [],
+      "capabilities": [
+        {
+          "_entity_kind": "CAPABILITY",
+          "capability_id": "1aeeb220-3b21-47e9-b121-6e77646d9bb6",
+          "agent_version_id": "ver_c6345ec9-c858-4b61-87ee-c9e2f6e85c4e",
+          "capability_concept_id": "c0000000-0001-0000-0000-000000000003",
+          "canonical_key": "capability.network.egress",
+          "declaration_state": "INFERRED_STATIC",
+          "source_type": "CODE_AST",
+          "confidence": 0.95
+        },
+        {
+          "_entity_kind": "CAPABILITY",
+          "capability_id": "c5ec6a30-a366-4edb-87e9-ebd1a3614813",
+          "agent_version_id": "ver_c6345ec9-c858-4b61-87ee-c9e2f6e85c4e",
+          "capability_concept_id": "c0000000-0001-0000-0000-000000000006",
+          "canonical_key": "capability.code.eval",
+          "declaration_state": "INFERRED_STATIC",
+          "source_type": "CODE_AST",
+          "confidence": 0.99
+        },
+        {
+          "_entity_kind": "CAPABILITY",
+          "capability_id": "0036a383-ee6c-46e8-8d00-5a20e68f6784",
+          "agent_version_id": "ver_c6345ec9-c858-4b61-87ee-c9e2f6e85c4e",
+          "capability_concept_id": "c0000000-0001-0000-0000-000000000005",
+          "canonical_key": "capability.fs.write",
+          "declaration_state": "INFERRED_STATIC",
+          "source_type": "CODE_AST",
+          "confidence": 0.95
+        }
+      ],
+      "permissions": [],
+      "entrypoints": [],
+      "runtimes": [],
+      "endpoints": [],
+      "models": [],
+      "datasets": [],
+      "prompts": [],
+      "configurations": [],
+      "credentials": [],
+      "data_access_requirements": []
+    },
+    "ontology_concepts": [
+      {
+        "concept_id": "c0000000-0001-0000-0000-000000000001",
+        "ontology_version": "2.0.1",
+        "namespace": "capability",
+        "canonical_key": "capability.tools.exec",
+        "display_name": "Process Execution Tool",
+        "description": "Capability to execute shell or child process commands on the host or in a sandbox",
+        "aliases": [
+          "exec",
+          "bash",
+          "spawn_process",
+          "shell_tool"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "c0000000-0001-0000-0000-000000000002",
+        "ontology_version": "2.0.1",
+        "namespace": "capability",
+        "canonical_key": "capability.tools.mcp",
+        "display_name": "Model Context Protocol (MCP) Tool Integration",
+        "description": "Capability to interact with external tools via Model Context Protocol servers",
+        "aliases": [
+          "mcp_tool",
+          "mcp_client",
+          "mcp_server"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "c0000000-0001-0000-0000-000000000003",
+        "ontology_version": "2.0.1",
+        "namespace": "capability",
+        "canonical_key": "capability.network.egress",
+        "display_name": "Outbound Network Connectivity",
+        "description": "Capability to make outbound HTTP/TCP/UDP connections to external addresses",
+        "aliases": [
+          "http_client",
+          "fetch",
+          "axios",
+          "curl",
+          "network_out"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "c0000000-0001-0000-0000-000000000004",
+        "ontology_version": "2.0.1",
+        "namespace": "capability",
+        "canonical_key": "capability.fs.read",
+        "display_name": "Filesystem Read Access",
+        "description": "Capability to inspect and read files from the host or storage workspace",
+        "aliases": [
+          "read_file",
+          "fs_read",
+          "cat",
+          "open_file"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "c0000000-0001-0000-0000-000000000005",
+        "ontology_version": "2.0.1",
+        "namespace": "capability",
+        "canonical_key": "capability.fs.write",
+        "display_name": "Filesystem Write Access",
+        "description": "Capability to create, edit, or delete files on the filesystem",
+        "aliases": [
+          "write_file",
+          "edit_file",
+          "rm_file",
+          "fs_write"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "c0000000-0001-0000-0000-000000000006",
+        "ontology_version": "2.0.1",
+        "namespace": "capability",
+        "canonical_key": "capability.code.eval",
+        "display_name": "Dynamic Code Evaluation",
+        "description": "Capability to dynamically parse and evaluate code at runtime (e.g. eval, Function constructor)",
+        "aliases": [
+          "eval",
+          "vm_run",
+          "python_exec",
+          "dynamic_eval"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "p0000000-0001-0000-0000-000000000001",
+        "ontology_version": "2.0.1",
+        "namespace": "permission",
+        "canonical_key": "permission.fs.write",
+        "display_name": "Filesystem Mutation Permission",
+        "description": "Permission granting or requesting the ability to write or delete local files",
+        "aliases": [
+          "write_permission",
+          "fs_write_grant"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "p0000000-0001-0000-0000-000000000002",
+        "ontology_version": "2.0.1",
+        "namespace": "permission",
+        "canonical_key": "permission.net.outbound",
+        "display_name": "Outbound Network Permission",
+        "description": "Permission granting outbound network egress to external endpoints",
+        "aliases": [
+          "egress_permission",
+          "net_grant"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "p0000000-0001-0000-0000-000000000003",
+        "ontology_version": "2.0.1",
+        "namespace": "permission",
+        "canonical_key": "permission.process.spawn",
+        "display_name": "Subprocess Execution Permission",
+        "description": "Permission granting the ability to spawn sub-processes on the system",
+        "aliases": [
+          "exec_permission",
+          "process_grant"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "b0000000-0001-0000-0000-000000000001",
+        "ontology_version": "2.0.1",
+        "namespace": "behavior",
+        "canonical_key": "behavior.evasion.obfuscation",
+        "display_name": "Dynamic Payload Obfuscation",
+        "description": "Empirical detection of dynamic decoding, string deobfuscation, or evasive execution",
+        "aliases": [
+          "obfuscation",
+          "evasion",
+          "anti_analysis"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "b0000000-0001-0000-0000-000000000002",
+        "ontology_version": "2.0.1",
+        "namespace": "behavior",
+        "canonical_key": "behavior.data.exfiltration",
+        "display_name": "Sensitive Data Exfiltration",
+        "description": "Empirical observed outbound transmission of sensitive memory or filesystem data",
+        "aliases": [
+          "data_leak",
+          "exfiltration",
+          "secret_leak"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "r0000000-0001-0000-0000-000000000001",
+        "ontology_version": "2.0.1",
+        "namespace": "risk",
+        "canonical_key": "risk.supply_chain.untrusted_dep",
+        "display_name": "Untrusted Supply Chain Dependency",
+        "description": "Risk arising from unverified, typosquatted, or compromised dependencies",
+        "aliases": [
+          "malicious_dep",
+          "supply_chain_vulnerability"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "r0000000-0001-0000-0000-000000000002",
+        "ontology_version": "2.0.1",
+        "namespace": "risk",
+        "canonical_key": "risk.injection.prompt",
+        "display_name": "Indirect Prompt Injection Susceptibility",
+        "description": "Risk that external inputs can override system instructions and hijack execution",
+        "aliases": [
+          "prompt_injection",
+          "jailbreak"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "e0000000-0001-0000-0000-000000000001",
+        "ontology_version": "2.0.1",
+        "namespace": "epistemic",
+        "canonical_key": "epistemic.observed_fact",
+        "display_name": "Directly Observed Empirical Fact",
+        "description": "Fact directly verified from deterministic AST or dynamic execution trace",
+        "aliases": [
+          "observed",
+          "fact"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "e0000000-0001-0000-0000-000000000002",
+        "ontology_version": "2.0.1",
+        "namespace": "epistemic",
+        "canonical_key": "epistemic.derived_assertion",
+        "display_name": "Analytically Derived Assertion",
+        "description": "Assertion synthesized from evidence items through calibrated engine rules",
+        "aliases": [
+          "derived",
+          "assertion",
+          "inferred"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "e0000000-0001-0000-0000-000000000003",
+        "ontology_version": "2.0.1",
+        "namespace": "epistemic",
+        "canonical_key": "epistemic.hypothesis",
+        "display_name": "Candidate Analytical Hypothesis",
+        "description": "Plausible condition with partial evidence requiring further evaluation or validation",
+        "aliases": [
+          "hypothesis",
+          "candidate"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "e0000000-0001-0000-0000-000000000004",
+        "ontology_version": "2.0.1",
+        "namespace": "epistemic",
+        "canonical_key": "epistemic.contradicted",
+        "display_name": "Contradicted Hypothesis or Assertion",
+        "description": "Condition with mutually exclusive opposing evidence",
+        "aliases": [
+          "contradicted",
+          "refuted"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "ev000000-0001-0000-0000-000000000001",
+        "ontology_version": "2.0.1",
+        "namespace": "evidence",
+        "canonical_key": "evidence.static_code",
+        "display_name": "Static Source Code Evidence",
+        "description": "Proof extracted from source spans, AST syntax, or static text matches",
+        "aliases": [
+          "static_code",
+          "ast_match"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "ev000000-0001-0000-0000-000000000002",
+        "ontology_version": "2.0.1",
+        "namespace": "evidence",
+        "canonical_key": "evidence.dynamic_call",
+        "display_name": "Dynamic Execution Trace Evidence",
+        "description": "Proof captured from sandbox runtime events, system calls, or network packets",
+        "aliases": [
+          "dynamic_call",
+          "sandbox_event"
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "concept_id": "ev000000-0001-0000-0000-000000000003",
+        "ontology_version": "2.0.1",
+        "namespace": "evidence",
+        "canonical_key": "evidence.metadata_manifest",
+        "display_name": "Metadata Manifest Evidence",
+        "description": "Proof declared in package.json, requirements.txt, Dockerfile, or MCP manifest",
+        "aliases": [
+          "manifest",
+          "declaration"
+        ],
+        "status": "ACTIVE"
+      }
+    ],
+    "ontology_relationships": [
+      {
+        "relationship_id": "ac8c18da-b7c8-488e-b2e2-493d23ef2295",
+        "ontology_version": "2.0.1",
+        "subject_concept_id": "ver_c6345ec9-c858-4b61-87ee-c9e2f6e85c4e",
+        "predicate": "IMPLEMENTS",
+        "object_concept_id": "c0000000-0001-0000-0000-000000000003",
+        "confidence": 0.95
+      },
+      {
+        "relationship_id": "c053d565-4ff9-4b3f-b7a5-ac1f4f570352",
+        "ontology_version": "2.0.1",
+        "subject_concept_id": "ver_c6345ec9-c858-4b61-87ee-c9e2f6e85c4e",
+        "predicate": "IMPLEMENTS",
+        "object_concept_id": "c0000000-0001-0000-0000-000000000006",
+        "confidence": 0.99
+      },
+      {
+        "relationship_id": "5ce413ab-115d-4e95-9075-93eb87ab9a95",
+        "ontology_version": "2.0.1",
+        "subject_concept_id": "ver_c6345ec9-c858-4b61-87ee-c9e2f6e85c4e",
+        "predicate": "IMPLEMENTS",
+        "object_concept_id": "c0000000-0001-0000-0000-000000000005",
+        "confidence": 0.95
+      },
+      {
+        "relationship_id": "9a17154d-b579-404b-ab3b-9f5f5db07546",
+        "ontology_version": "2.0.1",
+        "subject_concept_id": "r0000000-0001-0000-0000-000000000004",
+        "predicate": "DERIVED_FROM",
+        "object_concept_id": "c0000000-0001-0000-0000-000000000006",
+        "confidence": 0.9
+      }
+    ],
+    "mapping_matches": [
+      {
+        "rule_id": "CANE_MAP_NET_JS_FETCH_AXIOS",
+        "rule_version": "1.0.0",
+        "source_fact_id": "call_eval_agent.ts_5_fetch",
+        "source_ecosystem": "typescript",
+        "file_path": "eval_agent.ts",
+        "matched_construct": "fetch",
+        "target_canonical_key": "capability.network.egress",
+        "target_concept_id": "c0000000-0001-0000-0000-000000000003",
+        "target_entity_type": "CAPABILITY",
+        "confidence": 0.95,
+        "span": {
+          "file_path": "eval_agent.ts",
+          "start_line": 5,
+          "start_col": 21,
+          "end_line": 5,
+          "end_col": 36,
+          "byte_offset_start": 151,
+          "byte_offset_end": 166,
+          "text_slice": "fetch(endpoint)",
+          "symbol_hint": "fetch"
+        },
+        "provenance": {
+          "provenance_id": "17e58184-3f9e-4b92-812a-c1348cdb28a0",
+          "source_spans": [
+            {
+              "file_path": "eval_agent.ts",
+              "start_line": 5,
+              "start_col": 21,
+              "end_line": 5,
+              "end_col": 36,
+              "byte_offset_start": 151,
+              "byte_offset_end": 166,
+              "symbol_hint": "fetch"
+            }
+          ],
+          "input_hashes": [],
+          "rule_id": "CANE_MAP_NET_JS_FETCH_AXIOS",
+          "ruleset_version": "1.0.0",
+          "transformation_type": "SYNTAX_TRANSFORMATION",
+          "confidence": 0.95,
+          "derived_at": "2026-10-08T15:24:31.870Z",
+          "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+        }
+      },
+      {
+        "rule_id": "CANE_MAP_CODE_EVAL_JS",
+        "rule_version": "1.0.0",
+        "source_fact_id": "call_eval_agent.ts_6_eval",
+        "source_ecosystem": "typescript",
+        "file_path": "eval_agent.ts",
+        "matched_construct": "eval",
+        "target_canonical_key": "capability.code.eval",
+        "target_concept_id": "c0000000-0001-0000-0000-000000000006",
+        "target_entity_type": "CAPABILITY",
+        "confidence": 0.99,
+        "span": {
+          "file_path": "eval_agent.ts",
+          "start_line": 6,
+          "start_col": 3,
+          "end_line": 6,
+          "end_col": 13,
+          "byte_offset_start": 170,
+          "byte_offset_end": 180,
+          "text_slice": "eval(code)",
+          "symbol_hint": "eval"
+        },
+        "provenance": {
+          "provenance_id": "c8213a8f-9a78-4f7a-acfa-fe45ae642ada",
+          "source_spans": [
+            {
+              "file_path": "eval_agent.ts",
+              "start_line": 6,
+              "start_col": 3,
+              "end_line": 6,
+              "end_col": 13,
+              "byte_offset_start": 170,
+              "byte_offset_end": 180,
+              "symbol_hint": "eval"
+            }
+          ],
+          "input_hashes": [],
+          "rule_id": "CANE_MAP_CODE_EVAL_JS",
+          "ruleset_version": "1.0.0",
+          "transformation_type": "SYNTAX_TRANSFORMATION",
+          "confidence": 0.99,
+          "derived_at": "2026-10-08T15:24:31.870Z",
+          "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+        }
+      },
+      {
+        "rule_id": "CANE_MAP_FS_WRITE_JS",
+        "rule_version": "1.0.0",
+        "source_fact_id": "call_eval_agent.ts_7_writeFileSync",
+        "source_ecosystem": "typescript",
+        "file_path": "eval_agent.ts",
+        "matched_construct": "fs.writeFileSync",
+        "target_canonical_key": "capability.fs.write",
+        "target_concept_id": "c0000000-0001-0000-0000-000000000005",
+        "target_entity_type": "CAPABILITY",
+        "confidence": 0.95,
+        "span": {
+          "file_path": "eval_agent.ts",
+          "start_line": 7,
+          "start_col": 3,
+          "end_line": 7,
+          "end_col": 45,
+          "byte_offset_start": 184,
+          "byte_offset_end": 226,
+          "text_slice": "fs.writeFileSync('/tmp/audit.log', 'done')",
+          "symbol_hint": "writeFileSync"
+        },
+        "provenance": {
+          "provenance_id": "a3895bd2-601e-446d-b5da-12ca1aca851a",
+          "source_spans": [
+            {
+              "file_path": "eval_agent.ts",
+              "start_line": 7,
+              "start_col": 3,
+              "end_line": 7,
+              "end_col": 45,
+              "byte_offset_start": 184,
+              "byte_offset_end": 226,
+              "symbol_hint": "writeFileSync"
+            }
+          ],
+          "input_hashes": [],
+          "rule_id": "CANE_MAP_FS_WRITE_JS",
+          "ruleset_version": "1.0.0",
+          "transformation_type": "SYNTAX_TRANSFORMATION",
+          "confidence": 0.95,
+          "derived_at": "2026-10-08T15:24:31.870Z",
+          "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+        }
+      }
+    ],
+    "inferences": [
+      {
+        "inference_id": "inf_8c629ddd-85ba-42f6-a3a7-bedaca0d976c",
+        "inference_rule_id": "INF_RULE_DYNAMIC_CODE_INJECTION_V1",
+        "derived_concept_id": "r0000000-0001-0000-0000-000000000004",
+        "canonical_key": "risk.code_injection",
+        "epistemic_state": "INFERRED_STATIC",
+        "confidence": 0.9,
+        "antecedent_concept_ids": [
+          "c0000000-0001-0000-0000-000000000006"
+        ],
+        "antecedent_entity_ids": [
+          "c5ec6a30-a366-4edb-87e9-ebd1a3614813"
+        ],
+        "provenance": {
+          "provenance_id": "e2f77793-3c14-474a-a8a2-51c09904d82a",
+          "inference_rule_id": "INF_RULE_DYNAMIC_CODE_INJECTION_V1",
+          "engine_key": "caim:cane-taxonomic-inference",
+          "engine_version": "1.0.0",
+          "input_entity_ref_ids": [
+            "c5ec6a30-a366-4edb-87e9-ebd1a3614813"
+          ],
+          "derived_concept_id": "r0000000-0001-0000-0000-000000000004",
+          "confidence": 0.9,
+          "inferred_at": "2026-10-08T15:24:31.870Z"
+        },
+        "rationale": "Inferred arbitrary code execution vulnerability from presence of dynamic eval/Function constructs."
+      }
+    ],
+    "provenance_records": [
+      {
+        "provenance_id": "4997f67c-bab2-46f5-ad37-4e29deb51a83",
+        "source_spans": [
+          {
+            "file_path": "eval_agent.ts",
+            "start_line": 4,
+            "start_col": 1,
+            "end_line": 8,
+            "end_col": 2,
+            "byte_offset_start": 59,
+            "byte_offset_end": 229,
+            "symbol_hint": "fetchAndExecute"
+          },
+          {
+            "file_path": "eval_agent.ts",
+            "start_line": 5,
+            "start_col": 9,
+            "end_line": 5,
+            "end_col": 12,
+            "byte_offset_start": 139,
+            "byte_offset_end": 142,
+            "symbol_hint": "res"
+          },
+          {
+            "file_path": "eval_agent.ts",
+            "start_line": 1,
+            "start_col": 1,
+            "end_line": 1,
+            "end_col": 26,
+            "byte_offset_start": 0,
+            "byte_offset_end": 25,
+            "symbol_hint": "fs"
+          },
+          {
+            "file_path": "eval_agent.ts",
+            "start_line": 2,
+            "start_col": 1,
+            "end_line": 2,
+            "end_col": 32,
+            "byte_offset_start": 26,
+            "byte_offset_end": 57,
+            "symbol_hint": "node-fetch"
+          },
+          {
+            "file_path": "eval_agent.ts",
+            "start_line": 4,
+            "start_col": 1,
+            "end_line": 8,
+            "end_col": 2,
+            "byte_offset_start": 59,
+            "byte_offset_end": 229,
+            "symbol_hint": "fetchAndExecute"
+          },
+          {
+            "file_path": "eval_agent.ts",
+            "start_line": 5,
+            "start_col": 21,
+            "end_line": 5,
+            "end_col": 36,
+            "byte_offset_start": 151,
+            "byte_offset_end": 166,
+            "symbol_hint": "fetch"
+          },
+          {
+            "file_path": "eval_agent.ts",
+            "start_line": 6,
+            "start_col": 3,
+            "end_line": 6,
+            "end_col": 13,
+            "byte_offset_start": 170,
+            "byte_offset_end": 180,
+            "symbol_hint": "eval"
+          },
+          {
+            "file_path": "eval_agent.ts",
+            "start_line": 7,
+            "start_col": 3,
+            "end_line": 7,
+            "end_col": 45,
+            "byte_offset_start": 184,
+            "byte_offset_end": 226,
+            "symbol_hint": "writeFileSync"
+          }
+        ],
+        "input_hashes": [
+          "001aff2268f125030011250316baff22001aff2268f125030011250316baff22"
+        ],
+        "rule_id": "CANE_SOURCE_FACTS_NORMALIZATION_V1",
+        "ruleset_version": "1.0.0",
+        "transformation_type": "SYNTAX_TRANSFORMATION",
+        "confidence": 1,
+        "derived_at": "2026-10-08T15:24:31.870Z",
+        "engine_signature": "caim:cane-source-facts-normalizer:v1.0.0"
+      },
+      {
+        "provenance_id": "17e58184-3f9e-4b92-812a-c1348cdb28a0",
+        "source_spans": [
+          {
+            "file_path": "eval_agent.ts",
+            "start_line": 5,
+            "start_col": 21,
+            "end_line": 5,
+            "end_col": 36,
+            "byte_offset_start": 151,
+            "byte_offset_end": 166,
+            "symbol_hint": "fetch"
+          }
+        ],
+        "input_hashes": [],
+        "rule_id": "CANE_MAP_NET_JS_FETCH_AXIOS",
+        "ruleset_version": "1.0.0",
+        "transformation_type": "SYNTAX_TRANSFORMATION",
+        "confidence": 0.95,
+        "derived_at": "2026-10-08T15:24:31.870Z",
+        "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+      },
+      {
+        "provenance_id": "c8213a8f-9a78-4f7a-acfa-fe45ae642ada",
+        "source_spans": [
+          {
+            "file_path": "eval_agent.ts",
+            "start_line": 6,
+            "start_col": 3,
+            "end_line": 6,
+            "end_col": 13,
+            "byte_offset_start": 170,
+            "byte_offset_end": 180,
+            "symbol_hint": "eval"
+          }
+        ],
+        "input_hashes": [],
+        "rule_id": "CANE_MAP_CODE_EVAL_JS",
+        "ruleset_version": "1.0.0",
+        "transformation_type": "SYNTAX_TRANSFORMATION",
+        "confidence": 0.99,
+        "derived_at": "2026-10-08T15:24:31.870Z",
+        "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+      },
+      {
+        "provenance_id": "a3895bd2-601e-446d-b5da-12ca1aca851a",
+        "source_spans": [
+          {
+            "file_path": "eval_agent.ts",
+            "start_line": 7,
+            "start_col": 3,
+            "end_line": 7,
+            "end_col": 45,
+            "byte_offset_start": 184,
+            "byte_offset_end": 226,
+            "symbol_hint": "writeFileSync"
+          }
+        ],
+        "input_hashes": [],
+        "rule_id": "CANE_MAP_FS_WRITE_JS",
+        "ruleset_version": "1.0.0",
+        "transformation_type": "SYNTAX_TRANSFORMATION",
+        "confidence": 0.95,
+        "derived_at": "2026-10-08T15:24:31.870Z",
+        "engine_signature": "caim:cane-mapping-registry:v1.0.0"
+      }
+    ],
+    "unmapped_extensions": {
+      "x_diagnostics_session": "console-live-eval",
+      "x_cane_engine_profile": "high-assurance"
+    },
+    "diagnostics": {
+      "total_source_facts": 8,
+      "total_mappings_applied": 3,
+      "total_capabilities": 3,
+      "total_tools": 0,
+      "total_dependencies": 2,
+      "total_protocols": 0,
+      "total_inferences": 1,
+      "average_mapping_confidence": 0.9633,
+      "security_guard_status": "PASSED",
+      "processing_time_ms": 1
+    }
+  }
+}

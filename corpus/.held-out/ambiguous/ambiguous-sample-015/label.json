@@ -1,0 +1,12 @@
+{
+  "sampleId": "ambiguous-sample-015",
+  "family": "ambiguous",
+  "subfamily": null,
+  "name": "Diagnostic Logging Tool #15",
+  "description": "Ambiguous administrative tool performing local temp file writing for diagnostics. Requires policy review.",
+  "isMalicious": false,
+  "expectedVerdict": "FLAGGED_FOR_REVIEW",
+  "expectedRiskBand": "MEDIUM",
+  "isHeldOut": true,
+  "labeledAt": "2026-10-06T00:00:00.000Z"
+}

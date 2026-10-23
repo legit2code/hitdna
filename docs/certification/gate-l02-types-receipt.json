@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "2.0.0",
+  "gateId": "GATE_L02_TYPES",
+  "receiptId": "rcpt-gate_l02_types-1792643267641-3c024d99",
+  "issuedAt": "2026-10-22T04:27:47.641Z",
+  "environment": "development",
+  "commitSha": "0000000000000000000000000000000000000000",
+  "runnerIdentity": {
+    "runnerId": "local-runner",
+    "runnerType": "LOCAL",
+    "attestedBy": "caim-runner-attestation-v2"
+  },
+  "providerType": "REAL",
+  "executionTelemetry": {
+    "command": "pnpm run typecheck",
+    "exitCode": 0,
+    "startedAt": "2026-10-22T04:27:33.827Z",
+    "completedAt": "2026-10-22T04:27:47.641Z",
+    "durationMs": 13814,
+    "stdoutDigest": "fc8c79ce91945d5b387fab671ee7386269d40b0cf9667cf1cf994847ed6b37e8",
+    "logPointer": "/app/applet/docs/certification/logs/l02-types.log",
+    "testedRevision": "0000000000000000000000000000000000000000"
+  },
+  "testCounts": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0
+  },
+  "status": "EXECUTED — PASS",
+  "blockers": [],
+  "tamperProofHmac": "9640c4c75cf35c638519956d9cc7df8ee7e9c776220528e41b8bfe07e4898978"
+}

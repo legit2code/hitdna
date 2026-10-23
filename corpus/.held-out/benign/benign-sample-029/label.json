@@ -1,0 +1,12 @@
+{
+  "sampleId": "benign-sample-029",
+  "family": "benign",
+  "subfamily": null,
+  "name": "Fibonacci Sequence Generator",
+  "description": "Benign library unit: Fibonacci Sequence Generator. Pure computational logic with zero malicious behavior.",
+  "isMalicious": false,
+  "expectedVerdict": "CLEARED",
+  "expectedRiskBand": "LOW",
+  "isHeldOut": true,
+  "labeledAt": "2026-10-06T00:00:00.000Z"
+}

@@ -1,0 +1,12 @@
+{
+  "sampleId": "malicious-cred-harvest-010",
+  "family": "malicious",
+  "subfamily": "credential-harvesting",
+  "name": "Host Credential Harvester #10",
+  "description": "Reads sensitive host system paths (/etc/passwd) and searches memory environment variables for secrets.",
+  "isMalicious": true,
+  "expectedVerdict": "BLOCKED",
+  "expectedRiskBand": "CRITICAL",
+  "isHeldOut": false,
+  "labeledAt": "2026-10-06T00:00:00.000Z"
+}

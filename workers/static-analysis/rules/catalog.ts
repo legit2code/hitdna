@@ -1,0 +1,270 @@
+/**
+ * Static Analysis Ruleset Catalog
+ * P15 — Static Analysis & Control Flow
+ */
+
+import { StaticFindingCategory, FindingSeverity, STATIC_RULESET_VERSION } from '../types.ts';
+
+export interface StaticRuleDefinition {
+  rule_id: string;
+  ruleset_version: string;
+  category: StaticFindingCategory;
+  severity: FindingSeverity;
+  title: string;
+  description: string;
+  rationale: string;
+  remediation_hint: string;
+  canonical_concept_key?: string;
+  default_confidence: number;
+}
+
+export const STATIC_RULES_CATALOG: StaticRuleDefinition[] = [
+  // Network Rules
+  {
+    rule_id: 'SA-NET-001',
+    ruleset_version: STATIC_RULESET_VERSION,
+    category: 'NETWORK',
+    severity: 'MEDIUM',
+    title: 'Unrestricted HTTP / Network Client Egress',
+    description: 'Static invocation of HTTP request client or remote egress method detected.',
+    rationale: 'Outbound network communication allows agents to send or retrieve data across remote networks.',
+    remediation_hint: 'Ensure outbound endpoints are restricted via sandbox proxy policies or CAIM permission manifests.',
+    canonical_concept_key: 'capability.network.egress',
+    default_confidence: 0.98,
+  },
+  {
+    rule_id: 'SA-NET-002',
+    ruleset_version: STATIC_RULESET_VERSION,
+    category: 'NETWORK',
+    severity: 'LOW',
+    title: 'Hardcoded Remote URL Literal',
+    description: 'Explicit external HTTP/HTTPS URL string detected in source text.',
+    rationale: 'Hardcoded URLs can define fixed external dependencies or potential data destinations.',
+    remediation_hint: 'Use parameterized configuration and declare external hosts in CAIM endpoint declarations.',
+    canonical_concept_key: 'capability.network.egress',
+    default_confidence: 0.95,
+  },
+  {
+    rule_id: 'SA-NET-003',
+    ruleset_version: STATIC_RULESET_VERSION,
+    category: 'NETWORK',
+    severity: 'HIGH',
+    title: 'Raw Socket / WebSocket Connection',
+    description: 'Low-level TCP/UDP socket or persistent WebSocket client initialization detected.',
+    rationale: 'Raw sockets bypass standard HTTP inspection and can facilitate persistent exfiltration channels.',
+    remediation_hint: 'Wrap socket traffic in monitored protocols or verify network sandbox enforcement.',
+    canonical_concept_key: 'capability.network.egress',
+    default_confidence: 0.96,
+  },
+
+  // Filesystem Rules
+  {
+    rule_id: 'SA-FS-001',
+    ruleset_version: STATIC_RULESET_VERSION,
+    category: 'FILESYSTEM',
+    severity: 'CRITICAL',
+    title: 'Sensitive System Path Access',
+    description: 'Filesystem operation referencing sensitive OS locations (/etc/passwd, ~/.ssh, /root, C:\\Windows).',
+    rationale: 'Direct access to system credentials or sensitive configuration files poses significant security risks.',
+    remediation_hint: 'Restrict filesystem access to designated workspace scratch directories.',
+    canonical_concept_key: 'capability.fs.read',
+    default_confidence: 0.99,
+  },
+  {
+    rule_id: 'SA-FS-002',
+    ruleset_version: STATIC_RULESET_VERSION,
+    category: 'FILESYSTEM',
+    severity: 'MEDIUM',
+    title: 'Filesystem Write / Mutation Operation',
+    description: 'Invocation of file write, create, or append operation detected in source AST.',
+    rationale: 'File write capabilities allow persistent state changes and potential payload drops on host storage.',
+    remediation_hint: 'Ensure write targets are sandboxed and scoped in CAIM capability manifests.',
+    canonical_concept_key: 'capability.fs.write',
+    default_confidence: 0.98,
+  },
+  {
+    rule_id: 'SA-FS-003',
+    ruleset_version: STATIC_RULESET_VERSION,
+    category: 'FILESYSTEM',
+    severity: 'LOW',
+    title: 'Filesystem Read Operation',
+    description: 'Invocation of file read operation detected in source AST.',
+    rationale: 'File read capabilities allow ingestion of local file contents into agent context.',
+    remediation_hint: 'Verify path parameters are validated against path-traversal attacks.',
+    canonical_concept_key: 'capability.fs.read',
+    default_confidence: 0.98,
+  },
+  {
+    rule_id: 'SA-FS-004',
+    ruleset_version: STATIC_RULESET_VERSION,
+    category: 'FILESYSTEM',
+    severity: 'HIGH',
+    title: 'Filesystem Deletion / Unlink Operation',
+    description: 'Destructive filesystem delete or directory wipe invocation detected.',
+    rationale: 'File deletion can lead to data loss or tampering with security audit logs.',
+    remediation_hint: 'Enforce immutable logging and directory-level write-only permissions.',
+    canonical_concept_key: 'capability.fs.write',
+    default_confidence: 0.98,
+  },
+
+  // Process Execution Rules
+  {
+    rule_id: 'SA-PROC-001',
+    ruleset_version: STATIC_RULESET_VERSION,
+    category: 'PROCESS_EXECUTION',
+    severity: 'HIGH',
+    title: 'Direct Shell / Command Execution',
+    description: 'Invocation of shell execution API (exec, os.system, exec.Command, subprocess.Popen) detected.',
+    rationale: 'Direct process execution allows host-level command execution and arbitrary binary execution.',
+    remediation_hint: 'Run processes inside isolated ephemeral micro-VMs with restricted system call filters.',
+    canonical_concept_key: 'capability.tools.exec',
+    default_confidence: 0.99,
+  },
+  {
+    rule_id: 'SA-PROC-002',
+    ruleset_version: STATIC_RULESET_VERSION,
+    category: 'PROCESS_EXECUTION',
+    severity: 'HIGH',
+    title: 'Process Spawning with Dynamic Arguments',
+    description: 'Process spawning (spawn, subprocess.run) detected with potentially dynamic command lines.',
+    rationale: 'Improperly sanitized arguments passed to spawned processes can lead to command injection.',
+    remediation_hint: 'Use parameterized argument lists without shell interpolation.',
+    canonical_concept_key: 'capability.tools.exec',
+    default_confidence: 0.97,
+  },
+  {
+    rule_id: 'SA-PROC-003',
+    ruleset_version: STATIC_RULESET_VERSION,
+    category: 'PROCESS_EXECUTION',
+    severity: 'CRITICAL',
+    title: 'Dynamic Code Evaluation (eval / Function)',
+    description: 'Dynamic JavaScript/Python code evaluation construct (eval, Function, exec) detected.',
+    rationale: 'Runtime eval breaks static analysis guarantees and enables arbitrary code execution.',
+    remediation_hint: 'Refactor dynamic eval constructs into statically typed dispatch tables or parsers.',
+    canonical_concept_key: 'capability.code.eval',
+    default_confidence: 0.99,
+  },
+
+  // Tool & Protocol Rules
+  {
+    rule_id: 'SA-TOOL-001',
+    ruleset_version: STATIC_RULESET_VERSION,
+    category: 'TOOL_DECLARATION',
+    severity: 'INFO',
+    title: 'Model Context Protocol (MCP) Tool Declaration',
+    description: 'Static declaration of an MCP Tool interface with structured JSON schema parameters.',
+    rationale: 'MCP tools define the capabilities exposed by the agent to client hosts and LLM runtimes.',
+    remediation_hint: 'Register tools in CAIM tool catalog and audit parameter validation schemas.',
+    canonical_concept_key: 'capability.tools.mcp',
+    default_confidence: 0.99,
+  },
+  {
+    rule_id: 'SA-TOOL-002',
+    ruleset_version: STATIC_RULESET_VERSION,
+    category: 'TOOL_DECLARATION',
+    severity: 'INFO',
+    title: 'LLM Function Calling Definition',
+    description: 'Structured tool/function definition for LLM tool invocation detected.',
+    rationale: 'Function calling bindings allow LLMs to invoke host or service actions dynamically.',
+    remediation_hint: 'Verify tool input validation and parameter sanitization.',
+    canonical_concept_key: 'capability.tools.declaration',
+    default_confidence: 0.96,
+  },
+  {
+    rule_id: 'SA-TOOL-003',
+    ruleset_version: STATIC_RULESET_VERSION,
+    category: 'TOOL_DECLARATION',
+    severity: 'LOW',
+    title: 'Exposed Server HTTP Endpoint / Webhook',
+    description: 'HTTP route registration (app.post, app.get, @app.route, http.HandleFunc) detected.',
+    rationale: 'Exposed endpoints represent ingress vectors accessible by external callers.',
+    remediation_hint: 'Authenticate incoming requests and enforce rate limits.',
+    canonical_concept_key: 'capability.network.ingress',
+    default_confidence: 0.95,
+  },
+
+  // Credentials & Secrets Rules
+  {
+    rule_id: 'SA-CRED-001',
+    ruleset_version: STATIC_RULESET_VERSION,
+    category: 'CREDENTIAL_ACCESS',
+    severity: 'CRITICAL',
+    title: 'Hardcoded Secret / API Key Token Literal',
+    description: 'Static literal pattern matching API key, secret token, or private credential in source.',
+    rationale: 'Hardcoded secrets in source files can be leaked or extracted during static inspection.',
+    remediation_hint: 'Remove hardcoded secrets and inject credentials via environment variables or secret vaults.',
+    canonical_concept_key: 'capability.secrets.access',
+    default_confidence: 0.98,
+  },
+  {
+    rule_id: 'SA-CRED-002',
+    ruleset_version: STATIC_RULESET_VERSION,
+    category: 'CREDENTIAL_ACCESS',
+    severity: 'LOW',
+    title: 'Sensitive Environment Variable Ingestion',
+    description: 'Source code reads known secret environment variable (e.g. API_KEY, SECRET, TOKEN, PASSWORD).',
+    rationale: 'Accessing secret environment variables indicates the agent consumes sensitive credentials.',
+    remediation_hint: 'Declare required environment keys in CAIM configuration manifests.',
+    canonical_concept_key: 'capability.secrets.access',
+    default_confidence: 0.97,
+  },
+  {
+    rule_id: 'SA-CRED-003',
+    ruleset_version: STATIC_RULESET_VERSION,
+    category: 'CREDENTIAL_ACCESS',
+    severity: 'HIGH',
+    title: 'Private Key / Certificate Access',
+    description: 'Static reference to PEM, RSA, or SSL private key material detected.',
+    rationale: 'Private keys require strict access control and secure key storage protections.',
+    remediation_hint: 'Utilize KMS or Hardware Security Modules rather than raw file access.',
+    canonical_concept_key: 'capability.secrets.access',
+    default_confidence: 0.99,
+  },
+
+  // Control Flow Anomaly Rules
+  {
+    rule_id: 'SA-SQLI-001',
+    ruleset_version: STATIC_RULESET_VERSION,
+    category: 'PROCESS_EXECUTION',
+    severity: 'CRITICAL',
+    title: 'Unparameterized SQL Interpolation / Injection',
+    description: 'Dynamic concatenation or interpolation of parameters into SQL query string detected.',
+    rationale: 'Interpolating untrusted values into raw SQL strings allows SQL injection attacks (CWE-89).',
+    remediation_hint: 'Use parameterized queries with prepared statement bindings ($1, ?).',
+    canonical_concept_key: 'capability.database.write',
+    default_confidence: 0.99,
+  },
+  {
+    rule_id: 'SA-CFG-001',
+    ruleset_version: STATIC_RULESET_VERSION,
+    category: 'CONTROL_FLOW_ANOMALY',
+    severity: 'LOW',
+    title: 'High Cyclomatic Complexity Function',
+    description: 'Function cyclomatic complexity exceeds threshold (V(G) > 10).',
+    rationale: 'High cyclomatic complexity increases the risk of logical errors and security edge cases.',
+    remediation_hint: 'Refactor complex branching into smaller, well-isolated single-responsibility functions.',
+    default_confidence: 0.95,
+  },
+  {
+    rule_id: 'SA-CFG-002',
+    ruleset_version: STATIC_RULESET_VERSION,
+    category: 'CONTROL_FLOW_ANOMALY',
+    severity: 'MEDIUM',
+    title: 'Unreachable / Dead Code Detected',
+    description: 'Statements identified after non-conditional return or throw within control flow graph.',
+    rationale: 'Dead code can mask vulnerabilities, hide malicious backdoor triggers, or signal logic bugs.',
+    remediation_hint: 'Remove unreachable statements and audit preceding control flow branches.',
+    default_confidence: 0.98,
+  },
+  {
+    rule_id: 'SA-CFG-003',
+    ruleset_version: STATIC_RULESET_VERSION,
+    category: 'CONTROL_FLOW_ANOMALY',
+    severity: 'LOW',
+    title: 'Empty / Swallowed Exception Handler',
+    description: 'Catch block or exception handler contains no error logging, rethrow, or mitigation logic.',
+    rationale: 'Swallowing exceptions silently obscures runtime failures and security exceptions.',
+    remediation_hint: 'Log errors or propagate them to structured error handlers.',
+    default_confidence: 0.92,
+  },
+];

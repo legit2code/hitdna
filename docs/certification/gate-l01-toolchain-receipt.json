@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "2.0.0",
+  "gateId": "GATE_L01_TOOLCHAIN",
+  "receiptId": "rcpt-gate_l01_toolchain-1792643253818-6da9f95b",
+  "issuedAt": "2026-10-22T04:27:33.818Z",
+  "environment": "development",
+  "commitSha": "0000000000000000000000000000000000000000",
+  "runnerIdentity": {
+    "runnerId": "local-runner",
+    "runnerType": "LOCAL",
+    "attestedBy": "caim-runner-attestation-v2"
+  },
+  "providerType": "REAL",
+  "executionTelemetry": {
+    "command": "pnpm install --frozen-lockfile",
+    "exitCode": 0,
+    "startedAt": "2026-10-22T04:27:32.050Z",
+    "completedAt": "2026-10-22T04:27:33.818Z",
+    "durationMs": 1768,
+    "stdoutDigest": "b12976bbeb30de8717a5f25c15680f6cc8cb9b2d88389ed291a5f42cce3d1cc9",
+    "logPointer": "/app/applet/docs/certification/logs/l01-toolchain.log",
+    "testedRevision": "0000000000000000000000000000000000000000"
+  },
+  "testCounts": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0
+  },
+  "status": "EXECUTED — PASS",
+  "blockers": [],
+  "tamperProofHmac": "a8bc86a2a7e3297631a3273a5bc9af6b6be7efc554f2bd965f9e567a049b20d7"
+}

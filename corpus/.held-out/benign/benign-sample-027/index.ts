@@ -1,0 +1,1 @@
+export function convertCurrency(amt: number, fx: number) { return +(amt * fx).toFixed(2); }
