@@ -481,8 +481,10 @@ export async function certifyRealPostgres(
       logLines.push(`CATALOG: ${rlsEnabledTables.length} tables checked, ${unprotectedTables.length} unprotected.`);
 
       // 6. Active Two-Session Tenant Isolation Attacks (10 Mandatory Probes)
-      const clientA = await pool.connect();
-      const clientB = await pool.connect();
+      const appDatabaseUrl = process.env.APP_DATABASE_URL;
+      const attackPool = appDatabaseUrl ? new Pool({ connectionString: appDatabaseUrl, max: 4 }) : pool;
+      const clientA = await attackPool.connect();
+      const clientB = await attackPool.connect();
       const measuredAttacks: MeasuredTenantAttackResult[] = [];
 
       const tenantA = '11111111-1111-1111-1111-111111111111';
@@ -517,14 +519,18 @@ export async function certifyRealPostgres(
           throw new Error('SETUP_PRECONDITION_FAILED: Target victim records missing before attack execution.');
         }
 
-        // Configure Session A (Tenant A)
-        await clientA.query(`SET ROLE ${targetRole};`).catch(() => {});
+        // Configure Session A (Tenant A) - must run as nonprivileged role
+        if (!appDatabaseUrl) {
+          await clientA.query(`SET ROLE ${targetRole};`);
+        }
         await clientA.query('BEGIN');
         await clientA.query(`SELECT set_config('app.current_tenant_id', '${tenantA}', true);`);
         await clientA.query(`SELECT set_config('app.tenant_id', '${tenantA}', true);`);
 
-        // Configure Session B (Tenant B)
-        await clientB.query(`SET ROLE ${targetRole};`).catch(() => {});
+        // Configure Session B (Tenant B) - must run as nonprivileged role
+        if (!appDatabaseUrl) {
+          await clientB.query(`SET ROLE ${targetRole};`);
+        }
         await clientB.query('BEGIN');
         await clientB.query(`SELECT set_config('app.current_tenant_id', '${tenantB}', true);`);
         await clientB.query(`SELECT set_config('app.tenant_id', '${tenantB}', true);`);
@@ -800,6 +806,9 @@ export async function certifyRealPostgres(
       } finally {
         clientA.release();
         clientB.release();
+        if (attackPool !== pool) {
+          await attackPool.end().catch(() => {});
+        }
       }
 
       const allAttacksPassed = measuredAttacks.every(a => a.passed);

@@ -434,8 +434,8 @@ describe('CAIM Discovery Graph Step 2 of 6: Fetch Gateway & Untrusted-Content Sa
     it('strips credentials and sets safe git flags in SafeRepositoryAcquisition', () => {
       const testEnv = {
         PATH: '/usr/bin',
-        GITHUB_TOKEN: 'ghp_secret123',
-        AWS_SECRET_ACCESS_KEY: 'aws_secret',
+        GITHUB_TOKEN: 'test_token_val_123',
+        AWS_SECRET_ACCESS_KEY: 'test_aws_val_456',
         CUSTOM_VAR: 'clean_val',
       };
 

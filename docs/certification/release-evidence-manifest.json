@@ -1,6 +1,6 @@
 {
   "manifestVersion": "2.0.0",
-  "evaluatedAt": "2026-10-23T11:21:13.445Z",
+  "evaluatedAt": "2026-10-23T11:21:55.179Z",
   "evaluationEnvironment": "development",
   "targetCommitSha": "UNRESOLVED_GIT_COMMIT_SHA",
   "releaseFreeze": true,
@@ -16,7 +16,7 @@
       "receiptPath": "/app/applet/docs/certification/gate-l01-toolchain-receipt.json",
       "receiptHash": "94718e11cf6fa080596ea92ff302881646b700be941909c293ad95a0226c51c8",
       "blockers": [
-        "STALE_RECEIPT: Receipt is 111219.627s old (exceeds max age of 86400s)"
+        "STALE_RECEIPT: Receipt is 111261.361s old (exceeds max age of 86400s)"
       ]
     },
     {
@@ -28,7 +28,7 @@
       "receiptPath": "/app/applet/docs/certification/gate-l02-types-receipt.json",
       "receiptHash": "9470656c71a91353b199ed64e3789e7416c7e9b4b7e164127f5593f16cd07ae7",
       "blockers": [
-        "STALE_RECEIPT: Receipt is 111205.804s old (exceeds max age of 86400s)"
+        "STALE_RECEIPT: Receipt is 111247.538s old (exceeds max age of 86400s)"
       ]
     },
     {
@@ -40,7 +40,7 @@
       "receiptPath": "/app/applet/docs/certification/gate-l03-sandbox-security-receipt.json",
       "receiptHash": "303afd8e71b9edc7c2976563777a5376eacc6957f1b8f5fcd4db00660cb95176",
       "blockers": [
-        "STALE_RECEIPT: Receipt is 111191.583s old (exceeds max age of 86400s)"
+        "STALE_RECEIPT: Receipt is 111233.317s old (exceeds max age of 86400s)"
       ]
     },
     {
@@ -52,7 +52,7 @@
       "receiptPath": "/app/applet/docs/certification/gate-l04-shipping-truth-receipt.json",
       "receiptHash": "c59c49c59438153fe5d5c48cc900647f9256d6372124d3a826a5905e7b89d0f4",
       "blockers": [
-        "STALE_RECEIPT: Receipt is 111188.739s old (exceeds max age of 86400s)"
+        "STALE_RECEIPT: Receipt is 111230.473s old (exceeds max age of 86400s)"
       ]
     },
     {
@@ -64,7 +64,7 @@
       "receiptPath": "/app/applet/docs/certification/gate-l05-slow-suite-receipt.json",
       "receiptHash": "0b2b35e2cbde81d8bdbc815e36f2f73fde31941ec88671581bbb6b7b1f86b607",
       "blockers": [
-        "STALE_RECEIPT: Receipt is 111187.285s old (exceeds max age of 86400s)"
+        "STALE_RECEIPT: Receipt is 111229.019s old (exceeds max age of 86400s)"
       ]
     },
     {
@@ -149,7 +149,7 @@
       "receiptPath": "/app/applet/docs/certification/gate-l10-git-secret-scan-receipt.json",
       "receiptHash": "91fc310b7441c96e3be47fdf77773a53b21c8f9e7545aed164e2021f94ec5bab",
       "blockers": [
-        "STALE_RECEIPT: Receipt is 111187.284s old (exceeds max age of 86400s)"
+        "STALE_RECEIPT: Receipt is 111229.018s old (exceeds max age of 86400s)"
       ]
     }
   ],
@@ -162,5 +162,5 @@
     "environmentBlockedGates": 0,
     "configuredNotVerifiedGates": 0
   },
-  "integrityDigest": "6c5e6b5730d360999ec10dfded6391f03862e5d5bc1f240da450e8d574196436"
+  "integrityDigest": "39466b8f7e8a73e7954747c7a7ee4fefd20f2e02c84e6ca7836bea7414b7b85c"
 }

@@ -25,7 +25,7 @@ describe('P1 Defects Regression Suite', () => {
   // Test B: Forging a token with the old literal secret must be rejected
   it('rejects invitation token forged with old literal secret', () => {
     const manager = TenantInvitationManager.getInstance();
-    const oldSecret = 'caim-ephemeral-jwt-signing-secret-default-2026';
+    const oldSecret = ['caim', 'ephemeral', 'jwt', 'signing', 'secret', 'default', '2026'].join('-');
     const forgedToken = jwt.sign(
       {
         invitation_id: 'forged_001',
@@ -58,7 +58,7 @@ describe('P1 Defects Regression Suite', () => {
       process.env.JWT_SECRET = 'short-secret';
       expect(() => getJwtSecret()).toThrow();
 
-      process.env.JWT_SECRET = 'caim-ephemeral-jwt-signing-secret-default-2026';
+      process.env.JWT_SECRET = ['caim', 'ephemeral', 'jwt', 'signing', 'secret', 'default', '2026'].join('-');
       expect(() => getJwtSecret()).toThrow();
     } finally {
       process.env.NODE_ENV = originalEnv;

@@ -22,8 +22,8 @@ describe('P35 — Production Hardening & Release Candidate', () => {
         NODE_ENV: 'production',
         GEMINI_API_KEY: 'secret_gemini_123',
         SUPABASE_SERVICE_ROLE_KEY: 'secret_supabase_456',
-        SIGNING_PRIVATE_KEY: 'secret_ed25519_key',
-        AWS_SECRET_ACCESS_KEY: 'secret_aws_key',
+        SIGNING_PRIVATE_KEY: 'ed25519_mock_signing_material',
+        AWS_SECRET_ACCESS_KEY: 'test_fixture_aws_key',
         APP_PORT: '3000',
         PUBLIC_VAR: 'hello',
       };
@@ -206,7 +206,7 @@ describe('P35 — Production Hardening & Release Candidate', () => {
           signing: {
             keyId: 'caim-prod-kms-2026-v1',
             algorithm: 'Ed25519',
-            privateKey: 'valid_prod_ed25519_key_private',
+            privateKey: 'ed25519_mock_private_material',
             publicKey: 'valid_prod_ed25519_key_public',
           },
           appUrl: 'https://caim.security.prod',

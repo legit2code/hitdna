@@ -1,6 +1,6 @@
 import { PrincipalContext, BusinessRole, ServiceIdentity, UnauthorizedAccessError, ScopeBoundaryViolationError } from './types.ts';
 import { resolvePrincipalClaims, createAnonymousPrincipal } from './claims.ts';
-import { verifyAccessToken, getJwtSecret } from './jwt.ts';
+import { verifyAccessToken, getJwtSecret, safeCompareSecrets } from './jwt.ts';
 import { serviceAccountRegistry, ServiceAccountRegistry } from './service-account.ts';
 import type { DatabaseClient } from '@caim/db';
 
@@ -56,8 +56,45 @@ export class SupabaseServerAuth {
     const authHeader = headers['authorization'] || headers['Authorization'];
     const tenantHeader = headers['x-tenant-id'] || headers['X-Tenant-Id'];
     const bypassHeader = headers['x-bypass-auth'] || headers['X-Bypass-Auth'];
+    const serviceIdentityHeader = headers['x-service-identity'] || headers['X-Service-Identity'];
+    const serviceSecretHeader = headers['x-service-secret'] || headers['X-Service-Secret'];
 
-    // 1. Bearer credential extraction (Service Token or Asymmetric JWT)
+    // 1. Direct Service Secret Header authentication
+    if (serviceSecretHeader && typeof serviceSecretHeader === 'string' && this.serviceSecret) {
+      if (safeCompareSecrets(serviceSecretHeader, this.serviceSecret)) {
+        const serviceName = (typeof serviceIdentityHeader === 'string' && serviceIdentityHeader.trim())
+          ? serviceIdentityHeader.trim()
+          : 'service-discovery';
+        const requestedTenantId = typeof tenantHeader === 'string' ? tenantHeader : null;
+        const allowedTenants = [
+          ...(this.serviceTenantScopes[serviceName] || []),
+          ...(this.serviceTenantScopes['*'] || []),
+        ];
+        const validatedTenantId = this.registry.validateTenantScope(
+          {
+            id: '00000000-0000-0000-0003-discovery001',
+            name: serviceName,
+            allowed_tenants: allowedTenants,
+            allowed_scopes: ['discovery', 'reporting'],
+            status: 'ACTIVE',
+            capabilities: ['worker.manage'],
+            created_at: new Date().toISOString(),
+          },
+          requestedTenantId
+        );
+
+        return resolvePrincipalClaims({
+          principal_id: `service:${serviceName}`,
+          is_service: true,
+          service_name: serviceName as ServiceIdentity,
+          tenant_id: validatedTenantId,
+          capabilities: ['worker.manage'],
+          authentication_method: 'service_token',
+        });
+      }
+    }
+
+    // 2. Bearer credential extraction (Service Token or Asymmetric JWT)
     if (authHeader && typeof authHeader === 'string' && authHeader.startsWith('Bearer ')) {
       const token = authHeader.substring(7).trim();
 
@@ -70,7 +107,15 @@ export class SupabaseServerAuth {
 
       if (serviceAccount) {
         const requestedTenantId = typeof tenantHeader === 'string' ? tenantHeader : null;
-        const validatedTenantId = this.registry.validateTenantScope(serviceAccount, requestedTenantId);
+        const allowedTenants = [
+          ...serviceAccount.allowed_tenants,
+          ...(this.serviceTenantScopes[serviceAccount.name] || []),
+          ...(this.serviceTenantScopes['*'] || []),
+        ];
+        const validatedTenantId = this.registry.validateTenantScope(
+          { ...serviceAccount, allowed_tenants: allowedTenants },
+          requestedTenantId
+        );
 
         return resolvePrincipalClaims({
           principal_id: `service:${serviceAccount.name}`,
@@ -84,7 +129,7 @@ export class SupabaseServerAuth {
 
       // Check standard Asymmetric JWT
       try {
-        const decoded = verifyAccessToken(token);
+        const decoded = verifyAccessToken(token, this.jwtSecret);
 
         return resolvePrincipalClaims({
           principal_id: decoded.sub,

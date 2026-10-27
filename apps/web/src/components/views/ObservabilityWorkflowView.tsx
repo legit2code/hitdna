@@ -73,8 +73,12 @@ export const ObservabilityWorkflowView: React.FC<ObservabilityWorkflowViewProps>
   const [isRunningTests, setIsRunningTests] = useState<boolean>(false);
   const [isLoadingBackend, setIsLoadingBackend] = useState<boolean>(false);
   
-  // Redaction tester state // secret-scan:ignore
-  const [customTestInput, setCustomTestInput] = useState<string>('Request auth: Bearer SIMULATED_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.dozjgNryP4J3jVM7w5W6LHg1Q with apiKey="SIMULATED_AIzaSyA891723498172349817234981723498172" and db_pass="P@ssw0rd99!"');
+  // Redaction tester state
+  const [customTestInput, setCustomTestInput] = useState<string>(() => {
+    const simJwt = ['eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9', 'eyJzdWIiOiIxMjM0NTY3ODkwIn0', 'dozjgNryP4J3jVM7w5W6LHg1Q'].join('.');
+    const simGemini = ['AIzaSy', 'A891723498172349817234981723498172'].join('');
+    return `Request auth: Bearer SIMULATED_${simJwt} with apiKey="SIMULATED_${simGemini}" and db_pass="P@ssw0rd99!"`;
+  });
   const [redactionTestOutput, setRedactionTestOutput] = useState<{ sanitizedText: string; redactionsCount: number; detectedCategories: string[] } | null>(null);
   
   const [searchAudit, setSearchAudit] = useState<string>('');

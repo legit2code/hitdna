@@ -1,8 +1,8 @@
 {
   "schemaVersion": "2.0.0",
   "gateId": "GATE_L09_REMOTE_SHIPPING",
-  "receiptId": "rcpt-gate_l09_remote_shipping-1792754473437-2eb23af7",
-  "issuedAt": "2026-10-23T11:21:13.437Z",
+  "receiptId": "rcpt-gate_l09_remote_shipping-1792754515167-cabd65e1",
+  "issuedAt": "2026-10-23T11:21:55.167Z",
   "environment": "development",
   "commitSha": "0000000000000000000000000000000000000000",
   "runnerIdentity": {
@@ -14,10 +14,10 @@
   "executionTelemetry": {
     "command": "pnpm exec tsx scripts/certify-real-shipping.ts",
     "exitCode": 2,
-    "startedAt": "2026-10-23T11:21:13.436Z",
-    "completedAt": "2026-10-23T11:21:13.437Z",
+    "startedAt": "2026-10-23T11:21:55.166Z",
+    "completedAt": "2026-10-23T11:21:55.167Z",
     "durationMs": 1,
-    "stdoutDigest": "2f3094a327fb63ee32a765f9fc5c49ab730dc63f37d1b5950ecb14b75dc5bd57",
+    "stdoutDigest": "d10f868b0c4e8deaa92d2b8929577a01a00b89f35a022e5a3bc379661a90e5f5",
     "logPointer": "/app/applet/docs/certification/logs/l09-remote-shipping.log",
     "testedRevision": "0000000000000000000000000000000000000000"
   },
@@ -41,5 +41,5 @@
     "Hardware/Cloud remote shipping delivery requires authenticated cloud object storage or container registry.",
     "Local staging or dev simulation cannot certify production artifact shipping."
   ],
-  "tamperProofHmac": "96bfc4b0dd3ffb13eb88579d83617daa772e96e885e4daa52071d9b5b8c19063"
+  "tamperProofHmac": "6119dfc8b7f5bb479e855eda65cdeb133367dfd24a160e06c943271de7c680bd"
 }

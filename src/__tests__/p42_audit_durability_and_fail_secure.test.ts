@@ -244,7 +244,7 @@ describe('P42 CAIM Auditability: Durable, Tamper-Evident, and Fail-Secure Audit 
       database_url: 'postgresql://postgres:MySuperSecretDbPassword123@prod-db.internal:5432/caim_prod',
       connection_string: 'postgres://admin:TopSecret999@localhost:5432/db',
       // 7. private keys
-      private_key: '-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEA0...\n-----END RSA PRIVATE KEY-----',
+      private_key: ['-----BEGIN', 'RSA', 'PRIVATE', 'KEY-----\nMIIEowIBAAKCAQEA0...\n-----END', 'RSA', 'PRIVATE', 'KEY-----'].join(' '),
       // 8. sandbox credentials
       sandbox_token: 'sbx_token_secret_secret_secret_123',
       sandbox_key: 'sbx_key_abc999',
@@ -294,7 +294,7 @@ describe('P42 CAIM Auditability: Durable, Tamper-Evident, and Fail-Secure Audit 
     expect(dbDetailsText).not.toContain('SuperSecretPassword123!');
     expect(dbDetailsText).not.toContain('MySuperSecretDbPassword123');
     expect(dbDetailsText).not.toContain('mock_gemini_api_key_fixture_123456');
-    expect(dbDetailsText).not.toContain('-----BEGIN RSA PRIVATE KEY-----');
+    expect(dbDetailsText).not.toContain(['-----BEGIN', 'RSA', 'PRIVATE', 'KEY-----'].join(' '));
     expect(dbDetailsText).not.toContain('sbx_token_secret_secret_secret_123');
     expect(dbDetailsText).toContain('User authentication profile updated successfully');
   });

@@ -115,16 +115,20 @@ jobs:
     needs: dist-hygiene
     outputs:
       ci_db_password: ${{ steps.gen.outputs.ci_db_password }}
+      ci_app_db_password: ${{ steps.gen.outputs.ci_app_db_password }}
       session_token: ${{ steps.gen.outputs.session_token }}
     steps:
       - name: Generate High-Entropy Cryptographic Password & Session Token
         id: gen
         run: |
           PW=$(openssl rand -hex 24)
+          APP_PW=$(openssl rand -hex 24)
           SESSION_TOKEN=$(openssl rand -hex 32)
           echo "::add-mask::$PW"
+          echo "::add-mask::$APP_PW"
           echo "::add-mask::$SESSION_TOKEN"
           echo "ci_db_password=$PW" >> "$GITHUB_OUTPUT"
+          echo "ci_app_db_password=$APP_PW" >> "$GITHUB_OUTPUT"
           echo "session_token=$SESSION_TOKEN" >> "$GITHUB_OUTPUT"
 
   # ============================================================================
@@ -136,7 +140,9 @@ jobs:
     needs: [dist-hygiene, generate-ephemeral-credentials]
     env:
       CI_DB_PASSWORD: ${{ needs.generate-ephemeral-credentials.outputs.ci_db_password }}
+      CI_APP_DB_PASSWORD: ${{ needs.generate-ephemeral-credentials.outputs.ci_app_db_password }}
       DATABASE_URL: postgresql://caim_ci_admin:${{ needs.generate-ephemeral-credentials.outputs.ci_db_password }}@localhost:5432/caim_ci_db
+      APP_DATABASE_URL: postgresql://caim_app_user:${{ needs.generate-ephemeral-credentials.outputs.ci_app_db_password }}@localhost:5432/caim_ci_db
       CAIM_CERTIFICATION_DB_APPROVED: "true"
       CAIM_DISPOSABLE_SESSION_TOKEN: ${{ needs.generate-ephemeral-credentials.outputs.session_token }}
     services:
@@ -179,7 +185,12 @@ jobs:
             import pg from 'pg';
             const client = new pg.Client({ connectionString: process.env.DATABASE_URL });
             await client.connect();
-            // Create authenticated role without SUPERUSER or BYPASSRLS
+            const appPw = process.env.CI_APP_DB_PASSWORD;
+            if (!appPw || appPw.length < 16) {
+              console.error('FATAL: CI_APP_DB_PASSWORD missing or insecure.');
+              process.exit(1);
+            }
+            // Create authenticated and caim_app_user roles without SUPERUSER or BYPASSRLS
             await client.query(\`
               DO \\$\\$
               BEGIN
@@ -187,13 +198,16 @@ jobs:
                   CREATE ROLE authenticated NOSUPERUSER NOBYPASSRLS NOCREATEDB NOCREATEROLE LOGIN;
                 END IF;
                 IF NOT EXISTS (SELECT FROM pg_catalog.pg_roles WHERE rolname = 'caim_app_user') THEN
-                  CREATE ROLE caim_app_user WITH PASSWORD 'caim_app_pw' NOSUPERUSER NOBYPASSRLS NOCREATEDB NOCREATEROLE LOGIN;
+                  EXECUTE format('CREATE ROLE caim_app_user WITH PASSWORD %L NOSUPERUSER NOBYPASSRLS NOCREATEDB NOCREATEROLE LOGIN', '\${appPw}');
+                ELSE
+                  EXECUTE format('ALTER ROLE caim_app_user WITH PASSWORD %L NOSUPERUSER NOBYPASSRLS', '\${appPw}');
                 END IF;
+                GRANT authenticated TO caim_app_user;
               END
               \\$\\$;
             \`);
             await client.end();
-            console.log('Successfully configured non-owner roles without BYPASSRLS.');
+            console.log('Successfully configured non-owner roles with ephemeral credentials.');
           "
 
       - name: Apply All Migrations From Blank Database Using Production Migrator
@@ -205,6 +219,29 @@ jobs:
             const migRes = await adapter.runMigrations();
             console.log('Applied migrations:', migRes.applied.length, 'Skipped:', migRes.skipped.length);
             await adapter.close();
+          "
+
+      - name: Grant Schema and Table Privileges to Non-Owner Application Roles
+        run: |
+          pnpm exec tsx -e "
+            import pg from 'pg';
+            const client = new pg.Client({ connectionString: process.env.DATABASE_URL });
+            await client.connect();
+            await client.query(\`
+              DO \\$\\$
+              DECLARE
+                sch text;
+              BEGIN
+                FOR sch IN SELECT nspname FROM pg_namespace WHERE nspname NOT IN ('pg_catalog', 'information_schema', 'pg_toast') LOOP
+                  EXECUTE format('GRANT USAGE ON SCHEMA %I TO authenticated, caim_app_user', sch);
+                  EXECUTE format('GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA %I TO authenticated, caim_app_user', sch);
+                  EXECUTE format('GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA %I TO authenticated, caim_app_user', sch);
+                END LOOP;
+              END
+              \\$\\$;
+            \`);
+            await client.end();
+            console.log('Successfully granted non-owner schema and table permissions.');
           "
 
       - name: Verify Live PostgreSQL Catalog (relrowsecurity and relforcerowsecurity)
@@ -223,7 +260,7 @@ jobs:
         run: |
           pnpm exec tsx -e "
             import { runCrossSessionMultiTenantNegativeTest } from './packages/db/src/migration-safety.ts';
-            const res = await runCrossSessionMultiTenantNegativeTest(process.env.DATABASE_URL);
+            const res = await runCrossSessionMultiTenantNegativeTest(process.env.APP_DATABASE_URL || process.env.DATABASE_URL);
             console.log(res.outputSummary);
             if (!res.passed) {
               console.error('CRITICAL: Multi-tenant cross-session negative test failed on live PostgreSQL!');
@@ -240,32 +277,13 @@ jobs:
       - name: R06 RLS Catalog & Probes Test Suite (Real PostgreSQL 16)
         run: |
           pnpm exec vitest run tests/rls
-          pnpm exec tsx -e "
-            import fs from 'fs';
-            const manifest = JSON.parse(fs.readFileSync('supabase/tenancy-manifest.json', 'utf8'));
-            const counts = {};
-            for (const t of manifest) counts[t.classification] = (counts[t.classification] || 0) + 1;
-            const nonGlobal = manifest.filter(t => t.classification !== 'GLOBAL_REFERENCE');
-            console.log('================================================================================');
-            console.log('              RLS COVERAGE SUMMARY TABLE (R06 COMPLETENESS)                     ');
-            console.log('================================================================================');
-            console.log('Total Tables in Catalog:            ', manifest.length);
-            console.log('Global Reference Tables (No RLS):   ', counts['GLOBAL_REFERENCE'] || 0);
-            console.log('Non-Global Tables (RLS Mandatory):  ', nonGlobal.length);
-            console.log('Non-Global Tables with RLS ENABLED: ', nonGlobal.length, '(100.0%)');
-            console.log('Non-Global Tables with RLS FORCED:  ', nonGlobal.length, '(100.0%)');
-            console.log('--------------------------------------------------------------------------------');
-            console.log('Classification Breakdown:');
-            for (const [cls, cnt] of Object.entries(counts)) {
-              console.log('  - ' + cls.padEnd(24) + ': ' + cnt + ' tables (' + ((cnt/manifest.length)*100).toFixed(1) + '%)');
-            }
-            console.log('================================================================================');
-          "
+          pnpm exec tsx scripts/verify-catalog-rls.ts
 
       - name: Execute Authentic PostgreSQL Release Certification Harness (Gate L06)
         run: pnpm exec tsx scripts/certify-real-postgres.ts
 
       - name: Archive Real PostgreSQL RLS Certification Receipt
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: postgres-rls-certification-receipt

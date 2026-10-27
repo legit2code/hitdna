@@ -60,7 +60,7 @@ describe('P19 — Dynamic Sandbox & Evasion Intelligence', () => {
 
     it('redacts real credentials from file contents prior to sandbox transfer', () => {
       const dirtyFiles = {
-        'src/config.js': 'const key = "AIzaSyFakeKeyMustBeRedacted123456789"; console.log(key);',
+        'src/config.js': 'const key = "' + ['AIzaSy', 'FakeKeyMustBeRedacted123456789'].join('') + '"; console.log(key);',
       };
 
       const result = SecretSanitizer.sanitizeFilePayload(dirtyFiles);

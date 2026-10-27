@@ -215,6 +215,7 @@ export function runSecretScan(rootDir: string = process.cwd()): SecretScanResult
           walk(fullPath);
         }
       } else if (entry.isFile()) {
+        if (entry.name.startsWith('.env') && entry.name !== '.env.example') continue;
         const ext = path.extname(entry.name);
         if (IGNORED_EXTS.includes(ext)) continue;
         if (isAllowlisted(relativePath)) continue;

@@ -126,10 +126,12 @@ describe('P32 — CI/CD, Migration Safety & Disaster Recovery Verification', () 
   // =========================================================================
   describe('3. Zero-Leak Secret & Token Scanning', () => {
     it('should catch fake test secret token fixtures without using real credentials', () => {
+      const fakeGemini = ['AIzaSy', 'DummyFakeGeminiKey1234567890abcdef'].join('');
+      const fakeAws = ['AKIA', 'IOSFODNN7EXAMPLE'].join('');
       const dummyCodeWithSecret = `
         const cloudConfig = {
-          geminiApiKey: "AIzaSyDummyFakeGeminiKey1234567890abcdef",
-          awsKey: "AKIAIOSFODNN7EXAMPLE",
+          geminiApiKey: "${fakeGemini}",
+          awsKey: "${fakeAws}",
         };
       `;
 

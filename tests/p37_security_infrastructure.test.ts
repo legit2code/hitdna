@@ -388,7 +388,7 @@ describe('P37 Security Infrastructure: Rate Limiting, CSRF Defense & Audit Loggi
         target_entity_id: 'art-001',
         outcome: 'SUCCESS',
         details: {
-          api_key: 'sk-live-1234567890abcdef1234567890abcdef',
+          api_key: 'mock_test_openai_key_fixture',
           bearer: 'Bearer secret_token_xyz',
           normal_field: 'safe_value',
         },

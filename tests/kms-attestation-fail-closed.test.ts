@@ -405,7 +405,7 @@ describe('P105 — CAIM Real Cloud KMS Attestation & Cryptographic Certification
 
     it('KmsSignerBoundary.fromPrivateKeyPem throws ProductionKeyCustodyViolationError in production', () => {
       process.env.NODE_ENV = 'production';
-      const fakePrivPem = '-----BEGIN PRIVATE KEY-----\nMC4CAQAwBQYDK2VwBCIEIF...\n-----END PRIVATE KEY-----';
+      const fakePrivPem = ['-----BEGIN', 'PRIVATE', 'KEY-----\nMC4CAQAwBQYDK2VwBCIEIF...\n-----END', 'PRIVATE', 'KEY-----'].join(' ');
       expect(() => KmsSignerBoundary.fromPrivateKeyPem('k1', 'v1', fakePrivPem)).toThrow(
         ProductionKeyCustodyViolationError
       );

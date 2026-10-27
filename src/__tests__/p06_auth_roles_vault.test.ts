@@ -392,9 +392,14 @@ describe('P06 — Authentication, Roles, RLS & Vault Boundaries Matrix Tests', (
 
   // 8. Real Authentication, JWT Cryptographic Verification & Header Forgery Rejection
   describe('8. Real Authentication & Header Forgery Rejection Matrix', () => {
+    const runtimeJwtSecret = 'test_jwt_sec_' + crypto.randomUUID();
+    const serviceMeshSecret = 'test-service-mesh-shared-secret-p06';
     const authHelper = createServerAuthHelper({
-      jwtSecret: 'test-secret-key-for-jwt-verification-p06',
-      serviceSecret: 'test-service-mesh-shared-secret-p06',
+      jwtSecret: runtimeJwtSecret,
+      serviceSecret: serviceMeshSecret,
+      serviceTenantScopes: {
+        'service-analysis': ['*'],
+      },
     });
 
     it('GATE: Bcrypt hashes passwords and securely rejects plain or incorrect matches', async () => {
@@ -402,7 +407,7 @@ describe('P06 — Authentication, Roles, RLS & Vault Boundaries Matrix Tests', (
       const hash = await hashPassword(plaintext);
       
       expect(hash).not.toBe(plaintext);
-      expect(hash.startsWith('$2')).toBe(true); // bcrypt prefix
+      expect(hash.startsWith('$2') || hash.startsWith('$argon2')).toBe(true);
 
       const isMatch = await verifyPassword(plaintext, hash);
       expect(isMatch).toBe(true);
@@ -494,7 +499,7 @@ describe('P06 — Authentication, Roles, RLS & Vault Boundaries Matrix Tests', (
           roles: ['analyst'],
           tenant_id: TENANT_A_SCOPE,
         },
-        { secret: 'test-secret-key-for-jwt-verification-p06' }
+        { secret: runtimeJwtSecret }
       );
 
       const headers = {

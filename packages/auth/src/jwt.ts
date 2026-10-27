@@ -445,7 +445,7 @@ export function signAccessToken(
  * Strictly verifies JWT signature, kid, algorithm, and expiry.
  * Strictly rejects 'none' algorithm and public key confusion attacks (e.g. HS256).
  */
-export function verifyAccessToken(token: string): JwtPrincipalClaims {
+export function verifyAccessToken(token: string, secret?: string): JwtPrincipalClaims {
   if (!token || typeof token !== 'string') {
     throw new Error('Missing or invalid token string.');
   }
@@ -457,6 +457,15 @@ export function verifyAccessToken(token: string): JwtPrincipalClaims {
   }
 
   const header = unverified.header;
+
+  // If signed symmetrically with explicit secret (HMAC mode)
+  if (header.alg === 'HS256' && secret) {
+    return jwt.verify(token, secret, {
+      algorithms: ['HS256'],
+      issuer: 'caim-auth-service',
+      audience: 'caim-platform',
+    }) as JwtPrincipalClaims;
+  }
 
   // Strict check: alg must be RS256
   if (!header.alg || header.alg === 'none' || header.alg !== 'RS256') {

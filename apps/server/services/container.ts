@@ -272,13 +272,15 @@ export async function createServiceContainer(
 
   // Evaluation
   const globalEvaluationEngine = new GoldenCorpusEvaluationEngine();
-  if (!isProduction && config.env !== 'production') {
-    void globalEvaluationEngine.evaluateEngineVersion({
-      engineVersion: 'v2.0.1-certified',
-      baselineEngineVersion: 'v2.0.0-certified',
-      isConclusionChanging: false,
-      evaluatorActorId: 'system-init@caim.internal'
-    }).catch(() => {});
+  if (!isProduction && config.env !== 'production' && config.env !== 'test') {
+    setTimeout(() => {
+      void globalEvaluationEngine.evaluateEngineVersion({
+        engineVersion: 'v2.0.1-certified',
+        baselineEngineVersion: 'v2.0.0-certified',
+        isConclusionChanging: false,
+        evaluatorActorId: 'system-init@caim.internal'
+      }).catch(() => {});
+    }, 1000);
   }
 
   const persistAnalysisOutputs = async (options: {
