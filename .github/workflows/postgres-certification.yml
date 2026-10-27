@@ -218,7 +218,7 @@ jobs:
 
       - name: Archive Authentic PostgreSQL RLS Certification Receipt & Logs
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: standalone-postgres-certification-receipt
           path: |
