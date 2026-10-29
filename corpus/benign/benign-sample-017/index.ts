@@ -1,1 +1,0 @@
-export class SimpleLRU<K, V> { private map = new Map<K, V>(); constructor(private cap: number) {} get(k: K) { const v = this.map.get(k); if (v) { this.map.delete(k); this.map.set(k, v); } return v; } set(k: K, v: V) { if (this.map.size >= this.cap) { const first = this.map.keys().next().value; if (first) this.map.delete(first); } this.map.set(k, v); } }

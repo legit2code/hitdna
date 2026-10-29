@@ -1,90 +1,52 @@
-# Agent Lifecycle Intelligence Platform (CAIM V2.0.1)
+# Hit DNA Music Intelligence Platform
 
-Controlled Implementation Baseline for Agent Lifecycle Intelligence, Security Analysis, AI-BOM, Sandboxing, and Engine Verification.
+> **Architecture Version:** 5.0.0  
+> **Pack Version:** 6.0.0  
+> **Canonical Manifest Hash:** `1ccc957a962db4c93b5b2a872fb7cddbd4025d938ecdc5de86ca88c17bf5454b`  
+> **Active Engine:** `PF-02` — Repository & Tooling Foundation (Phase P01)
 
-## Technology Stack & Environment
-- **Runtime**: Node.js >= 22.0.0 (Node 22 LTS)
-- **Web Server**: Express 4 (`express ^4.21.2`)
-- **Frontend**: React 19 + TypeScript + Vite 6 + Tailwind CSS 4
-- **Package Manager**: **`pnpm` is the ONLY supported package manager** (pinned at `9.15.9`). Using `npm`, `yarn`, or `bun` is strictly unsupported.
+Hit DNA Music Intelligence is an evidence-backed music intelligence, empirical Hit DNA analysis, and constrained song construction system governed by the P00 Master Build Constitution.
 
-## Architecture & Monorepo Topology
+---
 
-```text
-apps/
-  web/                  # React 19 SPA + Tailwind client UI
-  server/               # Express 4 API bounded server
+## Canonical Command Surface
 
-packages/
-  api/                  # Express API routers and typed endpoint contracts
-  auth/                 # PrincipalContext, JWT tokens, RBAC, CSRF, and rate limiting
-  caim/                 # Common Artifact Intelligence Model (CAIM V2.0.1) definitions
-  config/               # Typed environment configuration and secret boundaries
-  contracts/            # Shared Zod schemas, DTOs, and event signatures
-  db/                   # PostgreSQL adapter, migration runner, and catalog safety
-  lifecycle/            # Non-overwriting lifecycle state machine and validation
-  ontology/             # CANE normalization mappings and concept registry
-  packaging/            # Cryptographic packaging, attestation, and signing
-  source/               # Multi-source acquisition adapters (GitHub, HuggingFace, NPM)
-  syntax/               # Multi-language parser registry (TS/JS, Python, Go)
-  workflow/             # Outbox queue control plane, DAG coordinator, and DR engine
+| Command | Description |
+| :--- | :--- |
+| `npm run dev` | Boots local full-stack server (`0.0.0.0:3000`) with Vite development middleware |
+| `npm run build` | Compiles client assets (`vite build`) and bundles production Node server (`dist/server.cjs`) |
+| `npm start` | Boots production server from `dist/server.cjs` |
+| `npm run lint` | Runs strict TypeScript typechecking (`tsc --noEmit`) |
+| `npm test` | Runs all unit, integration, and e2e test suites |
+| `npm run test:unit` | Runs isolated unit tests |
+| `npm run test:integration`| Runs HTTP route and system contract tests against ephemeral listener |
+| `npm run test:e2e` | Runs application shell contract tests |
+| `npm run check` | Root verification pipeline: runs integrity check, typecheck, tests, and phase verifier |
+| `npm run phase:verify P01` | Executes Truth & Integrity verifier and generates `docs/implementation/evidence/P01_RECEIPT.json` |
+| `npm run integrity:all` | Runs full suite of deterministic integrity and truth checks |
+| `npm run integrity:negative-tests` | Runs negative self-tests verifying drift, contamination, and bad receipts fail |
+| `npm run integrity:architecture` | Verifies v5.0.0 66 engines, 670 modules, and manifest hash |
+| `npm run integrity:fixtures` | Audits production files for forbidden test fixture contamination |
 
-workers/
-  discovery/            # [STUB] Source & Web discovery worker stub (until P6)
-  semantic/             # [STUB] AST, grammar, and prompt analysis worker stub (until P6)
-  evaluation/           # [STUB] Golden corpus evaluation worker stub (until P6)
-  cloudflare-scheduler/ # Cloudflare Worker edge cron scheduler
-  composer/             # Composition capability builder
-  composition/          # SBOM/AI-BOM dependency reachability worker
-  decision/             # Evidence risk and policy decision worker
-  knowledge/            # Knowledge RAG and pgvector embedding worker
-  lifecycle/            # Differential analysis and lifecycle state worker
-  sandbox-orchestrator/ # Isolated execution and anti-evasion worker
-  static-analysis/      # Static analysis CFG and interprocedural taint worker
-```
+---
 
-## Status & Audit Findings
-- Generated Status: [`docs/implementation/STATUS.generated.md`](docs/implementation/STATUS.generated.md)
-- Truth Ledger: [`docs/implementation/TRUTH_LEDGER.md`](docs/implementation/TRUTH_LEDGER.md)
+## Module Boundaries
 
-## Quick Start & Local Commands
+The repository enforces strict module separation across 10 functional boundaries:
 
-### Prerequisites
-- Node.js >= 22.0.0
-- pnpm 9.15.9 (`corepack enable && pnpm install`)
+- `src/client/`: Application UI shell and console components
+- `src/server/`: Express application, routes, and Vite middleware integration
+- `src/domain/`: Canonical engine schemas and domain boundaries
+- `src/repositories/`: Data access and state persistence abstractions
+- `src/services/`: Health, diagnostics, and domain services
+- `src/workers/`: Asynchronous job contracts and execution queue stubs
+- `src/contracts/`: Source-independent typed API envelopes and schemas
+- `src/config/`: Sanitized client/server configuration with secret redaction
+- `src/testing/`: Isolated fixtures (`TEST_FIXTURE`), unit, integration, and e2e suites
+- `docs/`: Canonical architecture manifest, check matrix, and evidence receipts
 
-### Commands
-```bash
-# Install dependencies with frozen lockfile
-pnpm install --frozen-lockfile
+---
 
-# Run local development server (Express + Vite on port 3000)
-pnpm run dev
+## Hard Phase Boundaries
 
-# Run strict type checking across all modules
-pnpm run typecheck
-
-# Run linter
-pnpm run lint
-
-# Run fast unit and integration tests
-pnpm test
-
-# Run slow test suites (sandbox, DR, performance)
-pnpm run test:slow
-
-# Run full test suite across all suites
-pnpm run test:all
-
-# Run artifact hygiene check
-pnpm exec tsx scripts/dist-hygiene.ts
-
-# Generate authoritative status report
-pnpm exec tsx scripts/generate-status.ts
-
-# Run production build
-pnpm run build
-
-# Run all checks
-pnpm run check
-```
+Per the P00 Master Build Constitution, domain engines (research ingestion, audio analysis, cohort statistics, artist style profiles, song generation, and admin governance) remain strictly locked until their respective phases.

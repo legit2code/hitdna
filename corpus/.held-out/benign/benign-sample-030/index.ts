@@ -1,1 +1,0 @@
-export function quicksort(arr: number[]): number[] { if (arr.length <= 1) return arr; const p = arr[0], rest = arr.slice(1); return [...quicksort(rest.filter(x => x < p)), p, ...quicksort(rest.filter(x => x >= p))]; }

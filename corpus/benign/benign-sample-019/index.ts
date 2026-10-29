@@ -1,1 +1,0 @@
-export class EventEmitter { private listeners = new Map<string, Function[]>(); on(e: string, fn: Function) { const list = this.listeners.get(e) || []; list.push(fn); this.listeners.set(e, list); } emit(e: string, data: any) { (this.listeners.get(e) || []).forEach(f => f(data)); } }

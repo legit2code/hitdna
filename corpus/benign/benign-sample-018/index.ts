@@ -1,1 +1,0 @@
-export function compareSemver(a: string, b: string) { const pa = a.split(".").map(Number), pb = b.split(".").map(Number); for (let i = 0; i < 3; i++) { if (pa[i] > pb[i]) return 1; if (pa[i] < pb[i]) return -1; } return 0; }

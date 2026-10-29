@@ -1,1 +1,0 @@
-export function buildTable(headers: string[], rows: string[][]) { return "| " + headers.join(" | ") + " |\n| " + headers.map(() => "---").join(" | ") + " |\n" + rows.map(r => "| " + r.join(" | ") + " |").join("\n"); }
