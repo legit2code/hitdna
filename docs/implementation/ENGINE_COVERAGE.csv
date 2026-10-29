@@ -1,0 +1,67 @@
+engine_id,engine_name,domain_id,status,phase_primary,implemented_modules,total_modules
+PF-01,"Architecture & Build Constitution Engine",D01,BOOTSTRAPPED,P00,8,8
+PF-02,"Repository & Tooling Foundation",D01,VERIFIED,P01,9,9
+PF-03,"Typed Configuration & Secrets Engine",D01,VERIFIED,P02,8,8
+PF-04,"Canonical Music Data Model & Repository Engine",D01,VERIFIED,P03,8,8
+PF-05,"Authentication, Roles & Authorization Engine",D01,PLANNED,FUTURE,0,8
+PF-06,"Shared Contracts & Validation Engine",D01,PLANNED,FUTURE,0,9
+PF-07,"Lifecycle State Engine",D01,PLANNED,FUTURE,0,9
+PF-08,"Workflow, Queue, Job & Outbox Control Plane",D01,PLANNED,FUTURE,0,12
+PF-09,"Version, Prompt & Methodology Governance",D01,VERIFIED,P03,10,10
+RI-01,"Source Adapter Framework",D02,PLANNED,FUTURE,0,10
+RI-02,"Continuous Research Scheduler",D02,PLANNED,FUTURE,0,9
+RI-03,"Research Acquisition & Raw Preservation",D02,PLANNED,FUTURE,0,10
+RI-04,"Song & Artist Identity Resolution",D02,PLANNED,FUTURE,0,10
+RI-05,"Chart Observation & Hit Qualification",D02,PLANNED,FUTURE,0,9
+RI-06,"Genre, Subgenre, Scene & Hybrid Taxonomy",D02,VERIFIED,P03,10,10
+RI-07,"Source Reconciliation & Canonical Mapping",D02,PLANNED,FUTURE,0,9
+RI-08,"Coverage, Freshness & Data Quality Engine",D02,PLANNED,FUTURE,0,9
+RI-09,"Rights, Licensing & Source Policy Engine",D02,VERIFIED,P04,8,8
+MI-01,"Feature Observation & Normalization Framework",D03,PLANNED,FUTURE,0,8
+MI-02,"Audio Feature Intelligence",D03,PLANNED,FUTURE,0,10
+MI-03,"Song Structure & Section Intelligence",D03,PLANNED,FUTURE,0,10
+MI-04,"Hook Intelligence",D03,PLANNED,FUTURE,0,9
+MI-05,"Rhythm, Cadence & Groove Intelligence",D03,PLANNED,FUTURE,0,11
+MI-06,"Production, Dynamics, 808 & Arrangement Intelligence",D03,PLANNED,FUTURE,0,11
+MI-07,"Lyrical, Theme & Language Feature Intelligence",D03,PLANNED,FUTURE,0,10
+MI-08,"Modern Language, Slang & Vernacular Intelligence",D03,PLANNED,FUTURE,0,12
+MI-09,"Melodic, Harmonic & Chord Intelligence",D03,PLANNED,FUTURE,0,11
+MI-10,"Musical Pattern Abstraction Engine",D03,PLANNED,FUTURE,0,9
+HD-01,"Hit Cohort & Denominator Engine",D04,PLANNED,FUTURE,0,11
+HD-02,"Evidence, Assertion, Claim & Confidence Engine",D04,PLANNED,FUTURE,0,10
+HD-03,"Deterministic Statistical Analytics",D04,PLANNED,FUTURE,0,11
+HD-04,"Multi-Archetype Clustering Engine",D04,PLANNED,FUTURE,0,11
+HD-05,"Temporal Evolution & Trend Intelligence",D04,PLANNED,FUTURE,0,10
+HD-06,"DNA Snapshot & Publication Registry",D04,PLANNED,FUTURE,0,9
+HD-07,"Top Hit DNA Ranking & Recommendation",D04,PLANNED,FUTURE,0,10
+HD-08,"Hybrid Genre DNA Intelligence",D04,PLANNED,FUTURE,0,7
+HD-09,"Novelty, Saturation & Pattern-Break Intelligence",D04,PLANNED,FUTURE,0,8
+AR-01,"Real Artist Research Intake",D05,PLANNED,FUTURE,0,7
+AR-02,"Artist Style Profile & Review",D05,PLANNED,FUTURE,0,10
+AR-03,"Artist Profile Versioning & Eligibility",D05,PLANNED,FUTURE,0,7
+AR-04,"Artist Style Resolver",D05,PLANNED,FUTURE,0,8
+AR-05,"Artist Identity Leakage & Similarity Guard",D05,PLANNED,FUTURE,0,8
+AR-06,"Artist Style Fusion Intelligence",D05,PLANNED,FUTURE,0,10
+CG-01,"Creator Keyword, Theme & Language Brief",D06,PLANNED,FUTURE,0,13
+CG-02,"Language Freshness & Era Authenticity Resolver",D06,PLANNED,FUTURE,0,9
+CG-03,"Song Specification & Blueprint Engine",D06,PLANNED,FUTURE,0,14
+CG-04,"Hook Strategy Engine",D06,PLANNED,FUTURE,0,10
+CG-05,"Modern Lyric Engineering Engine",D06,PLANNED,FUTURE,0,12
+CG-06,"Musical Pattern Reference Injection",D06,PLANNED,FUTURE,0,8
+CG-07,"Suno-Style Sound Prompt Engine",D06,PLANNED,FUTURE,0,11
+CG-08,"Generation Strategy & Pattern-Break Engine",D06,PLANNED,FUTURE,0,11
+CG-09,"Generation Orchestrator",D06,PLANNED,FUTURE,0,14
+CG-10,"Generation Validation & Truth Guard",D06,PLANNED,FUTURE,0,11
+CG-11,"Generation History, Feedback & Reproducibility",D06,VERIFIED,P05,10,10
+PA-01,"Public/Internal API & Contract Engine",D07,PLANNED,FUTURE,0,11
+PA-02,"Creator Experience UI",D07,PLANNED,FUTURE,0,13
+PA-03,"DNA Explorer & Music Pattern UI",D07,PLANNED,FUTURE,0,12
+PA-04,"Research Console & Data Source Operations",D07,PLANNED,FUTURE,0,12
+PA-05,"Artist Styles & Review UI",D07,PLANNED,FUTURE,0,9
+PA-06,"Admin, Methodology & Publication Governance UI",D07,PLANNED,FUTURE,0,11
+PA-07,"Observability, Freshness, Cost & Audit Engine",D07,PLANNED,FUTURE,0,14
+PA-08,"Golden Corpus & Regression Evaluation",D07,PLANNED,FUTURE,0,14
+PA-09,"CI/CD, Recovery & Continuous Operations",D07,PLANNED,FUTURE,0,18
+PA-10,"Engine Parity & Implementation Coverage Audit",D07,PLANNED,FUTURE,0,8
+PA-11,"Requirements & Definition-of-Done Traceability",D07,PLANNED,FUTURE,0,10
+PA-12,"Production Hardening & Final Release Audit",D07,PLANNED,FUTURE,0,12

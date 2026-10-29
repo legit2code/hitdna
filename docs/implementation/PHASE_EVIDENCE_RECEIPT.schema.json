@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hitdna.phase-evidence-receipt.v6.schema.json",
+  "title": "Hit DNA Phase Evidence Receipt v6",
+  "type": "object",
+  "required": [
+    "promptId",
+    "packVersion",
+    "architectureVersion",
+    "architectureIdentitySha256",
+    "status",
+    "commands",
+    "checks",
+    "generatedAt"
+  ],
+  "properties": {
+    "promptId": {
+      "type": "string",
+      "pattern": "^P(?:-01|00A|\\d{2}A?)$"
+    },
+    "packVersion": {
+      "const": "6.0.0"
+    },
+    "architectureVersion": {
+      "const": "5.0.0"
+    },
+    "architectureIdentitySha256": {
+      "type": "string",
+      "minLength": 64,
+      "maxLength": 64
+    },
+    "status": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "BLOCKED"
+      ]
+    },
+    "gitCommit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "dirty": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "changedFiles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "commands": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "command",
+          "state"
+        ],
+        "properties": {
+          "command": {
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "EXECUTED",
+              "NOT_EXECUTED",
+              "NOT_VERIFIABLE"
+            ]
+          },
+          "exitCode": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "state"
+        ],
+        "properties": {
+          "state": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "BLOCKED",
+              "NOT_APPLICABLE",
+              "NOT_EXECUTED",
+              "NOT_VERIFIABLE"
+            ]
+          },
+          "count": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "details": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "providers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "status"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "NOT_CONFIGURED",
+              "CONFIGURED_UNVERIFIED",
+              "AVAILABLE",
+              "DEGRADED",
+              "RATE_LIMITED",
+              "AUTH_FAILED",
+              "SOURCE_ERROR",
+              "DISABLED_POLICY"
+            ]
+          },
+          "liveVerificationPerformed": {
+            "type": "boolean"
+          },
+          "verifiedAt": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "knownGaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "generatedAt": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,12 @@
+{
+  "architectureVersion": "5.0.0",
+  "promptPackVersion": "6.0.0",
+  "algorithm": "sha256(canonical-json-projection-v1)",
+  "projection": "architectureVersion + ordered domains(domainId,domainCode,name) + ordered engines(engineId,name) + ordered modules(moduleId,name); JSON sort_keys=true, separators=(comma,colon), UTF-8",
+  "domainCount": 7,
+  "engineCount": 66,
+  "moduleCount": 670,
+  "architectureIdentitySha256": "091dbc8629246eadd10581acbd41285c9b72ee1712bb1cddd0de783ec125d80b",
+  "legacyArchitectureJsonDeclaredDigest": "1ccc957a962db4c93b5b2a872fb7cddbd4025d938ecdc5de86ca88c17bf5454b",
+  "note": "The legacy digest embedded in the v5 architecture JSON is retained as historical metadata. v6 integrity verification uses the explicitly defined non-self-referential identity projection above."
+}

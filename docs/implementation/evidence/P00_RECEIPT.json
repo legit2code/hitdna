@@ -1,0 +1,113 @@
+{
+  "promptId": "P00",
+  "packVersion": "6.0.0",
+  "architectureVersion": "5.0.0",
+  "architectureIdentitySha256": "091dbc8629246eadd10581acbd41285c9b72ee1712bb1cddd0de783ec125d80b",
+  "status": "PASS",
+  "gitCommit": null,
+  "dirty": null,
+  "changedFiles": [
+    "docs/implementation/PHASE_EVIDENCE_RECEIPT.schema.json",
+    "docs/implementation/INTEGRITY_CHECK_MATRIX.csv",
+    "docs/architecture/ARCHITECTURE_IDENTITY_V6.json",
+    "tools/integrity/phase-verifier.ts",
+    "tools/integrity/integrity-checker.ts"
+  ],
+  "commands": [
+    {
+      "command": "npm test",
+      "state": "EXECUTED",
+      "exitCode": 0
+    }
+  ],
+  "checks": {
+    "architecture": {
+      "state": "PASS",
+      "count": 0,
+      "details": "Bootstrap evidence verified"
+    },
+    "fixtures": {
+      "state": "NOT_APPLICABLE",
+      "count": null,
+      "details": null
+    },
+    "provenance": {
+      "state": "NOT_APPLICABLE",
+      "count": null,
+      "details": null
+    },
+    "claims": {
+      "state": "NOT_APPLICABLE",
+      "count": null,
+      "details": null
+    },
+    "metrics": {
+      "state": "NOT_APPLICABLE",
+      "count": null,
+      "details": null
+    },
+    "providers": {
+      "state": "NOT_APPLICABLE",
+      "count": null,
+      "details": null
+    },
+    "ui": {
+      "state": "NOT_APPLICABLE",
+      "count": null,
+      "details": null
+    },
+    "artist-safety": {
+      "state": "NOT_APPLICABLE",
+      "count": null,
+      "details": null
+    },
+    "snapshots": {
+      "state": "NOT_APPLICABLE",
+      "count": null,
+      "details": null
+    },
+    "security": {
+      "state": "NOT_APPLICABLE",
+      "count": null,
+      "details": null
+    },
+    "negative-tests": {
+      "state": "NOT_APPLICABLE",
+      "count": null,
+      "details": null
+    },
+    "receipt-schema": {
+      "state": "NOT_APPLICABLE",
+      "count": null,
+      "details": null
+    }
+  },
+  "providers": [
+    {
+      "name": "GEMINI_API",
+      "status": "NOT_CONFIGURED",
+      "liveVerificationPerformed": false,
+      "verifiedAt": null
+    },
+    {
+      "name": "SPOTIFY_API",
+      "status": "NOT_CONFIGURED",
+      "liveVerificationPerformed": false,
+      "verifiedAt": null
+    },
+    {
+      "name": "BILLBOARD_API",
+      "status": "NOT_CONFIGURED",
+      "liveVerificationPerformed": false,
+      "verifiedAt": null
+    },
+    {
+      "name": "GENIUS_API",
+      "status": "NOT_CONFIGURED",
+      "liveVerificationPerformed": false,
+      "verifiedAt": null
+    }
+  ],
+  "knownGaps": [],
+  "generatedAt": "2026-09-03T23:55:01.518Z"
+}

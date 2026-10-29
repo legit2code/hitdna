@@ -1,0 +1,10 @@
+requirement_id,family,name,primary_phase,status
+REQ-001,ARCHITECTURE_GOVERNANCE,"Canonical 66-Engine Architecture Materialization",P00,VERIFIED
+REQ-002,ARCHITECTURE_GOVERNANCE,"P00 Master Build Constitution Invariants Enforced",P00,VERIFIED
+REQ-003,ALL_GENRE_HYBRID,"All-Genre & Hybrid Graph Contract Specification",P00,VERIFIED
+REQ-004,MODERN_LANGUAGE,"Modern Language & Vernacular Intelligence Specification",P00,VERIFIED
+REQ-005,CHORD_GROOVE_ARRANGEMENT,"Musical Pattern Intelligence & Abstraction Specification",P00,VERIFIED
+REQ-006,KEYWORD_BRIEF,"Creator Keyword & Theme Brief Specification",P00,VERIFIED
+REQ-007,STATISTICAL_TRUTH,"Deterministic Lineage & Denominator Rule Specification",P00,VERIFIED
+REQ-008,SECURITY,"Server-Side Secrets & Provider Redaction Policy",P00,VERIFIED
+REQ-009,REPRODUCIBILITY,"Versioned Repository & Tooling Foundation (PF-02)",P01,VERIFIED

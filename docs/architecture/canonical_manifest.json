@@ -1,0 +1,81 @@
+{
+  "title": "Hit DNA Music Intelligence — Canonical Coexistent Architecture",
+  "architectureVersion": "5.0.0",
+  "packVersion": "6.0.0",
+  "canonicalManifestSha256": "1ccc957a962db4c93b5b2a872fb7cddbd4025d938ecdc5de86ca88c17bf5454b",
+  "status": "LOCKED_TARGET_BASELINE",
+  "northStar": [
+    "Hit DNA is measured intelligence, not generated intelligence.",
+    "No published percentage without numerator, denominator, cohort, versioned calculation, coverage and source lineage.",
+    "Genre and hybrid identity are data, not hard-coded strings.",
+    "Modern language and musical patterns are versioned evidence-backed intelligence, not stereotypes or model memory."
+  ],
+  "domainCount": 7,
+  "engineCount": 66,
+  "moduleCount": 670,
+  "domains": [
+    {
+      "domainId": "D01",
+      "domainCode": "PF",
+      "name": "Platform Foundation & Governance",
+      "requirementFamilies": ["ARCHITECTURE_GOVERNANCE", "SECURITY", "REPRODUCIBILITY", "VERSIONING"],
+      "engines": [
+        "PF-01", "PF-02", "PF-03", "PF-04", "PF-05", "PF-06", "PF-07", "PF-08", "PF-09"
+      ]
+    },
+    {
+      "domainId": "D02",
+      "domainCode": "RI",
+      "name": "Research, Sources & Continuous Ingestion",
+      "requirementFamilies": ["CONTINUOUS_RESEARCH", "PROVENANCE", "RIGHTS_AND_SOURCE_POLICY", "ALL_GENRE_HYBRID"],
+      "engines": [
+        "RI-01", "RI-02", "RI-03", "RI-04", "RI-05", "RI-06", "RI-07", "RI-08", "RI-09"
+      ]
+    },
+    {
+      "domainId": "D03",
+      "domainCode": "MI",
+      "name": "Music Understanding & Pattern Intelligence",
+      "requirementFamilies": ["MEASURED_MUSIC_FEATURES", "MODERN_LANGUAGE", "CHORD_GROOVE_ARRANGEMENT", "NO_FABRICATION"],
+      "engines": [
+        "MI-01", "MI-02", "MI-03", "MI-04", "MI-05", "MI-06", "MI-07", "MI-08", "MI-09", "MI-10"
+      ]
+    },
+    {
+      "domainId": "D04",
+      "domainCode": "HD",
+      "name": "Hit DNA Analytics, Archetypes & Trends",
+      "requirementFamilies": ["STATISTICAL_TRUTH", "MULTI_ARCHETYPE", "TEMPORAL_TRENDS", "TOP_HIT_DNA", "HYBRID_DNA"],
+      "engines": [
+        "HD-01", "HD-02", "HD-03", "HD-04", "HD-05", "HD-06", "HD-07", "HD-08", "HD-09"
+      ]
+    },
+    {
+      "domainId": "D05",
+      "domainCode": "AR",
+      "name": "Artist Research & Style Intelligence",
+      "requirementFamilies": ["REAL_ARTIST_RESEARCH", "ABSTRACT_STYLE_EXPORT", "NO_ARTIST_NAME_LEAKAGE"],
+      "engines": [
+        "AR-01", "AR-02", "AR-03", "AR-04", "AR-05", "AR-06"
+      ]
+    },
+    {
+      "domainId": "D06",
+      "domainCode": "CG",
+      "name": "Creative Generation & Song Construction",
+      "requirementFamilies": ["KEYWORD_BRIEF", "ERA_AUTHENTIC_LANGUAGE", "EVIDENCE_CONSTRAINED_GENERATION", "PERFORMANCE_LYRICS", "SUNO_PROMPT", "GENERATION_LINEAGE"],
+      "engines": [
+        "CG-01", "CG-02", "CG-03", "CG-04", "CG-05", "CG-06", "CG-07", "CG-08", "CG-09", "CG-10", "CG-11"
+      ]
+    },
+    {
+      "domainId": "D07",
+      "domainCode": "PA",
+      "name": "Product Experience, Operations & Assurance",
+      "requirementFamilies": ["CREATOR_SIMPLICITY", "EVIDENCE_DRILLDOWN", "ADMIN_GOVERNANCE", "OBSERVABILITY", "EVALUATION", "CI_CD", "DEFINITION_OF_DONE"],
+      "engines": [
+        "PA-01", "PA-02", "PA-03", "PA-04", "PA-05", "PA-06", "PA-07", "PA-08", "PA-09", "PA-10", "PA-11", "PA-12"
+      ]
+    }
+  ]
+}

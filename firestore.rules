@@ -1,0 +1,197 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // -------------------------------------------------------------
+    // Global Helper Functions
+    // -------------------------------------------------------------
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function hasRole(role) {
+      return isSignedIn() &&
+        request.auth.token != null &&
+        request.auth.token.role == role;
+    }
+
+    function isAdmin() {
+      return hasRole('ADMIN');
+    }
+
+    function isResearcher() {
+      return hasRole('RESEARCHER') || isAdmin();
+    }
+
+    function isValidId(id) {
+      return id is string &&
+        id.size() >= 3 &&
+        id.size() <= 128 &&
+        id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // -------------------------------------------------------------
+    // User Profiles & Roles
+    // -------------------------------------------------------------
+
+    match /users/{userId} {
+      allow get: if isOwner(userId) || isAdmin();
+      allow list: if isAdmin();
+      allow create: if isOwner(userId) &&
+        request.resource.data.keys().hasAll(['uid', 'email', 'role', 'createdAt']) &&
+        request.resource.data.uid == request.auth.uid &&
+        request.resource.data.role == 'USER'; // Normal users can only register as USER
+      allow update: if isOwner(userId) &&
+        !request.resource.data.diff(resource.data).affectedKeys().hasAny(['role', 'uid']) ||
+        isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    // -------------------------------------------------------------
+    // Published Hit DNA & Music Data (Public / Published Read)
+    // -------------------------------------------------------------
+
+    match /publishedHitDnaSnapshots/{snapshotId} {
+      allow get, list: if true; // Publicly verifiable published research
+      allow write: if isAdmin() && isValidId(snapshotId);
+    }
+
+    match /approvedArtistProfiles/{profileId} {
+      allow get, list: if isSignedIn(); // Creators can read approved artist profiles
+      allow write: if isResearcher() && isValidId(profileId);
+    }
+
+    match /genres/{genreId} {
+      allow get, list: if true;
+      allow write: if isResearcher() && isValidId(genreId);
+    }
+
+    // -------------------------------------------------------------
+    // Creator Lifecycle & Generation Artifacts (User-Owned)
+    // -------------------------------------------------------------
+
+    match /generationRequests/{requestId} {
+      allow get, list: if isSignedIn() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() &&
+        isValidId(requestId) &&
+        request.resource.data.userId == request.auth.uid;
+      allow update: if isSignedIn() &&
+        (resource.data.userId == request.auth.uid || isAdmin()) &&
+        request.resource.data.userId == resource.data.userId;
+      allow delete: if isSignedIn() &&
+        (resource.data.userId == request.auth.uid || isAdmin());
+    }
+
+    match /songSpecifications/{specId} {
+      allow get, list: if isSignedIn() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() &&
+        isValidId(specId) &&
+        request.resource.data.userId == request.auth.uid;
+      allow update, delete: if isSignedIn() &&
+        (resource.data.userId == request.auth.uid || isAdmin());
+    }
+
+    match /lyricsResults/{resultId} {
+      allow get, list: if isSignedIn() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() &&
+        isValidId(resultId) &&
+        request.resource.data.userId == request.auth.uid &&
+        request.resource.data.isCreativeOutput == true;
+      allow update, delete: if isSignedIn() &&
+        (resource.data.userId == request.auth.uid || isAdmin());
+    }
+
+    match /soundPromptResults/{promptId} {
+      allow get, list: if isSignedIn() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() &&
+        isValidId(promptId) &&
+        request.resource.data.userId == request.auth.uid &&
+        request.resource.data.artistLeakageScrubbed == true &&
+        request.resource.data.promptText.size() <= 1000;
+      allow update, delete: if isSignedIn() &&
+        (resource.data.userId == request.auth.uid || isAdmin());
+    }
+
+    match /generationRecords/{recordId} {
+      allow get, list: if isSignedIn() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() &&
+        isValidId(recordId) &&
+        request.resource.data.userId == request.auth.uid;
+      // Immutable generation records cannot be updated or purged
+      allow update: if false;
+      allow delete: if false;
+    }
+
+    match /generationFeedback/{feedbackId} {
+      allow get, list: if isSignedIn() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() &&
+        isValidId(feedbackId) &&
+        request.resource.data.userId == request.auth.uid &&
+        request.resource.data.promotedToResearch == false;
+      allow update, delete: if isSignedIn() &&
+        (resource.data.userId == request.auth.uid || isAdmin());
+    }
+
+    // -------------------------------------------------------------
+    // Research Evidence, Raw Payloads & Methodologies (Privileged)
+    // -------------------------------------------------------------
+
+    match /sourceRecords/{recordId} {
+      allow get, list: if isResearcher();
+      allow write: if isResearcher() && isValidId(recordId);
+    }
+
+    match /sourceObservations/{observationId} {
+      allow get, list: if isResearcher();
+      allow write: if isResearcher() && isValidId(observationId);
+    }
+
+    match /researchRuns/{runId} {
+      allow get, list: if isResearcher();
+      allow write: if isResearcher() && isValidId(runId);
+    }
+
+    match /methodologies/{methodologyId} {
+      allow get, list: if isResearcher();
+      allow write: if isAdmin() && isValidId(methodologyId);
+    }
+
+    match /promptTemplates/{templateId} {
+      allow get, list: if isResearcher();
+      allow write: if isAdmin() && isValidId(templateId);
+    }
+
+    match /rawProviderPayloads/{payloadId} {
+      allow read, write: if isAdmin() && isValidId(payloadId);
+    }
+
+    // -------------------------------------------------------------
+    // Auditing & Security Logs (Append-only by Admin, No Mutate/Delete)
+    // -------------------------------------------------------------
+
+    match /privilegedAudits/{auditId} {
+      allow get, list: if isAdmin();
+      allow create: if isAdmin() && isValidId(auditId);
+      allow update, delete: if false; // Strict immutability
+    }
+
+    match /auditEvents/{eventId} {
+      allow get, list: if isAdmin();
+      allow create: if isAdmin() && isValidId(eventId);
+      allow update, delete: if false; // Strict immutability
+    }
+
+    // -------------------------------------------------------------
+    // Default Deny
+    // -------------------------------------------------------------
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

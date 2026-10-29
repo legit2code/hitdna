@@ -1,9 +1,0 @@
-{
-  "checkpoint_id": "c11f6c4d-739c-477f-99c8-2c8fd9482197",
-  "stream_id": "global",
-  "total_records": 0,
-  "chain_head_hash": null,
-  "verified_at": "2026-10-08T02:26:06.615Z",
-  "algorithm": "Ed25519",
-  "key_id": "caim-audit-verifier-key"
-}

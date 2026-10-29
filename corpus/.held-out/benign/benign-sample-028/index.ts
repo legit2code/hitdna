@@ -1,1 +1,0 @@
-export function stdDev(nums: number[]) { const avg = nums.reduce((a, b) => a + b, 0) / nums.length; const sq = nums.map(n => Math.pow(n - avg, 2)).reduce((a, b) => a + b, 0); return Math.sqrt(sq / nums.length); }

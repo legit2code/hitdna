@@ -1,1 +1,0 @@
-export function transpose(m: number[][]) { return m[0].map((_, c) => m.map(r => r[c])); }

@@ -1,0 +1,201 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with role assignment and authentication details",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string", "maxLength": 100 },
+        "photoURL": { "type": "string", "maxLength": 500 },
+        "role": { "type": "string", "enum": ["USER", "REVIEWER", "RESEARCHER", "ADMIN"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email", "role", "createdAt"]
+    },
+    "PublishedHitDnaSnapshot": {
+      "title": "PublishedHitDnaSnapshot",
+      "description": "Published, immutable Hit DNA intelligence and archetype distributions",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "cohortId": { "type": "string" },
+        "publicationStatus": { "type": "string", "enum": ["PUBLISHED", "ARCHIVED"] },
+        "publishedAt": { "type": "string", "format": "date-time" },
+        "publishedBy": { "type": "string" },
+        "methodologyVersionId": { "type": "string" }
+      },
+      "required": ["id", "cohortId", "publicationStatus", "publishedAt", "publishedBy", "methodologyVersionId"]
+    },
+    "ApprovedArtistProfile": {
+      "title": "ApprovedArtistProfile",
+      "description": "Approved artist style intelligence, scrubbed of direct identity leakage",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "canonicalArtistId": { "type": "string" },
+        "approvalStatus": { "type": "string", "enum": ["APPROVED", "PENDING", "REJECTED"] },
+        "approvedBy": { "type": "string" },
+        "artistLeakageScrubbed": { "type": "boolean" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "canonicalArtistId", "approvalStatus", "artistLeakageScrubbed", "updatedAt"]
+    },
+    "GenerationRequest": {
+      "title": "GenerationRequest",
+      "description": "Creator song concept brief and input parameters",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "userId": { "type": "string", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "title": { "type": "string", "maxLength": 200 },
+        "genreId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "title", "genreId", "createdAt"]
+    },
+    "SongSpecification": {
+      "title": "SongSpecification",
+      "description": "Deterministic musical blueprint and section roadmap",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "userId": { "type": "string", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "generationRequestId": { "type": "string" },
+        "tempoBpm": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "generationRequestId", "tempoBpm", "createdAt"]
+    },
+    "LyricsResult": {
+      "title": "LyricsResult",
+      "description": "Generated song lyrics isolated from empirical research",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "userId": { "type": "string", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "generationRequestId": { "type": "string" },
+        "isCreativeOutput": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "generationRequestId", "isCreativeOutput", "createdAt"]
+    },
+    "SoundPromptResult": {
+      "title": "SoundPromptResult",
+      "description": "Generated Suno-style sound prompt scrubbed of artist names",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "userId": { "type": "string", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "promptText": { "type": "string", "maxLength": 1000 },
+        "artistLeakageScrubbed": { "type": "boolean" },
+        "isCreativeOutput": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "promptText", "artistLeakageScrubbed", "isCreativeOutput", "createdAt"]
+    },
+    "GenerationRecord": {
+      "title": "GenerationRecord",
+      "description": "Full lineage and reproducible manifest for generated music content",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "userId": { "type": "string", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "requestId": { "type": "string" },
+        "datasetSnapshotId": { "type": "string" },
+        "methodologyVersionId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "requestId", "datasetSnapshotId", "methodologyVersionId", "createdAt"]
+    },
+    "GenerationFeedback": {
+      "title": "GenerationFeedback",
+      "description": "User evaluation of generated output, strictly isolated from factual research",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "userId": { "type": "string", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "generationRecordId": { "type": "string" },
+        "rating": { "type": "number" },
+        "promotedToResearch": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "generationRecordId", "rating", "promotedToResearch", "createdAt"]
+    },
+    "SourceRecord": {
+      "title": "SourceRecord",
+      "description": "Empirical track metadata and chart observations from verified providers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "providerId": { "type": "string" },
+        "epistemicStatus": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "providerId", "epistemicStatus", "createdAt"]
+    },
+    "PrivilegedAuditEntry": {
+      "title": "PrivilegedAuditEntry",
+      "description": "Immutable audit log of administrative mutations and policy overrides",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "actorId": { "type": "string" },
+        "actorRole": { "type": "string", "enum": ["ADMIN"] },
+        "action": { "type": "string" },
+        "resourceCollection": { "type": "string" },
+        "resourceId": { "type": "string" },
+        "reason": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "actorId", "actorRole", "action", "resourceCollection", "resourceId", "reason", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile records"
+    },
+    "/publishedHitDnaSnapshots/{snapshotId}": {
+      "schema": "PublishedHitDnaSnapshot",
+      "description": "Published Hit DNA snapshots readable by all creators"
+    },
+    "/approvedArtistProfiles/{profileId}": {
+      "schema": "ApprovedArtistProfile",
+      "description": "Approved artist style profiles readable by creators"
+    },
+    "/generationRequests/{requestId}": {
+      "schema": "GenerationRequest",
+      "description": "User-owned generation requests"
+    },
+    "/songSpecifications/{specId}": {
+      "schema": "SongSpecification",
+      "description": "User-owned song specifications"
+    },
+    "/lyricsResults/{resultId}": {
+      "schema": "LyricsResult",
+      "description": "User-owned generated lyrics"
+    },
+    "/soundPromptResults/{promptId}": {
+      "schema": "SoundPromptResult",
+      "description": "User-owned sound prompts"
+    },
+    "/generationRecords/{recordId}": {
+      "schema": "GenerationRecord",
+      "description": "User-owned generation lineage records"
+    },
+    "/generationFeedback/{feedbackId}": {
+      "schema": "GenerationFeedback",
+      "description": "User-owned subjective feedback"
+    },
+    "/sourceRecords/{recordId}": {
+      "schema": "SourceRecord",
+      "description": "Research source records mutable only by researchers and admins"
+    },
+    "/privilegedAudits/{auditId}": {
+      "schema": "PrivilegedAuditEntry",
+      "description": "Privileged audit trail accessible only by admins"
+    }
+  }
+}

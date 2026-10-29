@@ -1,1 +1,0 @@
-export function decodePayload(jwt: string) { const parts = jwt.split("."); if (parts.length < 2) return null; return JSON.parse(Buffer.from(parts[1], "base64").toString("utf8")); }

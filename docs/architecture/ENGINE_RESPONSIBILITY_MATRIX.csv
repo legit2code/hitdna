@@ -1,0 +1,67 @@
+engine_id,engine_name,domain_id,domain_name,purpose,module_count
+PF-01,"Architecture & Build Constitution Engine",D01,"Platform Foundation & Governance","Lock the controlled product architecture, truth invariants, phase boundaries and change-governance process.",8
+PF-02,"Repository & Tooling Foundation",D01,"Platform Foundation & Governance","Provide strict TypeScript full-stack project boundaries, build tooling, tests and baseline CI.",9
+PF-03,"Typed Configuration & Secrets Engine",D01,"Platform Foundation & Governance","Centralize public/server/worker configuration, provider credentials, feature flags and redaction.",8
+PF-04,"Canonical Music Data Model & Repository Engine",D01,"Platform Foundation & Governance","Own typed persistence contracts and repository boundaries for the entire music intelligence model.",8
+PF-05,"Authentication, Roles & Authorization Engine",D01,"Platform Foundation & Governance","Enforce identity, role-aware access and privileged admin/research boundaries before data reaches UI or tools.",8
+PF-06,"Shared Contracts & Validation Engine",D01,"Platform Foundation & Governance","Provide source-independent TypeScript/Zod contracts used by client, server, jobs and analytics.",9
+PF-07,"Lifecycle State Engine",D01,"Platform Foundation & Governance","Control legal states for research, analysis, publication, artist review and generation records.",9
+PF-08,"Workflow, Queue, Job & Outbox Control Plane",D01,"Platform Foundation & Governance","Run durable asynchronous research, enrichment, analytics, clustering, publication and generation work.",12
+PF-09,"Version, Prompt & Methodology Governance",D01,"Platform Foundation & Governance","Version every taxonomy, methodology, prompt, model, extractor, clustering rule and publication policy that can change conclusions.",10
+RI-01,"Source Adapter Framework",D02,"Research, Sources & Continuous Ingestion","Isolate chart, metadata, audio, lyric, slang, lexicon and research-provider mechanics behind one source contract.",10
+RI-02,"Continuous Research Scheduler",D02,"Research, Sources & Continuous Ingestion","Keep current-hit, feature, slang and enrichment research refreshed according to provider-permitted cadences.",9
+RI-03,"Research Acquisition & Raw Preservation",D02,"Research, Sources & Continuous Ingestion","Accept real authorized source bytes/records, validate them and preserve immutable raw provenance.",10
+RI-04,"Song & Artist Identity Resolution",D02,"Research, Sources & Continuous Ingestion","Resolve duplicate provider observations into canonical song/artist identities while preserving ambiguity, versions and aliases.",10
+RI-05,"Chart Observation & Hit Qualification",D02,"Research, Sources & Continuous Ingestion","Normalize chart evidence and determine reproducible membership eligibility using versioned hit policies.",9
+RI-06,"Genre, Subgenre, Scene & Hybrid Taxonomy",D02,"Research, Sources & Continuous Ingestion","Model all genres and researched hybrids as a versioned graph rather than a single genre string.",10
+RI-07,"Source Reconciliation & Canonical Mapping",D02,"Research, Sources & Continuous Ingestion","Reconcile conflicting observations by feature family without destroying losing evidence.",9
+RI-08,"Coverage, Freshness & Data Quality Engine",D02,"Research, Sources & Continuous Ingestion","Measure source, cohort and feature completeness so every published claim discloses what was actually observed.",9
+RI-09,"Rights, Licensing & Source Policy Engine",D02,"Research, Sources & Continuous Ingestion","Enforce what source material may be collected, stored, analyzed, excerpted or exposed.",8
+MI-01,"Feature Observation & Normalization Framework",D03,"Music Understanding & Pattern Intelligence","Convert accepted evidence into typed music observations without making Hit DNA conclusions yet.",8
+MI-02,"Audio Feature Intelligence",D03,"Music Understanding & Pattern Intelligence","Measure or ingest reproducible audio properties used by Hit DNA.",10
+MI-03,"Song Structure & Section Intelligence",D03,"Music Understanding & Pattern Intelligence","Represent arrangement sections and derive reproducible structure/timing patterns.",10
+MI-04,"Hook Intelligence",D03,"Music Understanding & Pattern Intelligence","Measure hook placement, recurrence, title use and repetition while separating subjective catchiness claims.",9
+MI-05,"Rhythm, Cadence & Groove Intelligence",D03,"Music Understanding & Pattern Intelligence","Measure rhythmic pocket, vocal density and generalized groove patterns where evidence supports them.",11
+MI-06,"Production, Dynamics, 808 & Arrangement Intelligence",D03,"Music Understanding & Pattern Intelligence","Measure production and arrangement movement including dynamics, drops, bass/808 behavior and instrument entrances/exits.",11
+MI-07,"Lyrical, Theme & Language Feature Intelligence",D03,"Music Understanding & Pattern Intelligence","Measure authorized lyrical features and AI-assisted themes with explicit provenance/review states.",10
+MI-08,"Modern Language, Slang & Vernacular Intelligence",D03,"Music Understanding & Pattern Intelligence","Continuously research modern words, phrases, meanings, context, recency and trajectory for authentic current lyric writing.",12
+MI-09,"Melodic, Harmonic & Chord Intelligence",D03,"Music Understanding & Pattern Intelligence","Extract/ingest chords, progressions, harmonic rhythm and melodic features when validated evidence exists.",11
+MI-10,"Musical Pattern Abstraction Engine",D03,"Music Understanding & Pattern Intelligence","Convert measured chord, groove and arrangement patterns into safe aggregate/transposable references for generation.",9
+HD-01,"Hit Cohort & Denominator Engine",D04,"Hit DNA Analytics, Archetypes & Trends","Define exact immutable qualifying populations before any percentage is allowed to exist.",11
+HD-02,"Evidence, Assertion, Claim & Confidence Engine",D04,"Hit DNA Analytics, Archetypes & Trends","Turn observations and analysis outputs into auditable claims while preserving uncertainty and contradiction.",10
+HD-03,"Deterministic Statistical Analytics",D04,"Hit DNA Analytics, Archetypes & Trends","Calculate real frequencies, distributions and percentages from persisted cohort/feature records.",11
+HD-04,"Multi-Archetype Clustering Engine",D04,"Hit DNA Analytics, Archetypes & Trends","Discover distinct modes of successful songs rather than collapsing a genre into one average profile.",11
+HD-05,"Temporal Evolution & Trend Intelligence",D04,"Hit DNA Analytics, Archetypes & Trends","Compare immutable DNA snapshots over time and distinguish rising, stable, declining and emerging archetypes.",10
+HD-06,"DNA Snapshot & Publication Registry",D04,"Hit DNA Analytics, Archetypes & Trends","Freeze every published DNA result with exact dataset, methodology and evidence references.",9
+HD-07,"Top Hit DNA Ranking & Recommendation",D04,"Hit DNA Analytics, Archetypes & Trends","Convert complex analytics into up to five simple factual creator choices.",10
+HD-08,"Hybrid Genre DNA Intelligence",D04,"Hit DNA Analytics, Archetypes & Trends","Analyze researched hybrid cohorts separately from arbitrary creative blends and preserve component lineage.",7
+HD-09,"Novelty, Saturation & Pattern-Break Intelligence",D04,"Hit DNA Analytics, Archetypes & Trends","Quantify pattern prevalence/saturation and define controlled departures without rewriting research truth.",8
+AR-01,"Real Artist Research Intake",D05,"Artist Research & Style Intelligence","Create real artist identities and attach authorized evidence before any style profile becomes selectable.",7
+AR-02,"Artist Style Profile & Review",D05,"Artist Research & Style Intelligence","Curate vocal, cadence, delivery, lyrical, production, energy and ad-lib traits with explicit review states.",10
+AR-03,"Artist Profile Versioning & Eligibility",D05,"Artist Research & Style Intelligence","Preserve historical profile versions and decide which profiles may be used for generation.",7
+AR-04,"Artist Style Resolver",D05,"Artist Research & Style Intelligence","Convert an approved internal artist profile into exportable abstract performance traits.",8
+AR-05,"Artist Identity Leakage & Similarity Guard",D05,"Artist Research & Style Intelligence","Prevent external prompts from receiving real artist names, aliases, IDs or copying uniquely identifying material.",8
+AR-06,"Artist Style Fusion Intelligence",D05,"Artist Research & Style Intelligence","Blend two approved abstract profiles dimension-by-dimension while keeping provenance and deterministic ratios.",10
+CG-01,"Creator Keyword, Theme & Language Brief",D06,"Creative Generation & Song Construction","Turn user ideas plus optional evidence-backed suggestions into a structured creative brief before song generation.",13
+CG-02,"Language Freshness & Era Authenticity Resolver",D06,"Creative Generation & Song Construction","Choose current, 90-day, 12-month, era-authentic or neutral language guidance and prevent anachronistic slang.",9
+CG-03,"Song Specification & Blueprint Engine",D06,"Creative Generation & Song Construction","Assemble exact DNA, musical patterns, artist traits, keyword brief and generation strategy into a validated song blueprint.",14
+CG-04,"Hook Strategy Engine",D06,"Creative Generation & Song Construction","Translate measured hook DNA and creator concept into an original hook plan.",10
+CG-05,"Modern Lyric Engineering Engine",D06,"Creative Generation & Song Construction","Generate original lyrics using blueprint constraints, modern language intelligence, keyword directives and performance markup.",12
+CG-06,"Musical Pattern Reference Injection",D06,"Creative Generation & Song Construction","Translate safe chord/groove/arrangement pattern references into generation-facing instructions without copying hit melodies.",8
+CG-07,"Suno-Style Sound Prompt Engine",D06,"Creative Generation & Song Construction","Create a concise production/performance prompt from validated DNA, pattern references and safe artist traits.",11
+CG-08,"Generation Strategy & Pattern-Break Engine",D06,"Creative Generation & Song Construction","Apply user-selected fidelity and creative strategies without mutating the factual DNA snapshot.",11
+CG-09,"Generation Orchestrator",D06,"Creative Generation & Song Construction","Coordinate the complete authenticated generation pipeline and preserve stage lineage.",14
+CG-10,"Generation Validation & Truth Guard",D06,"Creative Generation & Song Construction","Validate DNA compliance, language rules, formatting, pattern breaks, artist leakage and evidence completeness before success.",11
+CG-11,"Generation History, Feedback & Reproducibility",D06,"Creative Generation & Song Construction","Store user-owned generation lineage and feedback without contaminating research truth.",10
+PA-01,"Public/Internal API & Contract Engine",D07,"Product Experience, Operations & Assurance","Expose implemented domains through stable typed APIs while keeping business logic out of HTTP/UI layers.",11
+PA-02,"Creator Experience UI",D07,"Product Experience, Operations & Assurance","Provide the simple genre -> period -> Top Hit DNA -> artist/keywords -> generate workflow.",13
+PA-03,"DNA Explorer & Music Pattern UI",D07,"Product Experience, Operations & Assurance","Expose deep distributions, chord/groove/arrangement, trends, cohort comparisons and evidence drill-down.",12
+PA-04,"Research Console & Data Source Operations",D07,"Product Experience, Operations & Assurance","Give researchers visibility into providers, ingestion, raw->normalized lineage, cohorts, clustering and unresolved data issues.",12
+PA-05,"Artist Styles & Review UI",D07,"Product Experience, Operations & Assurance","Expose approved artist profiles to creators and evidence/review/version workflows to authorized staff.",9
+PA-06,"Admin, Methodology & Publication Governance UI",D07,"Product Experience, Operations & Assurance","Manage taxonomy, methodologies, prompts, versions, publication controls and audit without unsafe direct writes.",11
+PA-07,"Observability, Freshness, Cost & Audit Engine",D07,"Product Experience, Operations & Assurance","Make research and generation diagnosable with correlation, freshness and measured operational cost.",14
+PA-08,"Golden Corpus & Regression Evaluation",D07,"Product Experience, Operations & Assurance","Continuously test statistical truth, cohort accuracy, clustering stability, generation constraints and no-fabrication behavior.",14
+PA-09,"CI/CD, Recovery & Continuous Operations",D07,"Product Experience, Operations & Assurance","Run mandatory build/security/evaluation gates and recover ongoing research without corrupting factual history.",18
+PA-10,"Engine Parity & Implementation Coverage Audit",D07,"Product Experience, Operations & Assurance","Prove every approved engine is accounted for exactly once with code, tests, telemetry, security and known gaps.",8
+PA-11,"Requirements & Definition-of-Done Traceability",D07,"Product Experience, Operations & Assurance","Map every authoritative requirement to implementation, data, APIs/jobs, tests and evaluation evidence.",10
+PA-12,"Production Hardening & Final Release Audit",D07,"Product Experience, Operations & Assurance","Verify security, truth lineage, continuous research, user workflows and clean-checkout reproducibility before COMPLETE.",12

@@ -1,1 +1,0 @@
-export function formatJson(obj: unknown) { return JSON.stringify(obj, null, 2); }

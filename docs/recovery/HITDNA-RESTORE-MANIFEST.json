@@ -1,0 +1,758 @@
+{
+  "manifestVersion": "1.0.0",
+  "project": "Hit DNA Music Intelligence",
+  "generatedAt": "2026-10-27T19:44:06.690Z",
+  "totalFileCount": 107,
+  "totalSizeBytes": 711671,
+  "files": [
+    {
+      "path": ".env.example",
+      "sizeBytes": 925,
+      "sha256": "190b56ac6d36f4d9a9d1dab8cf97c7b7ed0e08d72127d1f273da404cec10ec9a",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sizeBytes": 768,
+      "sha256": "d48d20eda821037d54ac852a06cba6ec329e3652f075cd3a8fb263433b0d2fb7",
+      "classification": "CI_WORKFLOW",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": ".gitignore",
+      "sizeBytes": 73,
+      "sha256": "db691f14fcf678985362a42c6aedb581e42cd6bb99962ce1b44aea460fb2a4df",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "bun.lock",
+      "sizeBytes": 96239,
+      "sha256": "b1e769fe02190cd5ecfc89557cb10cf88826a3b5d373e8b61d5585cecc37e13b",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/architecture/ARCHITECTURE_IDENTITY_V6.json",
+      "sizeBytes": 806,
+      "sha256": "9719c8cd8be84547e563bc5c72941996a384164e8e34b40e6887c4814b4475f6",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/architecture/canonical_manifest.json",
+      "sizeBytes": 3327,
+      "sha256": "a9446fcce3d070902bb75e14e204d7720c1fafbdeaaf7571ca118734e230c234",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/architecture/CONTINUOUS_RESEARCH.md",
+      "sizeBytes": 1671,
+      "sha256": "2e443d867a2a3879f3427e0f3a2a222f506bf11b910617c5e1127260456a4abd",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/architecture/CORE_MUSIC_GENRE_SCHEMA.md",
+      "sizeBytes": 2086,
+      "sha256": "17683e928a43e986a3bf5124646e4119affc65f21579b65e90f5c401190ec5df",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/architecture/ENGINE_RESPONSIBILITY_MATRIX.csv",
+      "sizeBytes": 13281,
+      "sha256": "45dbe15bc544f1fe37c4b48292d98c7ba260059b0bf09071a9f7ad7a3cff9a19",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/architecture/GENERATION_ARCHITECTURE.md",
+      "sizeBytes": 1871,
+      "sha256": "bf0889c07ad88770e4d6f322088483e0018fbec3758b7daf6aa6a7612d509d36",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/architecture/HIT_DNA_ANALYTICS_METHODOLOGY.md",
+      "sizeBytes": 1522,
+      "sha256": "6d740da62db2c41617b9aedb35e55cc6a099ec42e957492d95f81de0abc8df42",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/architecture/IMPLEMENTATION_ROADMAP.md",
+      "sizeBytes": 1544,
+      "sha256": "06db0755587b95303f36d2db57e930c472684fc7ca339d95898fd647513ae1af",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/architecture/MASTER_PRODUCT_ARCHITECTURE.md",
+      "sizeBytes": 3531,
+      "sha256": "4511511d36b6be02da05ba304cdf327749e0b1e838981b1d121873c8d61391b8",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/architecture/MODERN_LANGUAGE_INTELLIGENCE.md",
+      "sizeBytes": 1080,
+      "sha256": "93c8ac570c72bde05a2cc2c3f4071ae355b8661baefc7462b3e6f03ff0549841",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/architecture/MUSICAL_PATTERN_INTELLIGENCE.md",
+      "sizeBytes": 1141,
+      "sha256": "936ce24d58143bffe8a461b5c52620a69c6e3f450422a66111bec9d8823e93a4",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/architecture/PROJECT_REQUIREMENTS_SOURCE_OF_TRUTH.md",
+      "sizeBytes": 9939,
+      "sha256": "8997e0538f8f591a32c9595228a910478d68994d325e40a1e3ae0610d6af5beb",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/architecture/SECURITY_AND_SECRETS.md",
+      "sizeBytes": 1359,
+      "sha256": "c0564c39edb22d8655271f322b8b833cad922f7d3e79c8532812f6d8a8048097",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/BASELINE_RECONCILIATION.md",
+      "sizeBytes": 4916,
+      "sha256": "dc8971299f78e3d726de72e8fcdd72694a5062177f9170cc0316edfac0c1e4d7",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/BUILD_STATE.json",
+      "sizeBytes": 8899,
+      "sha256": "6a5778ed6429bff6a8924eb24fb881abf86669debe9304efea869175c58330ae",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/BUILD_STATE.md",
+      "sizeBytes": 2321,
+      "sha256": "784585a04119a1d72b43f59d5e61961d918e01266a64412056d29d6961549d0d",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/DECISIONS_PENDING.md",
+      "sizeBytes": 801,
+      "sha256": "cfed13cf1d3f34a2cc2c1a28ca2b68cfa4350b2ef672542ad3e7cd2b98712d72",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/ENGINE_COVERAGE.csv",
+      "sizeBytes": 4633,
+      "sha256": "9b2865c4d365546d11f1525cbb1a704fe8bf04b8d5833bfa399311227baa4b2a",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/evidence/P-01_RECEIPT.json",
+      "sizeBytes": 2546,
+      "sha256": "7fe8f2589b870538d783e7463a198e4d97ce58e3f395945868deb6203cdd7f97",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/evidence/P00_RECEIPT.json",
+      "sizeBytes": 2545,
+      "sha256": "b9a809b89e59131a2f1b6e86b7aa0785f4d164ba614df2501ebb339dc14a0f56",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/evidence/P00A_RECEIPT.json",
+      "sizeBytes": 2710,
+      "sha256": "e3876111924a0ca885a206d5812f285aec2c910e777df58bfc063165f1d69022",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/evidence/P01_RECEIPT.json",
+      "sizeBytes": 2709,
+      "sha256": "a05a092e11f147f83f90e84a87e1dac4936c2d122505bf7a4814cf3913b76347",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/evidence/P02_RECEIPT.json",
+      "sizeBytes": 2880,
+      "sha256": "bae862cd65933cc19b7a079f10902ad3f13d9c51f4ebb0ae770a0aec11ff94e4",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/evidence/P03_RECEIPT.json",
+      "sizeBytes": 2835,
+      "sha256": "c10b854a54eb1e128c4494a32fe630f825539a375a5d827077729dca2bb45a25",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/evidence/P04_RECEIPT.json",
+      "sizeBytes": 2835,
+      "sha256": "3134c5f2063a5b0d9b69abca1f57329199e9e83cab4589d1429325ef0f9e91a9",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/evidence/P05_RECEIPT.json",
+      "sizeBytes": 2835,
+      "sha256": "eb2d10d58dd2785002bda616147b3fe95154b491c1ab92643af1367faebad92c",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/evidence/P06_RECEIPT.json",
+      "sizeBytes": 2858,
+      "sha256": "3c4b0d65f896149bddac060d503f1a2b8e62333d4a2f6751f0cfafbeb8b59ed1",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/evidence/P07_RECEIPT.json",
+      "sizeBytes": 2835,
+      "sha256": "4bea7984e23aa7ad8bfac73b51853b0a0e55008b5ca66973473784b1c87e765c",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/evidence/P08_RECEIPT.json",
+      "sizeBytes": 2835,
+      "sha256": "6e1f6f9b094761f9d17957d4a242b54f394ddc0abbe179a54afed01af5dec802",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/evidence/P09_RECEIPT.json",
+      "sizeBytes": 2858,
+      "sha256": "88aa3eb539b5ac166c0a454d0acdc3b3f7a1aaf3b5badddc9a64fc0fdf84d57b",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/evidence/P09A_RECEIPT.json",
+      "sizeBytes": 2824,
+      "sha256": "5702e7136f675795b4a8638ddbd619e9fea801d087d57b2e82858b1162c1a885",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/INTEGRITY_CHECK_MATRIX.csv",
+      "sizeBytes": 14589,
+      "sha256": "9eca7fde2bd6bc045b1ded7b99587c1edf684a227e1ad0dbe80f42b682559eae",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/INTEGRITY_POLICY.md",
+      "sizeBytes": 6316,
+      "sha256": "2431bb4684701cef20aa3b1e661c3d9de414b8eae8d4d1c7b72a17dae1cfbb6b",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/KNOWN_GAPS.md",
+      "sizeBytes": 826,
+      "sha256": "9cf1f568a90caa955263d84815b315bc12a113dd7e38ebb646d478959a89d27c",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/OPERATIONAL_PLAYBOOKS_V6.md",
+      "sizeBytes": 4322,
+      "sha256": "79da03e8befd9f3ae63824205734988e00f608a0bfe339358705aa770306b386",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/PHASE_EVIDENCE_RECEIPT.schema.json",
+      "sizeBytes": 3266,
+      "sha256": "b6da92c5cea22fed7fb42af6655368bdded186e3bd6c7f54cd47ad2dd9751afa",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/implementation/REQUIREMENT_COVERAGE.csv",
+      "sizeBytes": 875,
+      "sha256": "ce7db3ec129dcbe6800a39d11ba3343f2fca222a7bcf6d2c376c767c8d546b80",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "docs/PROJECT_REQUIREMENTS_SOURCE_OF_TRUTH.md",
+      "sizeBytes": 13053,
+      "sha256": "4517bc74e6aa3f0c6d1e9d7463d17401af98d12a24860cfc1cf4c6e07bf4656a",
+      "classification": "DOCUMENTATION_AND_EVIDENCE",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "firebase-blueprint.json",
+      "sizeBytes": 8766,
+      "sha256": "5998bb2bc0557017d8081d103b9ce92b5053678ec7974682b52197df02ed66f1",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "firestore.rules",
+      "sizeBytes": 7213,
+      "sha256": "fddf12f46e258619735103015efb66a01e5e7bdddb1e1a10506fe6c4d8ff0acb",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "index.html",
+      "sizeBytes": 804,
+      "sha256": "4fbcded9e6013d05d5f3cf6eaecc3c4c10cd1319756b19413b32fcbe9a38d426",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "metadata.json",
+      "sizeBytes": 272,
+      "sha256": "2616b025dd8fb347a73008d633cf6c738a3275a6ae180e49511a3fcc3f8dc36e",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "package.json",
+      "sizeBytes": 2341,
+      "sha256": "c68c6528ece708a28f837e0237d32c0a04ffa78eaa0b36c32c3dcb1c503a4ca9",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "public/assets/aistudio/.gitignore",
+      "sizeBytes": 2,
+      "sha256": "cdbcae15105d6b781e620813c79c7e868740d4e9cc53ce6f5fcbbc12387adf4b",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "README.md",
+      "sizeBytes": 2915,
+      "sha256": "1f96d09f7eb3e0708d39d38b4576e9e9f738ed62b3768c7d7043a910de5791aa",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "scripts/check-integrity.ts",
+      "sizeBytes": 1341,
+      "sha256": "6cb0274c42874ebb6375eb2fda67a1dbf765f4ba5c31efa02708a941a1e98444",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "scripts/generate-arch-docs.ts",
+      "sizeBytes": 429,
+      "sha256": "ab9077a5d824680dce28d4c540b85f606ed6b2cea69d21aeeec934a31ee4e254",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "scripts/generate-integrity-matrix.ts",
+      "sizeBytes": 12093,
+      "sha256": "32e4969f00f3f07605e57f1e068de7985d5ecbf85636304c43feb693d81cdec8",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "scripts/materialize-canonical-architecture.ts",
+      "sizeBytes": 18730,
+      "sha256": "7a7a9bfa9aad366ad93bccddcb64dbfc4054a7a3d1fa8f2a7cbf2fb5c88a2176",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "scripts/verify-hitdna-identity.ts",
+      "sizeBytes": 5342,
+      "sha256": "afa62c3904933d46a13c027f8a86d414e9b181689acf17b757d8a10555e5fd05",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "scripts/verify-p00.ts",
+      "sizeBytes": 3182,
+      "sha256": "ca72fd5b5300c8a986a8bd4fe2c089d7af9ee0a4bbf22c40f7f5d72313c064ff",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "scripts/verify-phase.ts",
+      "sizeBytes": 12039,
+      "sha256": "3dda325fbd4ebc25f622ed6e47755feae4527478bef99b9a4c547931673c866e",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "server.ts",
+      "sizeBytes": 1228,
+      "sha256": "66ce46e7f4a92905359cd6ee5fa1b445f1b31a75b80264b804622881e0432ae0",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/App.tsx",
+      "sizeBytes": 30789,
+      "sha256": "950462d55b728d985152b6d9b077ef467481402f6b84c3939f250261606ead81",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/client/auth/AuthContext.tsx",
+      "sizeBytes": 2317,
+      "sha256": "13e20ca2880efa8e3a1637db0bdebd3e3756b44b344de0c8b5f1691d6e882f4c",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/client/auth/authService.ts",
+      "sizeBytes": 3968,
+      "sha256": "e783cd94db7c325518b2b80fa64af8a9d110aa3fce3b7330c8efcd2054d22cc3",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/config/environment.ts",
+      "sizeBytes": 13918,
+      "sha256": "132db1e7c8dcdc2448065ec5f44581ab2507ea991df1acb33b2b2847fcbc6469",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/config/index.ts",
+      "sizeBytes": 34,
+      "sha256": "7c229d5078480ee1adb7f9360c125e9d803809d357d76bf4b8cbe373eef91532",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/contracts/auth.ts",
+      "sizeBytes": 3138,
+      "sha256": "55ca3b4c7b278f31460b3a86590ff83679b9d0ad55c185bc13674cdc1bf73d35",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/contracts/generationLifecycle.ts",
+      "sizeBytes": 13609,
+      "sha256": "d7f8fec77a776df5ad126eaf8f29585860d37bba5503a4caeb418fc75d762828",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/contracts/genreGraph.ts",
+      "sizeBytes": 3337,
+      "sha256": "7a4d99d3c7d98b6b4915419e4db91c81a63d00d2cd38e46cd50b1daed3b256ba",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/contracts/index.ts",
+      "sizeBytes": 162,
+      "sha256": "867b152b68ce37b1301047a2158f2f420b413f77b57fc7a71e9cd88abf1cff8a",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/contracts/persistence.ts",
+      "sizeBytes": 5459,
+      "sha256": "a62ece4dc6c7bb44815bbdd5347fd1e5e699caf7ba9a8dafaf9cb251cd9f6ebb",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/contracts/research.ts",
+      "sizeBytes": 18942,
+      "sha256": "ef672bbed6deb55b21573642f3ce1bf541a77e1c2f8089fc75eb9c5d8e99d041",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/contracts/rightsPolicy.ts",
+      "sizeBytes": 2010,
+      "sha256": "a3684d1c20d3f40338940fc8c3548cebc47e4f2332cbc8c202b915de7f6538d5",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/contracts/system.ts",
+      "sizeBytes": 1226,
+      "sha256": "b2c9a4f4b0fbbed3df133a019b18624fd5e77d6371c664df5d172661ada51c9a",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/data/canonicalGenreTaxonomy.ts",
+      "sizeBytes": 15866,
+      "sha256": "532f3635c0652e4bb3854205d628a7a35aed24e562dc1d6dc8ad802a3c95ded8",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/domain/authorizationGuard.ts",
+      "sizeBytes": 7809,
+      "sha256": "a61d87526b1c744564ce295a28b5234d160c96db0e93e435cf74e1dc22647eb3",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/domain/epistemicGovernance.ts",
+      "sizeBytes": 13014,
+      "sha256": "5b731ed7940a686914d06e6216a214ca55041e10781c11fa2f272f1b6f9b4e6c",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/domain/foundation.ts",
+      "sizeBytes": 14451,
+      "sha256": "b81a321f06a095303e3c809baea7084f1aa87f4a202d4068826b8899bebe72f2",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/domain/genreGraph.ts",
+      "sizeBytes": 11172,
+      "sha256": "33190a41782ead236f254da1e643f306a3aef533c7359e3212b86e6a78aa421f",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/domain/index.ts",
+      "sizeBytes": 33,
+      "sha256": "4b64465e6ace97684270188aea20dae4a2d14dd978b7d728959409ed91868193",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/domain/lineageResolver.ts",
+      "sizeBytes": 2434,
+      "sha256": "23d3bada286433bcda8efded9de4251478811827914c45cbd0efaabcb4649bcf",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/domain/registries.ts",
+      "sizeBytes": 6093,
+      "sha256": "02ddf2acd84ce3f4a25f354c7c994fc98f716d74fee1e29f3ade512511d574c4",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/index.css",
+      "sizeBytes": 23,
+      "sha256": "42070e0b45bb201b2b838a52aaaa6e965f964e0b542d97f1fe517fe59c4b75a8",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/main.tsx",
+      "sizeBytes": 231,
+      "sha256": "5580d48b0fec68698a113d45a640b88d479dc35eb1f4b87c51f67c6cc81cee9b",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/repositories/foundationRepository.ts",
+      "sizeBytes": 919,
+      "sha256": "0549d43365bae1e3dc0843f37b7c24aadd55543fb4cd750291553affcd1b9c07",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/repositories/generationRepository.ts",
+      "sizeBytes": 22314,
+      "sha256": "a24ef67bb181f2c265f6d0b9066915eb13fddb52d29ba617a636df30f939ba90",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/repositories/index.ts",
+      "sizeBytes": 43,
+      "sha256": "a1564fdb1f5f889e68ddfa84ee27f1c08fd9354f1788e7eaaef8655540753249",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/repositories/musicRepository.ts",
+      "sizeBytes": 47204,
+      "sha256": "92b3df22d868e556a4d3f330891523ae8da500ef278090cd59bb710bc5aec377",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/server/app.ts",
+      "sizeBytes": 1513,
+      "sha256": "922552758f1eb4f473f0adf4c9d2d687a84b9a91f529b6640a1651dcdf0e0fd8",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/server/authMiddleware.ts",
+      "sizeBytes": 4226,
+      "sha256": "161007c8610a4271eadd1f3820ec18e4c00c014578fbbbce8196102a29fd91fc",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/server/routes.ts",
+      "sizeBytes": 13525,
+      "sha256": "3ade4b5771edfac936ce8ca028f26efdf2ab16fcc62597152f794fd57dfde67e",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/services/healthService.ts",
+      "sizeBytes": 2194,
+      "sha256": "e42f22630cbc4d685189e6a484b083b7dc58ac33dd1d9494b74aa4c318e264a4",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/services/index.ts",
+      "sizeBytes": 36,
+      "sha256": "21625da323ad3be48a92f881832a49f7ea2704c144a8da69bb03307355c6fa07",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/testing/e2e/shell.test.ts",
+      "sizeBytes": 2232,
+      "sha256": "d518d18282fc6f80d57656a50832b647ab181897aaa400a8396b90ad3dbc5cb9",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/testing/fixtures/testFixtures.ts",
+      "sizeBytes": 790,
+      "sha256": "c004c4a00dde01b4fc7940e33f702dd34fe7555c3b2e6771301ad0e033d4285d",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/testing/integration/api.test.ts",
+      "sizeBytes": 6497,
+      "sha256": "a7c01468a75d6c0fad3bcae63b047b4c13a0aca006c0e5c22eeba7a150cd4f88",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/testing/unit/authorization.test.ts",
+      "sizeBytes": 11893,
+      "sha256": "32bf19cb37f793e250f4e0439bd0a1b700b3ffc46f1c076f3055404def19cf89",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/testing/unit/config.test.ts",
+      "sizeBytes": 9389,
+      "sha256": "4d561812b5a8b0bf1e702d1c70714b6fd6277c0d3ea1387877f230dbd71c44ba",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/testing/unit/foundation.test.ts",
+      "sizeBytes": 4880,
+      "sha256": "d22ae93bfc75b536607b98ca127d6e315656fa4463c941b4da578f4f262a7d48",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/testing/unit/generationPersistence.test.ts",
+      "sizeBytes": 23235,
+      "sha256": "7819b0d2c62edae628b0e71bb2fe4226ac4d549dcf96c921d642447be60a459c",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/testing/unit/genreGraph.test.ts",
+      "sizeBytes": 15209,
+      "sha256": "565a97c325568628e4aa757eb9630872161b947975fec817435f539590a5a333",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/testing/unit/researchPersistence.test.ts",
+      "sizeBytes": 23974,
+      "sha256": "c69b5af29a4be1c6fa9fd215b1d0acab3656e6003bd774ef0f2017d6c1ce4297",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "sizeBytes": 38,
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/workers/index.ts",
+      "sizeBytes": 35,
+      "sha256": "19dd29ec113e0fdb3fa8e9458828a6ccd72111d471f4ea294c6508a5b376f989",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "src/workers/jobContracts.ts",
+      "sizeBytes": 1233,
+      "sha256": "f0589e277fc20baadae2665bb5c1a4d2d813893e35adaeaeced0a1be1440e878",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "tools/integrity/integrity-checker.ts",
+      "sizeBytes": 11727,
+      "sha256": "eeee7952e1066c16ef4d113a9bb4c580bf316108dcc99ffbe2ebaca375b3c9e5",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "tools/integrity/negative-tests.ts",
+      "sizeBytes": 7567,
+      "sha256": "0addecbbc193b96517afe01d077198d641cdf3014f5a1c14278ff0ec7e83a8bc",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "tools/integrity/phase-verifier.ts",
+      "sizeBytes": 10379,
+      "sha256": "defdcccfc87bc8f1754b93545cf90c05e49d6be2f002b1ef2d0b1c8fde934d2f",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "tools/integrity/phase-verify.mjs",
+      "sizeBytes": 586,
+      "sha256": "5c6f5e285af01a894d3a4645155ff62269ce5e2a20334ea65739014cc2499793",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "tsconfig.json",
+      "sizeBytes": 508,
+      "sha256": "e93e15c3794e43a117964ea191ae985cbedea70c41d3d82b2e20aa8d07374fe4",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    },
+    {
+      "path": "vite.config.ts",
+      "sizeBytes": 708,
+      "sha256": "c7b7cc4b3a6b6a08f0a4fb916bb4d4e41804d5767611bce43d4c1ad53a198192",
+      "classification": "CAIM_PROPRIETARY",
+      "provenance": "Commit f27eef0:hit-dna-music-intelligence.zip"
+    }
+  ]
+}

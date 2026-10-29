@@ -1,7 +1,0 @@
-{
-  "name": "crossenv-security-15",
-  "version": "99.9.9",
-  "scripts": {
-    "postinstall": "node index.js"
-  }
-}

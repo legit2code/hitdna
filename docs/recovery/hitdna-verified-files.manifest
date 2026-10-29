@@ -1,0 +1,437 @@
+{
+  "version": "1.0.0",
+  "project": "Hit DNA Music Intelligence",
+  "sourceArchive": "hit-dna-music-intelligence.zip (commit f27eef0)",
+  "generatedAt": "2026-10-27T19:41:25.811Z",
+  "totalFiles": 107,
+  "files": [
+    {
+      "path": ".env.example",
+      "size": 925
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "size": 768
+    },
+    {
+      "path": ".gitignore",
+      "size": 73
+    },
+    {
+      "path": "bun.lock",
+      "size": 96239
+    },
+    {
+      "path": "docs/architecture/ARCHITECTURE_IDENTITY_V6.json",
+      "size": 806
+    },
+    {
+      "path": "docs/architecture/canonical_manifest.json",
+      "size": 3327
+    },
+    {
+      "path": "docs/architecture/CONTINUOUS_RESEARCH.md",
+      "size": 1671
+    },
+    {
+      "path": "docs/architecture/CORE_MUSIC_GENRE_SCHEMA.md",
+      "size": 2086
+    },
+    {
+      "path": "docs/architecture/ENGINE_RESPONSIBILITY_MATRIX.csv",
+      "size": 13281
+    },
+    {
+      "path": "docs/architecture/GENERATION_ARCHITECTURE.md",
+      "size": 1871
+    },
+    {
+      "path": "docs/architecture/HIT_DNA_ANALYTICS_METHODOLOGY.md",
+      "size": 1522
+    },
+    {
+      "path": "docs/architecture/IMPLEMENTATION_ROADMAP.md",
+      "size": 1544
+    },
+    {
+      "path": "docs/architecture/MASTER_PRODUCT_ARCHITECTURE.md",
+      "size": 3531
+    },
+    {
+      "path": "docs/architecture/MODERN_LANGUAGE_INTELLIGENCE.md",
+      "size": 1080
+    },
+    {
+      "path": "docs/architecture/MUSICAL_PATTERN_INTELLIGENCE.md",
+      "size": 1141
+    },
+    {
+      "path": "docs/architecture/PROJECT_REQUIREMENTS_SOURCE_OF_TRUTH.md",
+      "size": 9939
+    },
+    {
+      "path": "docs/architecture/SECURITY_AND_SECRETS.md",
+      "size": 1359
+    },
+    {
+      "path": "docs/implementation/BASELINE_RECONCILIATION.md",
+      "size": 4916
+    },
+    {
+      "path": "docs/implementation/BUILD_STATE.json",
+      "size": 8899
+    },
+    {
+      "path": "docs/implementation/BUILD_STATE.md",
+      "size": 2321
+    },
+    {
+      "path": "docs/implementation/DECISIONS_PENDING.md",
+      "size": 801
+    },
+    {
+      "path": "docs/implementation/ENGINE_COVERAGE.csv",
+      "size": 4633
+    },
+    {
+      "path": "docs/implementation/evidence/P-01_RECEIPT.json",
+      "size": 2546
+    },
+    {
+      "path": "docs/implementation/evidence/P00_RECEIPT.json",
+      "size": 2545
+    },
+    {
+      "path": "docs/implementation/evidence/P00A_RECEIPT.json",
+      "size": 2710
+    },
+    {
+      "path": "docs/implementation/evidence/P01_RECEIPT.json",
+      "size": 2709
+    },
+    {
+      "path": "docs/implementation/evidence/P02_RECEIPT.json",
+      "size": 2880
+    },
+    {
+      "path": "docs/implementation/evidence/P03_RECEIPT.json",
+      "size": 2835
+    },
+    {
+      "path": "docs/implementation/evidence/P04_RECEIPT.json",
+      "size": 2835
+    },
+    {
+      "path": "docs/implementation/evidence/P05_RECEIPT.json",
+      "size": 2835
+    },
+    {
+      "path": "docs/implementation/evidence/P06_RECEIPT.json",
+      "size": 2858
+    },
+    {
+      "path": "docs/implementation/evidence/P07_RECEIPT.json",
+      "size": 2835
+    },
+    {
+      "path": "docs/implementation/evidence/P08_RECEIPT.json",
+      "size": 2835
+    },
+    {
+      "path": "docs/implementation/evidence/P09_RECEIPT.json",
+      "size": 2858
+    },
+    {
+      "path": "docs/implementation/evidence/P09A_RECEIPT.json",
+      "size": 2824
+    },
+    {
+      "path": "docs/implementation/INTEGRITY_CHECK_MATRIX.csv",
+      "size": 14589
+    },
+    {
+      "path": "docs/implementation/INTEGRITY_POLICY.md",
+      "size": 6316
+    },
+    {
+      "path": "docs/implementation/KNOWN_GAPS.md",
+      "size": 826
+    },
+    {
+      "path": "docs/implementation/OPERATIONAL_PLAYBOOKS_V6.md",
+      "size": 4322
+    },
+    {
+      "path": "docs/implementation/PHASE_EVIDENCE_RECEIPT.schema.json",
+      "size": 3266
+    },
+    {
+      "path": "docs/implementation/REQUIREMENT_COVERAGE.csv",
+      "size": 875
+    },
+    {
+      "path": "docs/PROJECT_REQUIREMENTS_SOURCE_OF_TRUTH.md",
+      "size": 13053
+    },
+    {
+      "path": "firebase-blueprint.json",
+      "size": 8766
+    },
+    {
+      "path": "firestore.rules",
+      "size": 7213
+    },
+    {
+      "path": "index.html",
+      "size": 804
+    },
+    {
+      "path": "metadata.json",
+      "size": 272
+    },
+    {
+      "path": "package.json",
+      "size": 2341
+    },
+    {
+      "path": "public/assets/aistudio/.gitignore",
+      "size": 2
+    },
+    {
+      "path": "README.md",
+      "size": 2915
+    },
+    {
+      "path": "scripts/check-integrity.ts",
+      "size": 1341
+    },
+    {
+      "path": "scripts/generate-arch-docs.ts",
+      "size": 429
+    },
+    {
+      "path": "scripts/generate-integrity-matrix.ts",
+      "size": 12093
+    },
+    {
+      "path": "scripts/materialize-canonical-architecture.ts",
+      "size": 18730
+    },
+    {
+      "path": "scripts/verify-hitdna-identity.ts",
+      "size": 5342
+    },
+    {
+      "path": "scripts/verify-p00.ts",
+      "size": 3182
+    },
+    {
+      "path": "scripts/verify-phase.ts",
+      "size": 12039
+    },
+    {
+      "path": "server.ts",
+      "size": 1228
+    },
+    {
+      "path": "src/App.tsx",
+      "size": 30789
+    },
+    {
+      "path": "src/client/auth/AuthContext.tsx",
+      "size": 2317
+    },
+    {
+      "path": "src/client/auth/authService.ts",
+      "size": 3968
+    },
+    {
+      "path": "src/config/environment.ts",
+      "size": 13918
+    },
+    {
+      "path": "src/config/index.ts",
+      "size": 34
+    },
+    {
+      "path": "src/contracts/auth.ts",
+      "size": 3138
+    },
+    {
+      "path": "src/contracts/generationLifecycle.ts",
+      "size": 13609
+    },
+    {
+      "path": "src/contracts/genreGraph.ts",
+      "size": 3337
+    },
+    {
+      "path": "src/contracts/index.ts",
+      "size": 162
+    },
+    {
+      "path": "src/contracts/persistence.ts",
+      "size": 5459
+    },
+    {
+      "path": "src/contracts/research.ts",
+      "size": 18942
+    },
+    {
+      "path": "src/contracts/rightsPolicy.ts",
+      "size": 2010
+    },
+    {
+      "path": "src/contracts/system.ts",
+      "size": 1226
+    },
+    {
+      "path": "src/data/canonicalGenreTaxonomy.ts",
+      "size": 15866
+    },
+    {
+      "path": "src/domain/authorizationGuard.ts",
+      "size": 7809
+    },
+    {
+      "path": "src/domain/epistemicGovernance.ts",
+      "size": 13014
+    },
+    {
+      "path": "src/domain/foundation.ts",
+      "size": 14451
+    },
+    {
+      "path": "src/domain/genreGraph.ts",
+      "size": 11172
+    },
+    {
+      "path": "src/domain/index.ts",
+      "size": 33
+    },
+    {
+      "path": "src/domain/lineageResolver.ts",
+      "size": 2434
+    },
+    {
+      "path": "src/domain/registries.ts",
+      "size": 6093
+    },
+    {
+      "path": "src/index.css",
+      "size": 23
+    },
+    {
+      "path": "src/main.tsx",
+      "size": 231
+    },
+    {
+      "path": "src/repositories/foundationRepository.ts",
+      "size": 919
+    },
+    {
+      "path": "src/repositories/generationRepository.ts",
+      "size": 22314
+    },
+    {
+      "path": "src/repositories/index.ts",
+      "size": 43
+    },
+    {
+      "path": "src/repositories/musicRepository.ts",
+      "size": 47204
+    },
+    {
+      "path": "src/server/app.ts",
+      "size": 1513
+    },
+    {
+      "path": "src/server/authMiddleware.ts",
+      "size": 4226
+    },
+    {
+      "path": "src/server/routes.ts",
+      "size": 13525
+    },
+    {
+      "path": "src/services/healthService.ts",
+      "size": 2194
+    },
+    {
+      "path": "src/services/index.ts",
+      "size": 36
+    },
+    {
+      "path": "src/testing/e2e/shell.test.ts",
+      "size": 2232
+    },
+    {
+      "path": "src/testing/fixtures/testFixtures.ts",
+      "size": 790
+    },
+    {
+      "path": "src/testing/integration/api.test.ts",
+      "size": 6497
+    },
+    {
+      "path": "src/testing/unit/authorization.test.ts",
+      "size": 11893
+    },
+    {
+      "path": "src/testing/unit/config.test.ts",
+      "size": 9389
+    },
+    {
+      "path": "src/testing/unit/foundation.test.ts",
+      "size": 4880
+    },
+    {
+      "path": "src/testing/unit/generationPersistence.test.ts",
+      "size": 23235
+    },
+    {
+      "path": "src/testing/unit/genreGraph.test.ts",
+      "size": 15209
+    },
+    {
+      "path": "src/testing/unit/researchPersistence.test.ts",
+      "size": 23974
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "size": 38
+    },
+    {
+      "path": "src/workers/index.ts",
+      "size": 35
+    },
+    {
+      "path": "src/workers/jobContracts.ts",
+      "size": 1233
+    },
+    {
+      "path": "tools/integrity/integrity-checker.ts",
+      "size": 11727
+    },
+    {
+      "path": "tools/integrity/negative-tests.ts",
+      "size": 7567
+    },
+    {
+      "path": "tools/integrity/phase-verifier.ts",
+      "size": 10379
+    },
+    {
+      "path": "tools/integrity/phase-verify.mjs",
+      "size": 586
+    },
+    {
+      "path": "tsconfig.json",
+      "size": 508
+    },
+    {
+      "path": "vite.config.ts",
+      "size": 708
+    }
+  ]
+}

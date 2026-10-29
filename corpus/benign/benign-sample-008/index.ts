@@ -1,1 +1,0 @@
-export function encodeString(str: string) { return Buffer.from(str, "utf8").toString("base64"); }
